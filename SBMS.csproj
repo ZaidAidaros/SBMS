@@ -48,6 +48,76 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Accounts\IAccounts.cs" />
+    <Compile Include="Views\Customers\ICustomers.cs" />
+    <Compile Include="Views\Employees\IEmployees.cs" />
+    <Compile Include="Views\Home\IHome.cs" />
+    <Compile Include="Views\Purchases\IPurchases.cs" />
+    <Compile Include="Views\Reports\IReports.cs" />
+    <Compile Include="Views\Sales\ISales.cs" />
+    <Compile Include="Views\Settings\ISettings.cs" />
+    <Compile Include="Views\Stores\IStores.cs" />
+    <Compile Include="Views\Suppliers\ISuppliers.cs" />
+    <Compile Include="Views\Accounts\Accounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Accounts\Accounts.Designer.cs">
+      <DependentUpon>Accounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customers\Customers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Customers\Customers.Designer.cs">
+      <DependentUpon>Customers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Employees\Employees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Employees\Employees.Designer.cs">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Home\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Purchases\Purchases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Purchases\Purchases.Designer.cs">
+      <DependentUpon>Purchases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\Sales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Sales\Sales.Designer.cs">
+      <DependentUpon>Sales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Settings\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stores\Stores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Stores\Stores.Designer.cs">
+      <DependentUpon>Stores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Suppliers\Suppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Suppliers\Suppliers.Designer.cs">
+      <DependentUpon>Suppliers.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -57,6 +127,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Home\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Sales\Sales.ar.resx">
+      <DependentUpon>Sales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Sales\Sales.resx">
+      <DependentUpon>Sales.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -69,6 +148,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Presenters\" />
+    <Folder Include="Views\Accounts\Components\" />
+    <Folder Include="Views\Customers\Components\" />
+    <Folder Include="Views\Employees\Components\" />
+    <Folder Include="Views\Home\Components\" />
+    <Folder Include="Views\Purchases\Components\" />
+    <Folder Include="Views\Reports\Components\" />
+    <Folder Include="Views\Settings\Components\" />
+    <Folder Include="Views\Stores\Components\" />
+    <Folder Include="Views\Suppliers\Components\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
