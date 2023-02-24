@@ -46,6 +46,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Customers\CuCategoryM.cs" />
+    <Compile Include="Models\Customers\CuPhoneM.cs" />
+    <Compile Include="Models\Customers\CustomerM.cs" />
+    <Compile Include="Models\Employees\EmployeeM.cs" />
+    <Compile Include="Models\Employees\EmployeesM.cs" />
+    <Compile Include="Models\Employees\EmpPhoneM.cs" />
+    <Compile Include="Models\Employees\JobTitleM.cs" />
+    <Compile Include="Models\GeneralM\GenderM.cs" />
+    <Compile Include="Models\GeneralM\OprationM.cs" />
+    <Compile Include="Models\Purchases\PuDateM.cs" />
+    <Compile Include="Models\Purchases\PuItemM.cs" />
+    <Compile Include="Models\Purchases\PurchaseOpM.cs" />
+    <Compile Include="Models\Purchases\PurchasesM.cs" />
+    <Compile Include="Models\Sales\SaleOpM.cs" />
+    <Compile Include="Models\Sales\SalesM.cs" />
+    <Compile Include="Models\Sales\SDateM.cs" />
+    <Compile Include="Models\Sales\SItemM.cs" />
+    <Compile Include="Models\Stores\PCategoryM.cs" />
+    <Compile Include="Models\Stores\PGroupM.cs" />
+    <Compile Include="Models\Stores\PLocatioonM.cs" />
+    <Compile Include="Models\Stores\ProductDetialsM.cs" />
+    <Compile Include="Models\Stores\ProductM.cs" />
+    <Compile Include="Models\Stores\ProductsM.cs" />
+    <Compile Include="Models\Stores\PUnitM.cs" />
+    <Compile Include="Models\Stores\SShelfM.cs" />
+    <Compile Include="Models\Stores\StoreM.cs" />
+    <Compile Include="Models\Stores\StoresM.cs" />
+    <Compile Include="Models\Suppliers\SuCategory.cs" />
+    <Compile Include="Models\Suppliers\SuPhoneM.cs" />
+    <Compile Include="Models\Suppliers\SupplierM.cs" />
+    <Compile Include="Models\Users\PermissionM.cs" />
+    <Compile Include="Models\Users\PermOperationM.cs" />
+    <Compile Include="Models\Users\UserM.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Accounts\IAccounts.cs" />
@@ -150,7 +183,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Presenters\" />
     <Folder Include="Views\Accounts\Components\" />
     <Folder Include="Views\Customers\Components\" />
