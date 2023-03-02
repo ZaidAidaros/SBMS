@@ -79,6 +79,7 @@
     <Compile Include="Models\Users\PermissionM.cs" />
     <Compile Include="Models\Users\PermOperationM.cs" />
     <Compile Include="Models\Users\UserM.cs" />
+    <Compile Include="Presenters\Services\DBHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Accounts\IAccounts.cs" />
@@ -87,6 +88,12 @@
     <Compile Include="Views\Home\IHome.cs" />
     <Compile Include="Views\Purchases\IPurchases.cs" />
     <Compile Include="Views\Reports\IReports.cs" />
+    <Compile Include="Views\Sales\Components\InvoiceItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Sales\Components\InvoiceItem.Designer.cs">
+      <DependentUpon>InvoiceItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Sales\ISales.cs" />
     <Compile Include="Views\Settings\ISettings.cs" />
     <Compile Include="Views\Stores\IStores.cs" />
@@ -163,6 +170,9 @@
     <EmbeddedResource Include="Views\Home\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Sales\Components\InvoiceItem.resx">
+      <DependentUpon>InvoiceItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Sales\Sales.ar.resx">
       <DependentUpon>Sales.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,7 +193,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Presenters\" />
+    <Folder Include="Presenters\Logic\" />
     <Folder Include="Views\Accounts\Components\" />
     <Folder Include="Views\Customers\Components\" />
     <Folder Include="Views\Employees\Components\" />

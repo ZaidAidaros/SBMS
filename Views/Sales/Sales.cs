@@ -29,6 +29,7 @@ namespace SBMS.Views.Screens
 
         private void Sales_Load(object sender, EventArgs e)
         {
+            
 
         }
 
@@ -43,6 +44,21 @@ namespace SBMS.Views.Screens
         }
 
         private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBoxInvItems_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
         {
 
         }
