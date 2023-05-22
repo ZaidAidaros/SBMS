@@ -22,3 +22,4 @@ C:\Users\za\Desktop\VisualProjects\SBMS\SBMS\obj\Debug\SBMS.csproj.GenerateResou
 C:\Users\za\Desktop\VisualProjects\SBMS\SBMS\obj\Debug\SBMS.csproj.CoreCompileInputs.cache
 C:\Users\za\Desktop\VisualProjects\SBMS\SBMS\obj\Debug\SBMS.exe
 C:\Users\za\Desktop\VisualProjects\SBMS\SBMS\obj\Debug\SBMS.pdb
+C:\Users\za\Desktop\VisualProjects\SBMS\SBMS\obj\Debug\SBMS.csprojAssemblyReference.cache

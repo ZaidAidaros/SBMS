@@ -87,6 +87,8 @@ namespace SBMS.Repositories.SalesRepo
             RepoResultM repoResult = new RepoResultM();
             repoResult.IsSucess = result.IsSucess;
             repoResult.EfectedRows = result.EfectedRows;
+            repoResult.ReturnNewRowId = result.ReturnIdOfNewRow;
+            repoResult.ResData.Add(result.ReturnIdOfNewRow);
             repoResult.ErrorMsg = result.ErrorMsg;
             return repoResult;
         }

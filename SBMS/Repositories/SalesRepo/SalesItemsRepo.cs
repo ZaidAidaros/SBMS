@@ -44,7 +44,7 @@ namespace SBMS.Repositories.SalesRepo
         static public async Task<RepoResultM> AddSaleItemAsync(InvoiceItemM saleItemM, int one)
         {
             RepoResultM repoResult = new RepoResultM();    
-            if (one==-1 && one == 1)
+            if (one==1 || one == -1)
             {
                 SqlParameter[] parameters =
                 {
@@ -61,7 +61,6 @@ namespace SBMS.Repositories.SalesRepo
                 repoResult.IsSucess = result.IsSucess;
                 repoResult.EfectedRows = result.EfectedRows;
                 repoResult.ErrorMsg = result.ErrorMsg;
-                repoResult.ResData.Add(result.ResData[0][0]);
                 return repoResult;
             }
             repoResult.IsSucess = false;

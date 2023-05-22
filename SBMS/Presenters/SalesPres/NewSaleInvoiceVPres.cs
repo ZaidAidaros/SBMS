@@ -1,7 +1,6 @@
 ﻿using SBMS.Models.Customers;
 using SBMS.Models.General;
 using SBMS.Models.Stores;
-using SBMS.Presenters.PurchasesPres;
 using SBMS.Repositories;
 using SBMS.Repositories.CustomersRepo;
 using SBMS.Repositories.SalesRepo;
@@ -236,8 +235,8 @@ namespace SBMS.Presenters.SalesPres
                 else
                 {
                     InvoiceM invoiceM = new InvoiceM();
-                    invoiceM.EmpId = PurchasesHVPres.GetInstance().EmpId;
-                    invoiceM.SupplierId = ((CustomerM)this.newSaleInvoiceV.CBXCustomers.SelectedItem).Id;
+                    invoiceM.EmpId = SalesHVPres.GetInstance().EmpId;
+                    invoiceM.CustomerId = ((CustomerM)this.newSaleInvoiceV.CBXCustomers.SelectedItem).Id;
                     invoiceM.MonyStateId = ((MonyStateM)this.newSaleInvoiceV.CBXMonyState.SelectedItem).Id;
                     invoiceM.InvoiceTypeId = 1;
                     invoiceM.Note = this.newSaleInvoiceV.InvNote;
@@ -249,8 +248,8 @@ namespace SBMS.Presenters.SalesPres
                     {
                         for (int i = 0; i < this.InvItems.Count; i++)
                         {
-                            this.InvItems[i].InvoiceId = (int)res.ResData[0];
-                            RepoResultM itemRes = await SalesItemsRepo.AddSaleItemAsync(this.InvItems[i],1);
+                            this.InvItems[i].InvoiceId = res.ReturnNewRowId;
+                            RepoResultM itemRes = await SalesItemsRepo.AddSaleItemAsync(this.InvItems[i],-1);
                             if (!itemRes.IsSucess) this.newSaleInvoiceV.ShowMsgBox(itemRes.ErrorMsg + "\n" + res.ResData[0], "Error:", false);
 
                         }
@@ -333,6 +332,7 @@ namespace SBMS.Presenters.SalesPres
             InvoiceItemM invoiceItemM = new InvoiceItemM();
             
             invoiceItemM.ProductId = this.selectedProduct.Id;
+            invoiceItemM.ProductDId = this.selectedProduct.DId;
             invoiceItemM.Name = this.selectedProduct.Name;
             invoiceItemM.Unit = this.selectedProduct.Unit;
             invoiceItemM.Price = decimal.Parse(this.newSaleInvoiceV.PPrice);

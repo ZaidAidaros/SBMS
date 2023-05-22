@@ -8,6 +8,7 @@ namespace SBMS.Repositories
         public string ErrorMsg { get; set; }
         public List<object> ResData { get; set; }
         public int EfectedRows { get; set; }
+        public int ReturnNewRowId { get; set; }
         public RepoResultM()
         {
             ResData = new List<object>();

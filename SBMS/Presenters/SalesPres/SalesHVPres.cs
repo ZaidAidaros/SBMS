@@ -1,4 +1,5 @@
-﻿using SBMS.Views.Sales;
+﻿using SBMS.Presenters.PurchasesPres;
+using SBMS.Views.Sales;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +37,7 @@ namespace SBMS.Presenters.SalesPres
         }
         private void ShowNewSalesInvView()
         {
-            //NewRetSaleInvoiceVPres.Dispose();
+            NewRetSaleInvVPres.Dispose();
             NewSaleInvoiceVPres.GetInstance();
             NewSaleInvoiceV.GetInstance().Dock = System.Windows.Forms.DockStyle.Fill;
             this.salesHomeV.HeaderTitle = "New Purchases";
@@ -44,8 +45,8 @@ namespace SBMS.Presenters.SalesPres
         }
         private void ShowNewRetSalesInvView()
         {
-            //NewSaleInvoiceVPres.Dispose();
-            //NewRetPurchaseInvVPres.GetInstance();
+            NewSaleInvoiceVPres.Dispose();
+            NewRetPurchaseInvVPres.GetInstance();
             NewRetSaleInvoiceV.GetInstance().Dock = System.Windows.Forms.DockStyle.Fill;
             NewRetSaleInvoiceV.GetInstance().Show();
             this.salesHomeV.HeaderTitle = "Return Purchases";
