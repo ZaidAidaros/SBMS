@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[InvoiceTypes]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
+    [name] NVARCHAR(20) NOT NULL,
+)

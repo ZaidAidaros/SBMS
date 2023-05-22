@@ -1,0 +1,5 @@
+C:\Users\za\Desktop\VisualProjects\SBMS\DatabaseSBMS\bin\Debug\DatabaseSBMS.dacpac
+C:\Users\za\Desktop\VisualProjects\SBMS\DatabaseSBMS\bin\Debug\DatabaseSBMS.dll
+C:\Users\za\Desktop\VisualProjects\SBMS\DatabaseSBMS\bin\Debug\DatabaseSBMS.pdb
+C:\Users\za\Desktop\VisualProjects\SBMS\DatabaseSBMS\obj\Debug\DatabaseSBMS.dll
+C:\Users\za\Desktop\VisualProjects\SBMS\DatabaseSBMS\obj\Debug\DatabaseSBMS.pdb

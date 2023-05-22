@@ -1,0 +1,57 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Products]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Table rebuild
+       [dbo].[Products] (Table)
+     Create
+       Unique Constraint: unnamed constraint on [dbo].[CustCategory] (Unique Constraint)
+       Unique Constraint: unnamed constraint on [dbo].[Customers] (Unique Constraint)
+       Unique Constraint: unnamed constraint on [dbo].[Employees] (Unique Constraint)
+       Unique Constraint: unnamed constraint on [dbo].[JobTitle] (Unique Constraint)
+       Unique Constraint: unnamed constraint on [dbo].[MonyState] (Unique Constraint)
+       Unique Constraint: unnamed constraint on [dbo].[Permission] (Unique Constraint)
+       Unique Constraint: unnamed constraint on [dbo].[ProductCategory] (Unique Constraint)
+       Unique Constraint: unnamed constraint on [dbo].[ProdUnits] (Unique Constraint)
+       Unique Constraint: unnamed constraint on [dbo].[SupCategory] (Unique Constraint)
+       Unique Constraint: unnamed constraint on [dbo].[Suppliers] (Unique Constraint)
+       Unique Constraint: unnamed constraint on [dbo].[Users] (Unique Constraint)
+       Unique Constraint: unnamed constraint on [dbo].[Users] (Unique Constraint)
+     Alter
+       [dbo].[CreateCustomersTables] (Procedure)
+       [dbo].[CreateEmpTables] (Procedure)
+       [dbo].[CreateGTables] (Procedure)
+       [dbo].[CreateStoresTables] (Procedure)
+       [dbo].[CreateSuppliersTables] (Procedure)
+       [dbo].[CreateUsersTableas] (Procedure)
+
+** Supporting actions
+     Drop
+       [dbo].[FK_Product_Unit] (Foreign Key)
+       [dbo].[FK_Product_Category] (Foreign Key)
+       [dbo].[FK_ProductDetails_Products] (Foreign Key)
+     Create
+       [dbo].[FK_Product_Unit] (Foreign Key)
+       [dbo].[FK_Product_Category] (Foreign Key)
+       [dbo].[FK_ProductDetails_Products] (Foreign Key)
+     Refresh
+       [dbo].[AddProduct] (Procedure)
+       [dbo].[DeleteProduct] (Procedure)
+       [dbo].[FilterAsProdCategory] (Procedure)
+       [dbo].[GetProducts] (Procedure)
+       [dbo].[GetPurchaseItems] (Procedure)
+       [dbo].[GetSaleItems] (Procedure)
+       [dbo].[GetSaleProducts] (Procedure)
+       [dbo].[SearchProdDetails] (Procedure)
+       [dbo].[SearchProduct] (Procedure)
+       [dbo].[UpdateProduct] (Procedure)
+
+The compatibility level of the target schema 160 is not supported, which may result in undefined behavior. Please upgrade to a later version which supports this compatibility level.
+

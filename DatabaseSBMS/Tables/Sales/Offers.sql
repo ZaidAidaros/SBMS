@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Offers]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
+    [name] NVARCHAR(50) NOT NULL, 
+    [note] NVARCHAR(50) NOT NULL,
+
+)

@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{217F565C-2924-4B90-806A-5E995335775F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SBMS</RootNamespace>
+    <AssemblyName>SBMS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Customers\CustCategoryM.cs" />
+    <Compile Include="Models\Customers\CustomerM.cs" />
+    <Compile Include="Models\Employees\EmployeeM.cs" />
+    <Compile Include="Models\Employees\JobM.cs" />
+    <Compile Include="Models\GeneralM\GenderM.cs" />
+    <Compile Include="Models\GeneralM\InvoiceTypeM.cs" />
+    <Compile Include="Models\GeneralM\MonyStateM.cs" />
+    <Compile Include="Models\GeneralM\ICategoryM.cs" />
+    <Compile Include="Models\GeneralM\InvoiceItemM.cs" />
+    <Compile Include="Models\GeneralM\InvoiceM.cs" />
+    <Compile Include="Models\Stores\ProdCategoryM.cs" />
+    <Compile Include="Models\Stores\ProdExtraInfoM.cs" />
+    <Compile Include="Models\Stores\ProductM.cs" />
+    <Compile Include="Models\Stores\ProdUnitM.cs" />
+    <Compile Include="Models\Suppliers\SuppCategory.cs" />
+    <Compile Include="Models\Suppliers\SupplierM.cs" />
+    <Compile Include="Models\Users\PermissionM.cs" />
+    <Compile Include="Models\Users\UserM.cs" />
+    <Compile Include="Presenters\CustomersPres\CustCategoriesVPres.cs" />
+    <Compile Include="Presenters\CustomersPres\CustomersVPres.cs" />
+    <Compile Include="Presenters\EmployeesPres\EmployeesVPres.cs" />
+    <Compile Include="Presenters\EmployeesPres\JobsVPres.cs" />
+    <Compile Include="Presenters\HomePres\AdminHomeVPres.cs" />
+    <Compile Include="Presenters\CustomersPres\CustomersHVPres.cs" />
+    <Compile Include="Presenters\EmployeesPres\EmployeesHVPres.cs" />
+    <Compile Include="Presenters\PurchasesPres\NewPurchaseInvVPres.cs" />
+    <Compile Include="Presenters\PurchasesPres\NewRePurchaseInvVPres.cs" />
+    <Compile Include="Presenters\PurchasesPres\PurchaseInvoicesVPres.cs" />
+    <Compile Include="Presenters\PurchasesPres\PurchasesHVPres.cs" />
+    <Compile Include="Presenters\ReportsPres\ReportsPres.cs" />
+    <Compile Include="Presenters\SalesPres\NewRetSaleInvVPres.cs" />
+    <Compile Include="Presenters\SalesPres\NewSaleInvoiceVPres.cs" />
+    <Compile Include="Presenters\SalesPres\SaleInvoicesVPres.cs" />
+    <Compile Include="Presenters\SalesPres\SalesHVPres.cs" />
+    <Compile Include="Presenters\SettingsPres\SettingsPres.cs" />
+    <Compile Include="Presenters\StoresPres\PCategoriesVPres.cs" />
+    <Compile Include="Presenters\StoresPres\ProductsVPres.cs" />
+    <Compile Include="Presenters\StoresPres\PUnitsVPres.cs" />
+    <Compile Include="Presenters\StoresPres\StoresVPres.cs" />
+    <Compile Include="Presenters\SuppliersPres\SuppCategoriesVPres.cs" />
+    <Compile Include="Presenters\SuppliersPres\SuppliersHVPres.cs" />
+    <Compile Include="Presenters\SuppliersPres\SuppliersVPres.cs" />
+    <Compile Include="Presenters\UsersPres\LogInVPres.cs" />
+    <Compile Include="Presenters\UsersPres\UsersVPres.cs" />
+    <Compile Include="Repositories\CustomersRepo\CustCategoriesRepo.cs" />
+    <Compile Include="Repositories\CustomersRepo\CustomersRepo.cs" />
+    <Compile Include="Repositories\EmployeesRepo\EmployeesRepo.cs" />
+    <Compile Include="Repositories\EmployeesRepo\JobsRepo.cs" />
+    <Compile Include="Repositories\RepoResultM.cs" />
+    <Compile Include="Repositories\PurchasesRepo\PurchasesItemsRepo.cs" />
+    <Compile Include="Repositories\PurchasesRepo\PurchasesRepo.cs" />
+    <Compile Include="Repositories\SalesRepo\SalesRepo.cs" />
+    <Compile Include="Repositories\SalesRepo\SalesItemsRepo.cs" />
+    <Compile Include="Repositories\StoresRepo\ProdCategoriesRepo.cs" />
+    <Compile Include="Repositories\StoresRepo\ProductsRepo.cs" />
+    <Compile Include="Repositories\StoresRepo\ProdUnitsRepo.cs" />
+    <Compile Include="Repositories\SuppliersRepo\SuppCategoriesRepo.cs" />
+    <Compile Include="Repositories\SuppliersRepo\SuppliersRepo.cs" />
+    <Compile Include="Repositories\UsersRepo\UsersRepo.cs" />
+    <Compile Include="Services\DBHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Auth\ILogInV.cs" />
+    <Compile Include="Views\Auth\IUsersV.cs" />
+    <Compile Include="Views\Auth\LogInV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Auth\LogInV.Designer.cs">
+      <DependentUpon>LogInV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Auth\UsersV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Auth\UsersV.Designer.cs">
+      <DependentUpon>UsersV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customers\ICustCategoriesV.cs" />
+    <Compile Include="Views\Customers\ICustomersHV.cs" />
+    <Compile Include="Views\Customers\ICustomersV.cs" />
+    <Compile Include="Views\Employees\IEmployeesHV.cs" />
+    <Compile Include="Views\Employees\IJobsV.cs" />
+    <Compile Include="Views\Employees\IEmployeesV.cs" />
+    <Compile Include="Views\Home\AdminHomeV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Home\AdminHomeV.Designer.cs">
+      <DependentUpon>AdminHomeV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\HomeWelcomV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Home\HomeWelcomV.Designer.cs">
+      <DependentUpon>HomeWelcomV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\IAdminHomeV.cs" />
+    <Compile Include="Views\Purchases\INewPurchaseInvV.cs" />
+    <Compile Include="Views\Purchases\IPurchaseInvoicesV.cs" />
+    <Compile Include="Views\Purchases\IPurchasesHV.cs" />
+    <Compile Include="Views\Purchases\NewPurchaseInvV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Purchases\NewPurchaseInvV.Designer.cs">
+      <DependentUpon>NewPurchaseInvV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Purchases\NewRetPurchaseInvV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Purchases\NewRetPurchaseInvV.Designer.cs">
+      <DependentUpon>NewRetPurchaseInvV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Purchases\PurchaseHomeV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Purchases\PurchaseHomeV.Designer.cs">
+      <DependentUpon>PurchaseHomeV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Purchases\PurchaseInvoicesV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Purchases\PurchaseInvoicesV.Designer.cs">
+      <DependentUpon>PurchaseInvoicesV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\IReports.cs" />
+    <Compile Include="Views\Sales\INewSaleInvoiceV.cs" />
+    <Compile Include="Views\Sales\ISaleInvoicesV.cs" />
+    <Compile Include="Views\Sales\ISalesHomeV.cs" />
+    <Compile Include="Views\Sales\NewRetSaleInvoiceV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Sales\NewRetSaleInvoiceV.Designer.cs">
+      <DependentUpon>NewRetSaleInvoiceV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\NewSaleInvoiceV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Sales\NewSaleInvoiceV.Designer.cs">
+      <DependentUpon>NewSaleInvoiceV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\SaleInvoicesV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Sales\SaleInvoicesV.Designer.cs">
+      <DependentUpon>SaleInvoicesV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\SalesHomeV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Sales\SalesHomeV.Designer.cs">
+      <DependentUpon>SalesHomeV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\ISettings.cs" />
+    <Compile Include="Views\StoresV\IPCategoriesV.cs" />
+    <Compile Include="Views\StoresV\IProductsV.cs" />
+    <Compile Include="Views\StoresV\IPUnitsV.cs" />
+    <Compile Include="Views\StoresV\IStoresV.cs" />
+    <Compile Include="Views\Suppliers\ISupCategoriesV.cs" />
+    <Compile Include="Views\Suppliers\ISuppliersV.cs" />
+    <Compile Include="Views\Customers\CustomersHV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Customers\CustomersHV.Designer.cs">
+      <DependentUpon>CustomersHV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Employees\EmployeesHV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Employees\EmployeesHV.Designer.cs">
+      <DependentUpon>EmployeesHV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Settings\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StoresV\StoresV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\StoresV\StoresV.Designer.cs">
+      <DependentUpon>StoresV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Suppliers\ISuppliersHV.cs" />
+    <Compile Include="Views\Suppliers\SuppliersHV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Suppliers\SuppliersHV.Designer.cs">
+      <DependentUpon>SuppliersHV.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\Auth\LogInV.resx">
+      <DependentUpon>LogInV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Auth\UsersV.resx">
+      <DependentUpon>UsersV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Customers\CustomersHV.resx">
+      <DependentUpon>CustomersHV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Employees\EmployeesHV.resx">
+      <DependentUpon>EmployeesHV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Home\AdminHomeV.resx">
+      <DependentUpon>AdminHomeV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Home\HomeWelcomV.resx">
+      <DependentUpon>HomeWelcomV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Purchases\NewPurchaseInvV.resx">
+      <DependentUpon>NewPurchaseInvV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Purchases\NewRetPurchaseInvV.resx">
+      <DependentUpon>NewRetPurchaseInvV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Purchases\PurchaseHomeV.resx">
+      <DependentUpon>PurchaseHomeV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Purchases\PurchaseInvoicesV.resx">
+      <DependentUpon>PurchaseInvoicesV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Sales\NewRetSaleInvoiceV.resx">
+      <DependentUpon>NewRetSaleInvoiceV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Sales\NewSaleInvoiceV.resx">
+      <DependentUpon>NewSaleInvoiceV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Sales\SaleInvoicesV.resx">
+      <DependentUpon>SaleInvoicesV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Sales\SalesHomeV.resx">
+      <DependentUpon>SalesHomeV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StoresV\StoresV.resx">
+      <DependentUpon>StoresV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Suppliers\SuppliersHV.resx">
+      <DependentUpon>SuppliersHV.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\SBMS.Models.General.InvoiceItemM.datasource" />
+    <None Include="Properties\DataSources\SBMS.Models.Purchases.PurchaseInvItemM.datasource" />
+    <None Include="Properties\DataSources\SBMS.Models.Purchases.PurchaseInvItemM1.datasource" />
+    <None Include="Properties\DataSources\SBMS.Models.Purchases.PurchaseInvM.datasource" />
+    <None Include="Properties\DataSources\SBMS.Models.Purchases.PurchaseItemM.datasource" />
+    <None Include="Properties\DataSources\SBMS.Models.Purchases.RePurchaseItemM.datasource" />
+    <None Include="Properties\DataSources\SBMS.Models.Stores.IProductM.datasource" />
+    <None Include="Properties\DataSources\SBMS.Models.Stores.ProductDetialsM.datasource" />
+    <None Include="Properties\DataSources\SBMS.Models.Stores.ProductM.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Home\Components\" />
+    <Folder Include="Views\Reports\Components\" />
+    <Folder Include="Views\Settings\Components\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
