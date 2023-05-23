@@ -28,10 +28,13 @@ namespace SBMS.Presenters.SalesPres
         {
             this.LoadInvoiceTypesAsync();
             await this.LoadInvoicesAsync(null);
-
+            this.saleInvoicesV.DGVInvoices.ClearSelection();
+            this.saleInvoicesV.DGVInvItems.ClearSelection();
             this.saleInvoicesV.OnInvSearchBClicked += async delegate { await OnSearchAsync(); };
-            this.saleInvoicesV.CBXInvFilter.SelectedIndexChanged += async delegate { await this.OnFilterAsync(); };
-            this.saleInvoicesV.DGVInvoices.SelectionChanged += async delegate { await this.OnSelectInvAsync(); };
+            this.saleInvoicesV.CBXInvFilter.SelectedIndexChanged += async delegate { await OnFilterAsync(); };
+            this.saleInvoicesV.DGVInvoices.SelectionChanged += async delegate { await OnSelectInvAsync(); };
+            
+            
         }
         private async Task OnSelectInvAsync()
         {
@@ -133,7 +136,7 @@ namespace SBMS.Presenters.SalesPres
         }
         private async Task OnFilterAsync()
         {
-            if (this.saleInvoicesV.CBXInvFilter.SelectedIndex == 0)
+            if (saleInvoicesV.CBXInvFilter.SelectedIndex == 0)
             {
                 await LoadInvoicesAsync(null);
             }

@@ -42,7 +42,15 @@ namespace SBMS.Views.Sales
 
         public bool ShowMsgBox(string msg, string title, bool isYesNo)
         {
-            throw new NotImplementedException();
+            DialogResult res = MessageBox.Show(msg, title, isYesNo ? MessageBoxButtons.YesNo : MessageBoxButtons.OK);
+            if (res == DialogResult.Yes)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         

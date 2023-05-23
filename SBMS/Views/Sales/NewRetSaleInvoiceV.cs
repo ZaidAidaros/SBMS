@@ -30,6 +30,7 @@ namespace SBMS.Views.Sales
         private NewRetSaleInvoiceV()
         {
             InitializeComponent();
+            this.EventsSubscrib();
         }
 
         public event EventHandler OnClose;

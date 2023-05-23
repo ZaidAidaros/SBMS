@@ -1,4 +1,4 @@
-﻿using SBMS.Views.Purchases;
+﻿using SBMS.Views.Auth;
 using SBMS.Views.Sales;
 using System;
 using System.Windows.Forms;
@@ -13,9 +13,8 @@ namespace SBMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //LogInV.GetInstance().Show();
-            Application.Run(SalesHomeV.GetInstance());
-            
+            LogInV.GetInstance().Show();
+            Application.Run();
         }
     }
 }

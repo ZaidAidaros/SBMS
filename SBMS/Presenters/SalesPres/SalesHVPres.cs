@@ -29,9 +29,9 @@ namespace SBMS.Presenters.SalesPres
         }
         private void ShowSalesView()
         {
-            //SaleInvoicesVPres.GetInstance();
+            SaleInvoicesVPres.GetInstance();
             SaleInvoicesV.GetInstance().Dock = System.Windows.Forms.DockStyle.Fill;
-            //SaleInvoicesV.GetInstance().IsInvItemsVisable = false;
+            SaleInvoicesV.GetInstance().IsInvItemsVisable = false;
             SaleInvoicesV.GetInstance().Show();
             this.salesHomeV.HeaderTitle = "Purchases";
         }
@@ -46,7 +46,7 @@ namespace SBMS.Presenters.SalesPres
         private void ShowNewRetSalesInvView()
         {
             NewSaleInvoiceVPres.Dispose();
-            NewRetPurchaseInvVPres.GetInstance();
+            NewRetSaleInvVPres.GetInstance();
             NewRetSaleInvoiceV.GetInstance().Dock = System.Windows.Forms.DockStyle.Fill;
             NewRetSaleInvoiceV.GetInstance().Show();
             this.salesHomeV.HeaderTitle = "Return Purchases";

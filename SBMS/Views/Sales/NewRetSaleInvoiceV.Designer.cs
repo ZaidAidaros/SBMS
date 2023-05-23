@@ -333,9 +333,8 @@
             this.lblInvFinalTotal.ForeColor = System.Drawing.Color.White;
             this.lblInvFinalTotal.Location = new System.Drawing.Point(99, 12);
             this.lblInvFinalTotal.Name = "lblInvFinalTotal";
-            this.lblInvFinalTotal.Size = new System.Drawing.Size(56, 16);
+            this.lblInvFinalTotal.Size = new System.Drawing.Size(0, 16);
             this.lblInvFinalTotal.TabIndex = 11;
-            this.lblInvFinalTotal.Text = "140550";
             // 
             // btnInvCancel
             // 
@@ -399,10 +398,13 @@
             // 
             this.dgvInvoiceItems.AllowUserToAddRows = false;
             this.dgvInvoiceItems.AllowUserToDeleteRows = false;
+            this.dgvInvoiceItems.AllowUserToResizeColumns = false;
+            this.dgvInvoiceItems.AllowUserToResizeRows = false;
             this.dgvInvoiceItems.AutoGenerateColumns = false;
             this.dgvInvoiceItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInvoiceItems.BackgroundColor = System.Drawing.Color.Silver;
-            this.dgvInvoiceItems.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dgvInvoiceItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvInvoiceItems.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvInvoiceItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInvoiceItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
@@ -841,11 +843,13 @@
             // 
             this.dgvProducts.AllowUserToAddRows = false;
             this.dgvProducts.AllowUserToDeleteRows = false;
+            this.dgvProducts.AllowUserToResizeColumns = false;
+            this.dgvProducts.AllowUserToResizeRows = false;
             this.dgvProducts.AutoGenerateColumns = false;
             this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProducts.BackgroundColor = System.Drawing.Color.Silver;
             this.dgvProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvProducts.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dgvProducts.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,

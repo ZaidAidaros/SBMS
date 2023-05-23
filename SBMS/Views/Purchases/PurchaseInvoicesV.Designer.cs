@@ -45,22 +45,24 @@
             this.dgvInvItems = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvInvoices = new System.Windows.Forms.DataGridView();
-            this.InvSuppName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invoiceMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameOnInvoiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.monyStateNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invoiceTypeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.invoiceTypeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.empNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.purchaseInvMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.invoiceItemMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.barCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.purchaseInvItemMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -68,8 +70,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvItems)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.purchaseInvMBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.purchaseInvItemMBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceMBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceItemMBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -189,13 +191,14 @@
             this.dgvInvItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.barCodeDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
-            this.dgvInvItems.DataSource = this.purchaseInvItemMBindingSource;
+            this.dgvInvItems.DataSource = this.invoiceItemMBindingSource;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -208,6 +211,7 @@
             this.dgvInvItems.Location = new System.Drawing.Point(0, 0);
             this.dgvInvItems.Name = "dgvInvItems";
             this.dgvInvItems.ReadOnly = true;
+            this.dgvInvItems.RowHeadersVisible = false;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Blue;
@@ -238,14 +242,15 @@
             this.dgvInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInvoices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
-            this.InvSuppName,
+            this.nameOnInvoiceDataGridViewTextBoxColumn,
+            this.supplierDataGridViewTextBoxColumn,
+            this.empNameDataGridViewTextBoxColumn,
             this.monyStateNameDataGridViewTextBoxColumn,
+            this.invoiceTypeNameDataGridViewTextBoxColumn,
             this.totalDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
-            this.invoiceTypeNameDataGridViewTextBoxColumn,
-            this.empNameDataGridViewTextBoxColumn,
             this.noteDataGridViewTextBoxColumn});
-            this.dgvInvoices.DataSource = this.purchaseInvMBindingSource;
+            this.dgvInvoices.DataSource = this.invoiceMBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -258,6 +263,7 @@
             this.dgvInvoices.Location = new System.Drawing.Point(0, 0);
             this.dgvInvoices.Name = "dgvInvoices";
             this.dgvInvoices.ReadOnly = true;
+            this.dgvInvoices.RowHeadersVisible = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Blue;
@@ -267,37 +273,55 @@
             this.dgvInvoices.Size = new System.Drawing.Size(543, 495);
             this.dgvInvoices.TabIndex = 3;
             // 
-            // InvSuppName
+            // invoiceMBindingSource
             // 
-            this.InvSuppName.DataPropertyName = "InvSuppName";
-            this.InvSuppName.FillWeight = 77.81726F;
-            this.InvSuppName.HeaderText = "Supplier Name";
-            this.InvSuppName.Name = "InvSuppName";
-            this.InvSuppName.ReadOnly = true;
+            this.invoiceMBindingSource.DataSource = typeof(SBMS.Models.General.InvoiceM);
             // 
             // idDataGridViewTextBoxColumn
             // 
-            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.FillWeight = 185.2792F;
-            this.idDataGridViewTextBoxColumn.Frozen = true;
-            this.idDataGridViewTextBoxColumn.HeaderText = "Invoice No";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // nameOnInvoiceDataGridViewTextBoxColumn
+            // 
+            this.nameOnInvoiceDataGridViewTextBoxColumn.DataPropertyName = "NameOnInvoice";
+            this.nameOnInvoiceDataGridViewTextBoxColumn.HeaderText = "NameOnInvoice";
+            this.nameOnInvoiceDataGridViewTextBoxColumn.Name = "nameOnInvoiceDataGridViewTextBoxColumn";
+            this.nameOnInvoiceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // supplierDataGridViewTextBoxColumn
+            // 
+            this.supplierDataGridViewTextBoxColumn.DataPropertyName = "Supplier";
+            this.supplierDataGridViewTextBoxColumn.HeaderText = "Supplier";
+            this.supplierDataGridViewTextBoxColumn.Name = "supplierDataGridViewTextBoxColumn";
+            this.supplierDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // empNameDataGridViewTextBoxColumn
+            // 
+            this.empNameDataGridViewTextBoxColumn.DataPropertyName = "EmpName";
+            this.empNameDataGridViewTextBoxColumn.HeaderText = "EmpName";
+            this.empNameDataGridViewTextBoxColumn.Name = "empNameDataGridViewTextBoxColumn";
+            this.empNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // monyStateNameDataGridViewTextBoxColumn
             // 
             this.monyStateNameDataGridViewTextBoxColumn.DataPropertyName = "MonyStateName";
-            this.monyStateNameDataGridViewTextBoxColumn.FillWeight = 77.81726F;
-            this.monyStateNameDataGridViewTextBoxColumn.HeaderText = "Mony State";
+            this.monyStateNameDataGridViewTextBoxColumn.HeaderText = "MonyStateName";
             this.monyStateNameDataGridViewTextBoxColumn.Name = "monyStateNameDataGridViewTextBoxColumn";
             this.monyStateNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // invoiceTypeNameDataGridViewTextBoxColumn
+            // 
+            this.invoiceTypeNameDataGridViewTextBoxColumn.DataPropertyName = "InvoiceTypeName";
+            this.invoiceTypeNameDataGridViewTextBoxColumn.HeaderText = "InvoiceTypeName";
+            this.invoiceTypeNameDataGridViewTextBoxColumn.Name = "invoiceTypeNameDataGridViewTextBoxColumn";
+            this.invoiceTypeNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // totalDataGridViewTextBoxColumn
             // 
             this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-            this.totalDataGridViewTextBoxColumn.FillWeight = 77.81726F;
             this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
             this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
             this.totalDataGridViewTextBoxColumn.ReadOnly = true;
@@ -305,38 +329,27 @@
             // dateDataGridViewTextBoxColumn
             // 
             this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.FillWeight = 77.81726F;
             this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             this.dateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // invoiceTypeNameDataGridViewTextBoxColumn
-            // 
-            this.invoiceTypeNameDataGridViewTextBoxColumn.DataPropertyName = "InvoiceTypeName";
-            this.invoiceTypeNameDataGridViewTextBoxColumn.FillWeight = 77.81726F;
-            this.invoiceTypeNameDataGridViewTextBoxColumn.HeaderText = "Invoice Type";
-            this.invoiceTypeNameDataGridViewTextBoxColumn.Name = "invoiceTypeNameDataGridViewTextBoxColumn";
-            this.invoiceTypeNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // empNameDataGridViewTextBoxColumn
-            // 
-            this.empNameDataGridViewTextBoxColumn.DataPropertyName = "EmpName";
-            this.empNameDataGridViewTextBoxColumn.FillWeight = 77.81726F;
-            this.empNameDataGridViewTextBoxColumn.HeaderText = "Stuff Name";
-            this.empNameDataGridViewTextBoxColumn.Name = "empNameDataGridViewTextBoxColumn";
-            this.empNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // noteDataGridViewTextBoxColumn
             // 
             this.noteDataGridViewTextBoxColumn.DataPropertyName = "Note";
-            this.noteDataGridViewTextBoxColumn.FillWeight = 77.81726F;
             this.noteDataGridViewTextBoxColumn.HeaderText = "Note";
             this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
             this.noteDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // purchaseInvMBindingSource
+            // invoiceItemMBindingSource
             // 
-            this.purchaseInvMBindingSource.DataSource = typeof(SBMS.Models.General.InvoiceM);
+            this.invoiceItemMBindingSource.DataSource = typeof(SBMS.Models.General.InvoiceItemM);
+            // 
+            // barCodeDataGridViewTextBoxColumn
+            // 
+            this.barCodeDataGridViewTextBoxColumn.DataPropertyName = "BarCode";
+            this.barCodeDataGridViewTextBoxColumn.HeaderText = "BarCode";
+            this.barCodeDataGridViewTextBoxColumn.Name = "barCodeDataGridViewTextBoxColumn";
+            this.barCodeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -352,19 +365,19 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Price";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Price";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Quantity";
             this.dataGridViewTextBoxColumn3.HeaderText = "Quantity";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Price";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Price";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -379,10 +392,6 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "ExpireDate";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // purchaseInvItemMBindingSource
-            // 
-            this.purchaseInvItemMBindingSource.DataSource = typeof(SBMS.Models.General.InvoiceItemM);
             // 
             // PurchaseInvoicesV
             // 
@@ -406,8 +415,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvItems)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.purchaseInvMBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.purchaseInvItemMBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceMBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceItemMBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -426,26 +435,28 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.ComboBox cbxInvFilter;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.BindingSource purchaseInvMBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn expireDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn barCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.BindingSource purchaseInvItemMBindingSource;
+        private System.Windows.Forms.BindingSource invoiceItemMBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn InvSuppName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameOnInvoiceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn supplierDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn empNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn monyStateNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn invoiceTypeNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn invoiceTypeNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn empNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource invoiceMBindingSource;
     }
 }

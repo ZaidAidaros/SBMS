@@ -18,10 +18,10 @@ namespace SBMS.Repositories.PurchasesRepo
             InvoiceM purchaseM = new InvoiceM();
             purchaseM.Id = (int)result[0];
             purchaseM.Supplier = result[1].ToString();
-            purchaseM.EmpName = result[2].ToString();
-            purchaseM.MonyStateName = result[3].ToString();
-            purchaseM.InvoiceTypeName = result[4].ToString();
-            purchaseM.NameOnInvoice = result[5].ToString();
+            purchaseM.NameOnInvoice = result[2].ToString();
+            purchaseM.EmpName = result[3].ToString();
+            purchaseM.MonyStateName = result[4].ToString();
+            purchaseM.InvoiceTypeName = result[5].ToString();
             purchaseM.Total = decimal.Parse(result[6].ToString());
             purchaseM.Note = result[7].ToString();
             purchaseM.Date = DateTime.Parse(result[8].ToString());

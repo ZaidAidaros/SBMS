@@ -7,7 +7,7 @@
     [total] REAL NOT NULL, 
     [monStateId] INT NOT NULL, 
     [invTypeId] INT NOT NULL, 
-    [opDate] TIMESTAMP NOT NULL, 
+    [opDate] DATETIME NOT NULL, 
     [note] nvarchar(50) NOT NULL, 
     CONSTRAINT [FK_SalesOp_Employees] FOREIGN KEY([empId]) REFERENCES [dbo].[Employees] ([Id]), 
     CONSTRAINT [FK_InvoiceTypes_SaleInvoices] FOREIGN KEY([invTypeId]) REFERENCES [dbo].[InvoiceTypes] ([Id]),

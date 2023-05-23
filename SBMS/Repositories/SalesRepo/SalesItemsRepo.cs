@@ -17,17 +17,16 @@ namespace SBMS.Repositories.SalesRepo
             InvoiceItemM saleItemM = new InvoiceItemM();
             saleItemM.Id = (int)result[0];
             saleItemM.Name = result[1].ToString();
-            saleItemM.Unit = result[1].ToString();
+            saleItemM.Unit = result[2].ToString();
             saleItemM.Quantity = decimal.Parse(result[3].ToString());
-            saleItemM.Price = decimal.Parse(result[2].ToString());
-            saleItemM.ExpireDate = DateTime.Parse(result[2].ToString()).ToShortDateString();
+            saleItemM.Price = decimal.Parse(result[4].ToString());
+            saleItemM.ExpireDate = DateTime.Parse(result[5].ToString()).ToShortDateString();
             return saleItemM;
         }
         public static async Task<RepoResultM> GetSaleItemsAsync(int saleId)
         {
 
-            SqlParameter[] parameters = { new SqlParameter("@saleId", SqlDbType.Int) };
-            parameters[0].Value = saleId;
+            SqlParameter[] parameters = { new SqlParameter("@saleId", saleId) };
             RepoResultM repoResult = new RepoResultM();
             DBResult result = await DBHelper.ExcuteStoredProcedQueryAsync(GetSaleItems, parameters);
             repoResult.IsSucess = result.IsSucess;

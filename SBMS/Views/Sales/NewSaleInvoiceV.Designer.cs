@@ -84,6 +84,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.gbInvItems = new System.Windows.Forms.GroupBox();
             this.pnlInvElements = new System.Windows.Forms.Panel();
+            this.pnlInvTile = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblInvFinalTotal = new System.Windows.Forms.Label();
+            this.btnInvCancel = new System.Windows.Forms.Button();
+            this.btnInvSave = new System.Windows.Forms.Button();
             this.dgvInvoiceItems = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,12 +98,6 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.invoiceItemMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pnlInvTile = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblInvFinalTotal = new System.Windows.Forms.Label();
-            this.btnInvCancel = new System.Windows.Forms.Button();
-            this.btnInvSave = new System.Windows.Forms.Button();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -116,10 +116,10 @@
             this.panel1.SuspendLayout();
             this.gbInvItems.SuspendLayout();
             this.pnlInvElements.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoiceItems)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceItemMBindingSource)).BeginInit();
             this.pnlInvTile.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoiceItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceItemMBindingSource)).BeginInit();
             this.pnlHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -407,11 +407,13 @@
             // 
             this.dgvProducts.AllowUserToAddRows = false;
             this.dgvProducts.AllowUserToDeleteRows = false;
+            this.dgvProducts.AllowUserToResizeColumns = false;
+            this.dgvProducts.AllowUserToResizeRows = false;
             this.dgvProducts.AutoGenerateColumns = false;
             this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProducts.BackgroundColor = System.Drawing.Color.Silver;
             this.dgvProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvProducts.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dgvProducts.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -726,14 +728,88 @@
             this.pnlInvElements.Size = new System.Drawing.Size(461, 501);
             this.pnlInvElements.TabIndex = 1;
             // 
+            // pnlInvTile
+            // 
+            this.pnlInvTile.Controls.Add(this.panel6);
+            this.pnlInvTile.Controls.Add(this.btnInvCancel);
+            this.pnlInvTile.Controls.Add(this.panel7);
+            this.pnlInvTile.Controls.Add(this.btnInvSave);
+            this.pnlInvTile.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlInvTile.Location = new System.Drawing.Point(0, 424);
+            this.pnlInvTile.Name = "pnlInvTile";
+            this.pnlInvTile.Size = new System.Drawing.Size(461, 77);
+            this.pnlInvTile.TabIndex = 0;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.label5);
+            this.panel6.Controls.Add(this.lblInvFinalTotal);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(461, 38);
+            this.panel6.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(3, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(90, 16);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Final Total :";
+            // 
+            // lblInvFinalTotal
+            // 
+            this.lblInvFinalTotal.AutoSize = true;
+            this.lblInvFinalTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInvFinalTotal.ForeColor = System.Drawing.Color.White;
+            this.lblInvFinalTotal.Location = new System.Drawing.Point(99, 12);
+            this.lblInvFinalTotal.Name = "lblInvFinalTotal";
+            this.lblInvFinalTotal.Size = new System.Drawing.Size(0, 16);
+            this.lblInvFinalTotal.TabIndex = 11;
+            // 
+            // btnInvCancel
+            // 
+            this.btnInvCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInvCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnInvCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnInvCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInvCancel.ForeColor = System.Drawing.Color.White;
+            this.btnInvCancel.Location = new System.Drawing.Point(320, 46);
+            this.btnInvCancel.Name = "btnInvCancel";
+            this.btnInvCancel.Size = new System.Drawing.Size(61, 27);
+            this.btnInvCancel.TabIndex = 7;
+            this.btnInvCancel.Text = "Cancel";
+            this.btnInvCancel.UseVisualStyleBackColor = false;
+            // 
+            // btnInvSave
+            // 
+            this.btnInvSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInvSave.BackColor = System.Drawing.Color.Green;
+            this.btnInvSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnInvSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInvSave.ForeColor = System.Drawing.Color.White;
+            this.btnInvSave.Location = new System.Drawing.Point(388, 46);
+            this.btnInvSave.Name = "btnInvSave";
+            this.btnInvSave.Size = new System.Drawing.Size(61, 27);
+            this.btnInvSave.TabIndex = 6;
+            this.btnInvSave.Text = "Save";
+            this.btnInvSave.UseVisualStyleBackColor = false;
+            // 
             // dgvInvoiceItems
             // 
             this.dgvInvoiceItems.AllowUserToAddRows = false;
             this.dgvInvoiceItems.AllowUserToDeleteRows = false;
+            this.dgvInvoiceItems.AllowUserToResizeColumns = false;
+            this.dgvInvoiceItems.AllowUserToResizeRows = false;
             this.dgvInvoiceItems.AutoGenerateColumns = false;
             this.dgvInvoiceItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInvoiceItems.BackgroundColor = System.Drawing.Color.Silver;
-            this.dgvInvoiceItems.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dgvInvoiceItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvInvoiceItems.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvInvoiceItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInvoiceItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
@@ -808,78 +884,6 @@
             // 
             this.invoiceItemMBindingSource.DataSource = typeof(SBMS.Models.General.InvoiceItemM);
             // 
-            // pnlInvTile
-            // 
-            this.pnlInvTile.Controls.Add(this.panel6);
-            this.pnlInvTile.Controls.Add(this.btnInvCancel);
-            this.pnlInvTile.Controls.Add(this.panel7);
-            this.pnlInvTile.Controls.Add(this.btnInvSave);
-            this.pnlInvTile.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlInvTile.Location = new System.Drawing.Point(0, 424);
-            this.pnlInvTile.Name = "pnlInvTile";
-            this.pnlInvTile.Size = new System.Drawing.Size(461, 77);
-            this.pnlInvTile.TabIndex = 0;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.label5);
-            this.panel6.Controls.Add(this.lblInvFinalTotal);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(461, 38);
-            this.panel6.TabIndex = 2;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(3, 12);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 16);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Final Total :";
-            // 
-            // lblInvFinalTotal
-            // 
-            this.lblInvFinalTotal.AutoSize = true;
-            this.lblInvFinalTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInvFinalTotal.ForeColor = System.Drawing.Color.White;
-            this.lblInvFinalTotal.Location = new System.Drawing.Point(99, 12);
-            this.lblInvFinalTotal.Name = "lblInvFinalTotal";
-            this.lblInvFinalTotal.Size = new System.Drawing.Size(56, 16);
-            this.lblInvFinalTotal.TabIndex = 11;
-            this.lblInvFinalTotal.Text = "140550";
-            // 
-            // btnInvCancel
-            // 
-            this.btnInvCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInvCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnInvCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnInvCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInvCancel.ForeColor = System.Drawing.Color.White;
-            this.btnInvCancel.Location = new System.Drawing.Point(320, 46);
-            this.btnInvCancel.Name = "btnInvCancel";
-            this.btnInvCancel.Size = new System.Drawing.Size(61, 27);
-            this.btnInvCancel.TabIndex = 7;
-            this.btnInvCancel.Text = "Cancel";
-            this.btnInvCancel.UseVisualStyleBackColor = false;
-            // 
-            // btnInvSave
-            // 
-            this.btnInvSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInvSave.BackColor = System.Drawing.Color.Green;
-            this.btnInvSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnInvSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInvSave.ForeColor = System.Drawing.Color.White;
-            this.btnInvSave.Location = new System.Drawing.Point(388, 46);
-            this.btnInvSave.Name = "btnInvSave";
-            this.btnInvSave.Size = new System.Drawing.Size(61, 27);
-            this.btnInvSave.TabIndex = 6;
-            this.btnInvSave.Text = "Save";
-            this.btnInvSave.UseVisualStyleBackColor = false;
-            // 
             // pnlHeader
             // 
             this.pnlHeader.Controls.Add(this.btnClose);
@@ -926,11 +930,11 @@
             this.panel1.PerformLayout();
             this.gbInvItems.ResumeLayout(false);
             this.pnlInvElements.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoiceItems)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceItemMBindingSource)).EndInit();
             this.pnlInvTile.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoiceItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceItemMBindingSource)).EndInit();
             this.pnlHeader.ResumeLayout(false);
             this.ResumeLayout(false);
 

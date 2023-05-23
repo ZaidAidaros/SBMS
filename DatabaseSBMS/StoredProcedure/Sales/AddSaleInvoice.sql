@@ -6,6 +6,7 @@
 	@monStateId int,
 	@invTypeId int,
 	@note nvarchar(50),
+	@date DateTime,
     @ID int out
 AS
 Begin
@@ -17,6 +18,7 @@ INSERT INTO [dbo].SaleInvoices(
             [dbo].SaleInvoices.total,
 			[dbo].SaleInvoices.monStateId,
 			[dbo].SaleInvoices.invTypeId,
+			[dbo].SaleInvoices.opDate,
 			[dbo].SaleInvoices.note
 			)
             VALUES (
@@ -26,6 +28,7 @@ INSERT INTO [dbo].SaleInvoices(
 			@total,
 			@monStateId,
 			@invTypeId,
+			@date,
 			@note
 			);
 SET @ID = IDENT_CURRENT('SaleInvoices');

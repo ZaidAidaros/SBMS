@@ -44,6 +44,8 @@ namespace SBMS.Presenters.SalesPres
             await this.LoadProdCategoiesAsync();
             await this.LoadOffersAsync();
             this.LoadMonyStates();
+            this.newSaleInvoiceV.DGVProducts.ClearSelection();
+            this.newSaleInvoiceV.DGVInvItems.ClearSelection();
             this.newSaleInvoiceV.OnInvSave += async delegate { await OnSaveInvAsync(); };
             this.newSaleInvoiceV.OnInvCancel += delegate { OnInCancel(); };
             this.newSaleInvoiceV.OnInvItemIncOne += delegate { OnInvItemIncOne(); };
@@ -57,8 +59,6 @@ namespace SBMS.Presenters.SalesPres
             this.newSaleInvoiceV.DGVProducts.SelectionChanged += delegate { OnSelectProduct(); };
             this.newSaleInvoiceV.OnClose += delegate { OnClose(); };
 
-            this.newSaleInvoiceV.DGVProducts.ClearSelection();
-            this.newSaleInvoiceV.DGVInvItems.ClearSelection();
         }
         private void OnSelectProduct()
         {
@@ -240,7 +240,7 @@ namespace SBMS.Presenters.SalesPres
                     invoiceM.EmpId = SalesHVPres.GetInstance().EmpId;
                     invoiceM.CustomerId = ((CustomerM)this.newSaleInvoiceV.CBXCustomers.SelectedItem).Id;
                     invoiceM.MonyStateId = ((MonyStateM)this.newSaleInvoiceV.CBXMonyState.SelectedItem).Id;
-                    invoiceM.InvoiceTypeId = 1;
+                    invoiceM.InvoiceTypeId = 2;
                     invoiceM.Note = this.newSaleInvoiceV.InvNote;
                     invoiceM.NameOnInvoice = this.newSaleInvoiceV.InvCustomerName;
                     invoiceM.Date = DateTime.Now;
@@ -441,7 +441,6 @@ namespace SBMS.Presenters.SalesPres
             this.newSaleInvoiceV.InvItemQuantity = "1";
             this.newSaleInvoiceV.PPrice = null;
             this.newSaleInvoiceV.PSearvhField = null;
-            this.InvItems.Clear();
             this.selectedCustomer = null;
             this.selectedProduct = null;
             this.selectedInvoiceItem = null;

@@ -18,11 +18,13 @@ namespace SBMS.Repositories.SalesRepo
             InvoiceM invoiceM = new InvoiceM();
             invoiceM.Id = (int)result[0];
             invoiceM.Customer = result[1].ToString();
-            invoiceM.EmpName = result[2].ToString();
-            invoiceM.MonyStateName = result[3].ToString();
-            invoiceM.Total = decimal.Parse(result[4].ToString());
-            invoiceM.Date = DateTime.Parse(result[5].ToString());
-            invoiceM.Note = result[6].ToString();
+            invoiceM.NameOnInvoice = result[2].ToString();
+            invoiceM.EmpName = result[3].ToString();
+            invoiceM.MonyStateName = result[4].ToString();
+            invoiceM.InvoiceTypeName = result[5].ToString();
+            invoiceM.Total = decimal.Parse(result[6].ToString());
+            invoiceM.Date = DateTime.Parse(result[7].ToString()); 
+            invoiceM.Note = result[8].ToString();
             return invoiceM;
         }
         public static async Task<RepoResultM> GetSaleInvoicesAsync()
@@ -48,12 +50,14 @@ namespace SBMS.Repositories.SalesRepo
             SqlParameter[] parameters =
             {
                 new SqlParameter("@id", SqlDbType.Int),
+                new SqlParameter("@invTypId", SqlDbType.Int),
                 new SqlParameter("@name", SqlDbType.NVarChar),
-                new SqlParameter("@date", SqlDbType.NVarChar)
+                new SqlParameter("@date", SqlDbType.DateTime)
             };
             parameters[0].Value = int.TryParse(searchValueIdBarcodeName, out _) ? Convert.ToInt32(searchValueIdBarcodeName) : 0;
-            parameters[1].Value = searchValueIdBarcodeName;
-            parameters[2].Value =DateTime.TryParse(searchValueIdBarcodeName,out _) ? Convert.ToDateTime(searchValueIdBarcodeName) : new DateTime();
+            parameters[1].Value = int.TryParse(searchValueIdBarcodeName, out _) ? Convert.ToInt32(searchValueIdBarcodeName) : 0;
+            parameters[2].Value = searchValueIdBarcodeName;
+            parameters[3].Value =DateTime.TryParse(searchValueIdBarcodeName,out _) ? Convert.ToDateTime(searchValueIdBarcodeName) : new DateTime(3000,1,1);
             
             RepoResultM repoResult = new RepoResultM();
             DBResult result = await DBHelper.ExcuteStoredProcedQueryAsync(searchProcedName, parameters);
@@ -79,9 +83,10 @@ namespace SBMS.Repositories.SalesRepo
                 new SqlParameter("@monStateId", saleInvM.MonyStateId),
                 new SqlParameter("@invTypeId", saleInvM.InvoiceTypeId),
                 new SqlParameter("@note", saleInvM.Note),
+                new SqlParameter("@date", saleInvM.Date),
                 new SqlParameter("@ID", SqlDbType.Int)
             };
-            parameters[7].Direction = ParameterDirection.Output;
+            parameters[8].Direction = ParameterDirection.Output;
 
             DBResult result = await DBHelper.ExcuteStoredProcedNonQueryAsync(addProcedName, parameters,"@ID");
             RepoResultM repoResult = new RepoResultM();

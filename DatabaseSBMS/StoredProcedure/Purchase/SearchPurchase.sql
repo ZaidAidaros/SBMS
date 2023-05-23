@@ -7,10 +7,10 @@ AS
 Begin
 SELECT [dbo].PurchaseInvoices.Id,
        [dbo].Suppliers.[name] as SupplierName,
+       [dbo].PurchaseInvoices.invSuppName,
        [dbo].Employees.[name] as EmpName,
        [dbo].MonyState.[name] as MonyState,
        [dbo].InvoiceTypes.[name] as InvType,
-       [dbo].PurchaseInvoices.invSuppName,
        [dbo].PurchaseInvoices.total,
        [dbo].PurchaseInvoices.note,
        [dbo].PurchaseInvoices.opDate

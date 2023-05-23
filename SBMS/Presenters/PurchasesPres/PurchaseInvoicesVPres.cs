@@ -30,10 +30,11 @@ namespace SBMS.Presenters.PurchasesPres
         {
             this.LoadInvoiceTypesAsync();
             await this.LoadInvoicesAsync(null);
-            
+            this.purchaseInvoicesV.DGVInvoices.ClearSelection();
             this.purchaseInvoicesV.OnInvSearchBClicked += async delegate { await OnSearchAsync(); };
             this.purchaseInvoicesV.CBXInvFilter.SelectedIndexChanged += async delegate { await this.OnFilterAsync(); };
             this.purchaseInvoicesV.DGVInvoices.SelectionChanged += async delegate { await this.OnSelectInvAsync(); };
+
         }
         private async Task OnSelectInvAsync()
         {

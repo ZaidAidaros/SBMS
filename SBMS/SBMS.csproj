@@ -300,6 +300,7 @@
       <DependentUpon>SuppliersHV.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\SBMS.Models.General.InvoiceItemM.datasource" />
+    <None Include="Properties\DataSources\SBMS.Models.General.InvoiceM.datasource" />
     <None Include="Properties\DataSources\SBMS.Models.Purchases.PurchaseInvItemM.datasource" />
     <None Include="Properties\DataSources\SBMS.Models.Purchases.PurchaseInvItemM1.datasource" />
     <None Include="Properties\DataSources\SBMS.Models.Purchases.PurchaseInvM.datasource" />
@@ -321,10 +322,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Home\Components\" />
-    <Folder Include="Views\Reports\Components\" />
-    <Folder Include="Views\Settings\Components\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
