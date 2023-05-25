@@ -3,3 +3,13 @@ C:\Users\za\Desktop\VisualProjects\SBMS\DatabaseSBMS\bin\Debug\DatabaseSBMS.dll
 C:\Users\za\Desktop\VisualProjects\SBMS\DatabaseSBMS\bin\Debug\DatabaseSBMS.pdb
 C:\Users\za\Desktop\VisualProjects\SBMS\DatabaseSBMS\obj\Debug\DatabaseSBMS.dll
 C:\Users\za\Desktop\VisualProjects\SBMS\DatabaseSBMS\obj\Debug\DatabaseSBMS.pdb
+C:\Users\daood\Desktop\SBMS\DatabaseSBMS\bin\Debug\DatabaseSBMS.dacpac
+C:\Users\daood\Desktop\SBMS\DatabaseSBMS\bin\Debug\DatabaseSBMS.dll
+C:\Users\daood\Desktop\SBMS\DatabaseSBMS\bin\Debug\DatabaseSBMS.pdb
+C:\Users\daood\Desktop\SBMS\DatabaseSBMS\obj\Debug\DatabaseSBMS.sqlproj.AssemblyReference.cache
+C:\Users\daood\Desktop\SBMS\DatabaseSBMS\obj\Debug\Model.xml
+C:\Users\daood\Desktop\SBMS\DatabaseSBMS\obj\Debug\refactor.xml
+C:\Users\daood\Desktop\SBMS\DatabaseSBMS\obj\Debug\postdeploy.sql
+C:\Users\daood\Desktop\SBMS\DatabaseSBMS\obj\Debug\predeploy.sql
+C:\Users\daood\Desktop\SBMS\DatabaseSBMS\obj\Debug\DatabaseSBMS.dll
+C:\Users\daood\Desktop\SBMS\DatabaseSBMS\obj\Debug\DatabaseSBMS.pdb

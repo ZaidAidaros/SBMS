@@ -3,6 +3,7 @@
 AS
 Begin
 SELECT  [dbo].SalesItems.Id,
+        [dbo].Products.[barCode],
         [dbo].Products.[name],
         [dbo].[ProdUnits].[name],
         [dbo].SalesItems.quantity,

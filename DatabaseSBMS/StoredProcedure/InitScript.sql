@@ -1,4 +1,4 @@
-﻿
+﻿use DatabaseSBMS;
 INSERT INTO [dbo].[Gender]  VALUES(1,'Male');
 INSERT INTO [dbo].[Gender]  VALUES(2,'FMale');
 INSERT INTO [dbo].[MonyState]  VALUES(1,'Cash','نقدا');

@@ -16,11 +16,12 @@ namespace SBMS.Repositories.SalesRepo
         {
             InvoiceItemM saleItemM = new InvoiceItemM();
             saleItemM.Id = (int)result[0];
-            saleItemM.Name = result[1].ToString();
-            saleItemM.Unit = result[2].ToString();
-            saleItemM.Quantity = decimal.Parse(result[3].ToString());
-            saleItemM.Price = decimal.Parse(result[4].ToString());
-            saleItemM.ExpireDate = DateTime.Parse(result[5].ToString()).ToShortDateString();
+            saleItemM.BarCode = (int)result[1];
+            saleItemM.Name = result[2].ToString();
+            saleItemM.Unit = result[3].ToString();
+            saleItemM.Quantity = decimal.Parse(result[4].ToString());
+            saleItemM.Price = decimal.Parse(result[5].ToString());
+            saleItemM.ExpireDate = DateTime.Parse(result[6].ToString()).ToShortDateString();
             return saleItemM;
         }
         public static async Task<RepoResultM> GetSaleItemsAsync(int saleId)

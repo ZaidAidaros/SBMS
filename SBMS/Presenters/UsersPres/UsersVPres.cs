@@ -48,7 +48,7 @@ namespace SBMS.Presenters.UsersPres
             this.usersV.OnSelectUser += delegate { this.OnSelectUser(); };
             this.usersV.OnPermmisionFilterChanged += async delegate { await OnPermissionFilterChangedAsync(); };
             this.usersV.OnSearchBClicked += async delegate { await OnSearchButtonClickedAsync(); };
-            this.usersV.OnVRefresh += delegate { OnVRefresh(); };
+            this.usersV.OnVRefresh += delegate { OnVRefreshAsync(); };
         }
 
         private void ShowAddUserForm()
@@ -211,11 +211,12 @@ namespace SBMS.Presenters.UsersPres
             }
         }
 
-        private void OnVRefresh()
+        private async Task OnVRefreshAsync()
         {
-            this.ResetAll();
-            this.LoadUsersAsync();
-            this.LoadPermissionListAsync();
+            ResetAll();
+            await LoadUsersAsync();
+            await LoadPermissionListAsync();
+            await LoadEmployeeListAsync();
         }
 
         private async Task LoadPermissionListAsync()

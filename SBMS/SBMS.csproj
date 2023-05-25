@@ -281,6 +281,9 @@
     <EmbeddedResource Include="Views\Purchases\PurchaseInvoicesV.resx">
       <DependentUpon>PurchaseInvoicesV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Sales\NewRetSaleInvoiceV.resx">
       <DependentUpon>NewRetSaleInvoiceV.cs</DependentUpon>
     </EmbeddedResource>
@@ -309,6 +312,7 @@
     <None Include="Properties\DataSources\SBMS.Models.Stores.IProductM.datasource" />
     <None Include="Properties\DataSources\SBMS.Models.Stores.ProductDetialsM.datasource" />
     <None Include="Properties\DataSources\SBMS.Models.Stores.ProductM.datasource" />
+    <None Include="Properties\DataSources\SBMS.Models.Users.UserM.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
