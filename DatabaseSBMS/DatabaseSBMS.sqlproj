@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>DatabaseSBMS</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{c659dc5e-3aec-47f1-9ab1-70ee0851b1f5}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>DatabaseSBMS</RootNamespace>
+    <AssemblyName>DatabaseSBMS</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Tables" />
+    <Folder Include="StoredProcedure" />
+    <Folder Include="StoredProcedure\Users" />
+    <Folder Include="Tables\Customers" />
+    <Folder Include="Tables\Employees" />
+    <Folder Include="Tables\Stores" />
+    <Folder Include="Tables\Sales" />
+    <Folder Include="Tables\Purchase" />
+    <Folder Include="Tables\Suppliers" />
+    <Folder Include="StoredProcedure\Employees" />
+    <Folder Include="StoredProcedure\Sales" />
+    <Folder Include="StoredProcedure\Purchase" />
+    <Folder Include="Tables\General" />
+    <Folder Include="StoredProcedure\General" />
+    <Folder Include="Tables\Users" />
+    <Folder Include="StoredProcedure\Stores" />
+    <Folder Include="StoredProcedure\Suppliers" />
+    <Folder Include="StoredProcedure\Customers" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="StoredProcedure\Users\CheckUser.sql" />
+    <Build Include="StoredProcedure\Users\DeleteUser.sql" />
+    <Build Include="StoredProcedure\Users\SearchUser.sql" />
+    <Build Include="StoredProcedure\Users\AddUser.sql" />
+    <Build Include="StoredProcedure\Users\UpdateUser.sql" />
+    <Build Include="StoredProcedure\Users\GetUsers.sql" />
+    <Build Include="Tables\Customers\CustCategory.sql" />
+    <Build Include="Tables\Customers\Customers.sql" />
+    <Build Include="Tables\Employees\Employees.sql" />
+    <Build Include="Tables\Employees\JobTitle.sql" />
+    <Build Include="Tables\Stores\ProductCategory.sql" />
+    <Build Include="Tables\Stores\ProductsDetails.sql" />
+    <Build Include="Tables\Stores\Products.sql" />
+    <Build Include="Tables\Stores\ProdUnits.sql" />
+    <Build Include="Tables\Sales\SaleInvsItems.sql" />
+    <Build Include="Tables\Sales\SaleInvoices.sql" />
+    <Build Include="Tables\Purchase\PurchaseInvoices.sql" />
+    <Build Include="Tables\Suppliers\SupCategory.sql" />
+    <Build Include="Tables\Suppliers\Suppliers.sql" />
+    <Build Include="StoredProcedure\Sales\GetSales.sql" />
+    <Build Include="StoredProcedure\Employees\GetEmployees.sql" />
+    <Build Include="StoredProcedure\Sales\GetSaleItems.sql" />
+    <Build Include="StoredProcedure\Sales\AddSaleInvoice.sql" />
+    <Build Include="StoredProcedure\Sales\AddSaleItem.sql" />
+    <Build Include="StoredProcedure\Purchase\AddPurchaseItem.sql" />
+    <Build Include="StoredProcedure\Purchase\AddPurchaseInvoice.sql" />
+    <Build Include="StoredProcedure\Purchase\GetPurchases.sql" />
+    <Build Include="StoredProcedure\Employees\CreateEmpTables.sql" />
+    <Build Include="StoredProcedure\Employees\AddEmployee.sql" />
+    <Build Include="StoredProcedure\Employees\UpdateEmployee.sql" />
+    <Build Include="StoredProcedure\Employees\SearchEmployee.sql" />
+    <Build Include="StoredProcedure\Employees\DeleteEmployee.sql" />
+    <Build Include="StoredProcedure\Employees\AddJobT.sql" />
+    <Build Include="StoredProcedure\Employees\DeleteJobT.sql" />
+    <Build Include="StoredProcedure\Employees\UpdateJobT.sql" />
+    <Build Include="StoredProcedure\Employees\GetJobTitles.sql" />
+    <Build Include="Tables\General\Gender.sql" />
+    <Build Include="Tables\General\MonyState.sql" />
+    <Build Include="StoredProcedure\Users\CreateUsersTableas.sql" />
+    <Build Include="Tables\Users\Users.sql" />
+    <Build Include="Tables\Users\Permission.sql" />
+    <Build Include="StoredProcedure\Stores\AddProdCategory.sql" />
+    <Build Include="StoredProcedure\Stores\AddProdUnit.sql" />
+    <Build Include="StoredProcedure\Stores\UpdateProdUnit.sql" />
+    <Build Include="StoredProcedure\Stores\UpdateProdCategory.sql" />
+    <Build Include="StoredProcedure\Stores\UpdateProduct.sql" />
+    <Build Include="StoredProcedure\Stores\DeleteProduct.sql" />
+    <Build Include="StoredProcedure\Stores\DeleteProdUnit.sql" />
+    <Build Include="StoredProcedure\Stores\DeleteProdCategory.sql" />
+    <Build Include="StoredProcedure\Stores\GetProdCategories.sql" />
+    <Build Include="StoredProcedure\Stores\GetProdUnits.sql" />
+    <Build Include="StoredProcedure\Stores\GetProducts.sql" />
+    <Build Include="StoredProcedure\Suppliers\CreateSuppliersTables.sql" />
+    <Build Include="StoredProcedure\Suppliers\AddSuppCategory.sql" />
+    <Build Include="StoredProcedure\Suppliers\UpdateSuppCategory.sql" />
+    <Build Include="StoredProcedure\Suppliers\DeleteSuppCategory.sql" />
+    <Build Include="StoredProcedure\Suppliers\GetSuppCategories.sql" />
+    <Build Include="StoredProcedure\Suppliers\AddSupolier.sql" />
+    <Build Include="StoredProcedure\Suppliers\UpdateSupplier.sql" />
+    <Build Include="StoredProcedure\Suppliers\DeleteSupplier.sql" />
+    <Build Include="StoredProcedure\Suppliers\GetSuppliers.sql" />
+    <Build Include="StoredProcedure\Suppliers\SearchSupplier.sql" />
+    <Build Include="StoredProcedure\Customers\CreateCustomersTables.sql" />
+    <Build Include="StoredProcedure\Customers\AddCustCategory.sql" />
+    <Build Include="StoredProcedure\Customers\UpdateCustCategory.sql" />
+    <Build Include="StoredProcedure\Customers\DeleteCustCategory.sql" />
+    <Build Include="StoredProcedure\Customers\GetCustCategories.sql" />
+    <Build Include="StoredProcedure\Customers\AddCustomer.sql" />
+    <Build Include="StoredProcedure\Customers\UpdateCustomer.sql" />
+    <Build Include="StoredProcedure\Customers\DeleteCustomer.sql" />
+    <Build Include="StoredProcedure\Customers\GetCustomers.sql" />
+    <Build Include="StoredProcedure\Customers\SearchCustomer.sql" />
+    <Build Include="StoredProcedure\Users\GetPermissions.sql" />
+    <Build Include="StoredProcedure\Stores\FilterByProdCategory.sql" />
+    <Build Include="StoredProcedure\Sales\SearchSales.sql" />
+    <Build Include="StoredProcedure\Purchase\SearchPurchase.sql" />
+    <Build Include="StoredProcedure\Suppliers\FilterSuppByCategory.sql" />
+    <Build Include="StoredProcedure\Customers\FilterCustByCategory.sql" />
+    <Build Include="StoredProcedure\Employees\FilterEmpByJTitle.sql" />
+    <Build Include="StoredProcedure\Stores\AddProduct.sql" />
+    <Build Include="StoredProcedure\Stores\SearchProduct.sql" />
+    <Build Include="StoredProcedure\Stores\GetProdDetails.sql" />
+    <Build Include="Tables\General\InvoiceTypes.sql" />
+    <Build Include="Tables\Sales\Offers.sql" />
+    <Build Include="Tables\Purchase\PurchasesItems.sql" />
+    <Build Include="StoredProcedure\Purchase\AddRePurchItem.sql" />
+    <Build Include="StoredProcedure\Stores\IncDecProdQuantity.sql" />
+    <Build Include="StoredProcedure\Stores\IncDecProdDQuantity.sql" />
+    <Build Include="StoredProcedure\Purchase\GetPurchaseInvItems.sql" />
+    <Build Include="StoredProcedure\Stores\GetFullProductsInfo.sql" />
+    <Build Include="StoredProcedure\Stores\GetFilterdFullProduct.sql" />
+    <Build Include="StoredProcedure\Stores\SearchFullProduct.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="DatabaseSBMS.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StoredProcedure\OnInstallScriptsOfSBMS.sql" />
+    <None Include="StoredProcedure\InitScript.sql" />
+    <None Include="StoredProcedure\testScript.sql" />
+  </ItemGroup>
+</Project>
