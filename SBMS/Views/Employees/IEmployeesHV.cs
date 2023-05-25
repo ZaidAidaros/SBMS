@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace SBMS.Views.Purchases
+namespace SBMS.Views.Employees
 {
     interface IEmployeesHV
     {

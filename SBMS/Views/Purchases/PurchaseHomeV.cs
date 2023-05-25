@@ -12,7 +12,6 @@ namespace SBMS.Views.Purchases
             if (instance == null || instance.IsDisposed)
             {
                 instance = new PurchaseHomeV();
-                PurchasesHVPres.GetInstance();
             }
             else
             {

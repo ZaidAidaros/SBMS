@@ -1,6 +1,7 @@
 ﻿using SBMS.Models.Employees;
 using SBMS.Repositories;
 using SBMS.Repositories.EmployeesRepo;
+using SBMS.Views.Employees;
 using SBMS.Views.Purchases;
 using System.Collections.Generic;
 using System.Threading.Tasks;

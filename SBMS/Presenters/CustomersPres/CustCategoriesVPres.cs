@@ -1,6 +1,7 @@
 ﻿using SBMS.Models.Customers;
 using SBMS.Repositories;
 using SBMS.Repositories.CustomersRepo;
+using SBMS.Views.Customers;
 using SBMS.Views.Purchases;
 using System;
 using System.Collections.Generic;

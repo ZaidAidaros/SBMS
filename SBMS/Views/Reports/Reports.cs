@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SBMS.Views.Purchases
+namespace SBMS.Views.Reports
 {
     public partial class Reports : Form
     {

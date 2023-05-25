@@ -1,6 +1,16 @@
 ﻿using SBMS.Models.Users;
+using SBMS.Presenters.UsersPres;
+using SBMS.Views.Auth;
 using SBMS.Views.Home;
+using SBMS.Views.Employees;
+using SBMS.Views.StoresV;
 using System;
+using SBMS.Views.Purchases;
+using SBMS.Views.Sales;
+using SBMS.Views.Customers;
+using SBMS.Views.Suppliers;
+using SBMS.Presenters.SalesPres;
+using SBMS.Presenters.PurchasesPres;
 
 namespace SBMS.Presenters
 {
@@ -8,19 +18,30 @@ namespace SBMS.Presenters
     {
         IAdminHomeV adminHomeV;
          UserM user;
-        public AdminHomeVPres(UserM userM)
+        private static AdminHomeVPres instance;
+        public static AdminHomeVPres GetInstance(UserM userM)
+        {
+            if (instance == null) instance = new AdminHomeVPres(userM);
+            return instance;
+        }
+        private AdminHomeVPres(UserM userM)
         {
             user = userM;
             adminHomeV = AdminHomeV.GetInstance();
             Subscribe();
             adminHomeV.UName = user.Name;
             adminHomeV.SName = user.Employee;
+            EmployeesHV.GetInstance().MdiParent = AdminHomeV.GetInstance();
+            UsersV.GetInstance().MdiParent = AdminHomeV.GetInstance();
+            StoresV.GetInstance().MdiParent = AdminHomeV.GetInstance();
+            CustomersHV.GetInstance().MdiParent = AdminHomeV.GetInstance();
+            SuppliersHV.GetInstance().MdiParent = AdminHomeV.GetInstance();
             AdminHomeV.GetInstance().Show();
         }
 
         void Subscribe()
         {
-            adminHomeV.ShowAccountsMV += delegate { ShowAccountsMV(); };
+            adminHomeV.ShowAccountsMV += delegate { ShowEmploeesMV(); };
             adminHomeV.ShowStoresMV += delegate { ShowStoresMV(); }; 
             adminHomeV.ShowSalesMV += delegate { ShowSalesMV(); };
             adminHomeV.ShowPurchaseMV += delegate { ShowPurchaseMV(); };
@@ -33,42 +54,47 @@ namespace SBMS.Presenters
 
         private void ShowAboutV()
         {
-            throw new NotImplementedException();
+            
         }
 
         private void ShowSettingsMV()
         {
-            throw new NotImplementedException();
+            
         }
-
+        private void ShowEmploeesMV()
+        {
+            EmployeesHV.GetInstance().Dock = System.Windows.Forms.DockStyle.Fill;
+            EmployeesHV.GetInstance().Show();
+        }
         private void ShowUsersMV()
         {
-            throw new NotImplementedException();
+            UsersV.GetInstance().Dock = System.Windows.Forms.DockStyle.Fill;
+            UsersV.GetInstance().Show();
         }
 
         private void ShowPurchaseMV()
         {
-            throw new NotImplementedException();
-        }
-
-        private void ShowReportsMV()
-        {
-            throw new NotImplementedException();
+            PurchasesHVPres.GetInstance(user);
+            PurchaseHomeV.GetInstance().Show();
         }
 
         private void ShowSalesMV()
         {
+            SalesHVPres.GetInstance(user);
+            SalesHomeV.GetInstance().Show();
+        }
 
+        private void ShowReportsMV()
+        {
+            
         }
 
         private void ShowStoresMV()
         {
-            throw new NotImplementedException();
+            StoresV.GetInstance().Dock = System.Windows.Forms.DockStyle.Fill;
+            StoresV.GetInstance().Show();
         }
 
-        private void ShowAccountsMV()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

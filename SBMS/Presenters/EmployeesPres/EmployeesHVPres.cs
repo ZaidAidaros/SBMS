@@ -1,9 +1,4 @@
-﻿using SBMS.Views.Purchases;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SBMS.Views.Employees;
 
 namespace SBMS.Presenters.EmployeesPres
 {

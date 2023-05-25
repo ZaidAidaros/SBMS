@@ -2,7 +2,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace SBMS.Views.Purchases
+namespace SBMS.Views.Suppliers
 {
     public partial class SuppliersHV : Form, ISuppliersHV, ISuppliersV, ISupCategoriesV
     {

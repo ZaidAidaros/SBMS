@@ -1,11 +1,9 @@
 ﻿using SBMS.Models.Suppliers;
 using SBMS.Repositories;
 using SBMS.Repositories.SuppliersRepo;
-using SBMS.Views.Purchases;
-using System;
+using SBMS.Views.Suppliers;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace SBMS.Presenters.SuppliersPres

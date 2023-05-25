@@ -9,7 +9,10 @@ namespace SBMS.Views.Home
         {
             InitializeComponent();
             TodayDate = DateTime.Now.ToShortDateString();
-            
+            Subscribe();
+
+
+
         }
         //Singleton pattern (Open a single form instance)
         private static AdminHomeV instance;
@@ -64,7 +67,7 @@ namespace SBMS.Views.Home
         void Subscribe()
         {
             //btnClose.Click += delegate { this.Close(); };
-            btnAccountV.Click += delegate { ShowAccountsMV?.Invoke(this, EventArgs.Empty); };
+            btnEmployeesMV.Click += delegate { ShowAccountsMV?.Invoke(this, EventArgs.Empty); };
             btnStoresV.Click += delegate { ShowStoresMV?.Invoke(this, EventArgs.Empty); };
             btnSalesV.Click += delegate { ShowSalesMV?.Invoke(this, EventArgs.Empty); };
             btnPurchaseV.Click += delegate { ShowPurchaseMV?.Invoke(this, EventArgs.Empty); };

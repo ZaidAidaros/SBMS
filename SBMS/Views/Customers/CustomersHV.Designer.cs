@@ -1,4 +1,4 @@
-﻿namespace SBMS.Views.Purchases
+﻿namespace SBMS.Views.Customers
 {
     partial class CustomersHV
     {

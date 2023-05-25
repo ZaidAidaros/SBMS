@@ -2,7 +2,7 @@
 using SBMS.Models.General;
 using SBMS.Repositories;
 using SBMS.Repositories.CustomersRepo;
-using SBMS.Views.Purchases;
+using SBMS.Views.Customers;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

@@ -32,13 +32,33 @@ namespace SBMS.Presenters
             if (repoResult.IsSucess)
             {
                 iLogInV.Message = "Log In Successfully...";
+                GoHome((UserM)repoResult.ResData[0]);
                 LogInV.GetInstance().Close();
-                new AdminHomeVPres((UserM)repoResult.ResData[0]);
             }
             else
             {
                 iLogInV.Message = repoResult.ErrorMsg;
             }
+        }
+        private void GoHome(UserM user)
+        {
+            if (user.PermissionId == 1 || user.PermissionId==2)
+            {
+                AdminHomeVPres.GetInstance(user);
+            }
+            else if(user.PermissionId == 3)
+            {
+
+            }
+            else if (user.PermissionId == 4)
+            {
+
+            }
+            else
+            {
+                iLogInV.Message ="Access Denaid";
+            }
+
         }
     }
 }

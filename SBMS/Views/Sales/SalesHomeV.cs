@@ -12,7 +12,6 @@ namespace SBMS.Views.Sales
             if (instance == null || instance.IsDisposed)
             {
                 instance = new SalesHomeV();
-                SalesHVPres.GetInstance();
             }
             else
             {

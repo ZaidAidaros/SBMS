@@ -200,7 +200,7 @@ namespace SBMS.Presenters.PurchasesPres
                 else
                 {
                     InvoiceM purchaseInvM = new InvoiceM();
-                    purchaseInvM.EmpId = PurchasesHVPres.GetInstance().EmpId;
+                    purchaseInvM.EmpId = PurchasesHVPres.GetInstance(null).user.EmployeeId;
                     purchaseInvM.SupplierId = ((SupplierM)this.newRetPurchaseInvV.CBXSuppliers.SelectedItem).Id;
                     purchaseInvM.MonyStateId = ((MonyStateM)this.newRetPurchaseInvV.CBXMonyState.SelectedItem).Id;
                     purchaseInvM.InvoiceTypeId = 2;

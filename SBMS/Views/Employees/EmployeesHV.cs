@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SBMS.Views.Purchases
+namespace SBMS.Views.Employees
 {
     public partial class EmployeesHV : Form, IEmployeesHV,IEmployeesV,IJobsV
     {

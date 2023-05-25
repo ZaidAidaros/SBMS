@@ -1,4 +1,5 @@
-﻿using SBMS.Presenters.PurchasesPres;
+﻿using SBMS.Models.Users;
+using SBMS.Presenters.PurchasesPres;
 using SBMS.Views.Sales;
 using System;
 using System.Collections.Generic;
@@ -11,17 +12,18 @@ namespace SBMS.Presenters.SalesPres
     class SalesHVPres
     {
         ISalesHomeV salesHomeV;
+        public UserM user;
         private static SalesHVPres instance;
-        public static SalesHVPres GetInstance()
+        public static SalesHVPres GetInstance(UserM userM)
         {
-            if (instance == null) instance = new SalesHVPres();
+            if (instance == null) instance = new SalesHVPres(userM);
             return instance;
         }
-        public int EmpId { get; set; }
-        private SalesHVPres()
+        private SalesHVPres(UserM userM)
         {
+            if(userM != null) user = userM;
+
             this.salesHomeV = SalesHomeV.GetInstance();
-            this.EmpId = 1;
             ShowSalesView();
             this.salesHomeV.ShowSalesView += delegate { ShowSalesView(); };
             this.salesHomeV.ShowNewSalesInvView += delegate { ShowNewSalesInvView(); };
@@ -29,18 +31,22 @@ namespace SBMS.Presenters.SalesPres
         }
         private void ShowSalesView()
         {
+            this.salesHomeV.HeaderTitle = "Sales";
+            this.salesHomeV.UserName = user.Name;
+            this.salesHomeV.StuffName = user.Employee;
             SaleInvoicesVPres.GetInstance();
             SaleInvoicesV.GetInstance().Dock = System.Windows.Forms.DockStyle.Fill;
             SaleInvoicesV.GetInstance().IsInvItemsVisable = false;
             SaleInvoicesV.GetInstance().Show();
-            this.salesHomeV.HeaderTitle = "Purchases";
+            
+
         }
         private void ShowNewSalesInvView()
         {
             NewRetSaleInvVPres.Dispose();
             NewSaleInvoiceVPres.GetInstance();
             NewSaleInvoiceV.GetInstance().Dock = System.Windows.Forms.DockStyle.Fill;
-            this.salesHomeV.HeaderTitle = "New Purchases";
+            this.salesHomeV.HeaderTitle = "New Sale Invoice";
             NewSaleInvoiceV.GetInstance().Show();
         }
         private void ShowNewRetSalesInvView()
@@ -49,7 +55,7 @@ namespace SBMS.Presenters.SalesPres
             NewRetSaleInvVPres.GetInstance();
             NewRetSaleInvoiceV.GetInstance().Dock = System.Windows.Forms.DockStyle.Fill;
             NewRetSaleInvoiceV.GetInstance().Show();
-            this.salesHomeV.HeaderTitle = "Return Purchases";
+            this.salesHomeV.HeaderTitle = "Return Sale Invoice";
         }
         
     }

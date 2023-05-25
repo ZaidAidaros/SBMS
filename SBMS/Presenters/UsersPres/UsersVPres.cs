@@ -149,8 +149,10 @@ namespace SBMS.Presenters.UsersPres
             if (user == null) user = new UserM();
             user.Name = this.usersV.UserName;
             user.Password = this.usersV.UserPassword;
-            user.Permissionm = (PermissionM)this.usersV.CBXPermmisions.SelectedItem;
-            user.Employeem = (IEmployeeM)this.usersV.CBXEmployees.SelectedItem;
+            user.PermissionId = ((PermissionM)this.usersV.CBXPermmisions.SelectedItem).Id;
+            user.Permission = ((PermissionM)this.usersV.CBXPermmisions.SelectedItem).Name;
+            user.EmployeeId = ((IEmployeeM)this.usersV.CBXEmployees.SelectedItem).Id;
+            user.Employee = ((IEmployeeM)this.usersV.CBXEmployees.SelectedItem).Name;
             return user;
         }
 
@@ -190,10 +192,10 @@ namespace SBMS.Presenters.UsersPres
             RepoResultM res = await UsersRepo.SearchUserAsync(this.usersV.SearchValue);
             if (res.IsSucess)
             {
-                List<IUserM> userList = new List<IUserM>();
+                List<UserM> userList = new List<UserM>();
                 for (int i = 0; i < res.ResData.Count; i++)
                 {
-                    userList.Add((IUserM)res.ResData[i]);
+                    userList.Add((UserM)res.ResData[i]);
                 }
                 if (userList.Count > 0)
                 {
@@ -280,10 +282,10 @@ namespace SBMS.Presenters.UsersPres
             this.usersV.DGVUsers.DataSource = null;
             if (res.IsSucess)
             {
-                List<IUserM> users = new List<IUserM>();
+                List<UserM> users = new List<UserM>();
                 for (int i = 0; i < res.ResData.Count; i++)
                 {
-                    users.Add((IUserM)res.ResData[i]);
+                    users.Add((UserM)res.ResData[i]);
                 }
                 if (users.Count > 0)
                 {
@@ -307,10 +309,10 @@ namespace SBMS.Presenters.UsersPres
 
             if (res.IsSucess)
             {
-                List<IUserM> users = new List<IUserM>();
+                List<UserM> users = new List<UserM>();
                 for (int i = 0; i < res.ResData.Count; i++)
                 {
-                    users.Add((IUserM)res.ResData[i]);
+                    users.Add((UserM)res.ResData[i]);
                 }
                 if (users.Count > 0)
                 {

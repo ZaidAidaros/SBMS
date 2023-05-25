@@ -1,21 +1,22 @@
-﻿using SBMS.Views.Purchases;
+﻿using SBMS.Models.Users;
+using SBMS.Views.Purchases;
 
 namespace SBMS.Presenters.PurchasesPres
 {
     class PurchasesHVPres
     {
         IPurchasesHV PurchaseHv;
+        public UserM user;
         private static PurchasesHVPres instance;
-        public static PurchasesHVPres GetInstance()
+        public static PurchasesHVPres GetInstance(UserM userM)
         {
-            if (instance == null) instance = new PurchasesHVPres();
+            if (instance == null) instance = new PurchasesHVPres(userM);
             return instance;
         }
-        public int EmpId { get; set; }
-        private PurchasesHVPres()
+        private PurchasesHVPres(UserM userM)
         {
+            if (userM != null) user = userM;
             this.PurchaseHv = PurchaseHomeV.GetInstance();
-            this.EmpId = 1;
             ShowPurchasesView();
             this.PurchaseHv.ShowPurchasesView += delegate { ShowPurchasesView(); };
             this.PurchaseHv.ShowNewPurchaseView += delegate { ShowNewPurchaseView(); };
@@ -23,27 +24,30 @@ namespace SBMS.Presenters.PurchasesPres
         }
         private void ShowPurchasesView()
         {
+            this.PurchaseHv.HeaderTitle = "Purchases";
+            this.PurchaseHv.UserName = user.Name;
+            this.PurchaseHv.StuffName = user.Employee;
             PurchaseInvoicesVPres.GetInstance();
             PurchaseInvoicesV.GetInstance().Dock = System.Windows.Forms.DockStyle.Fill;
             PurchaseInvoicesV.GetInstance().IsInvItemsVisable = false;
             PurchaseInvoicesV.GetInstance().Show();
-            this.PurchaseHv.HeaderTitle = "Purchases";
         }
         private void ShowNewPurchaseView()
         {
+
+            this.PurchaseHv.HeaderTitle = "New Purchases";
             NewRetPurchaseInvVPres.Dispose();
             NewPurchaseInvVPres.GetInstance();
             NewPurchaseInvV.GetInstance().Dock = System.Windows.Forms.DockStyle.Fill;
             NewPurchaseInvV.GetInstance().Show();
-            this.PurchaseHv.HeaderTitle = "New Purchases";
         }
         private void ShowRetPurchasesView()
         {
+            this.PurchaseHv.HeaderTitle = "Return Purchases";
             NewPurchaseInvVPres.Dispose();
             NewRetPurchaseInvVPres.GetInstance();
             NewRetPurchaseInvV.GetInstance().Dock = System.Windows.Forms.DockStyle.Fill;
             NewRetPurchaseInvV.GetInstance().Show();
-            this.PurchaseHv.HeaderTitle = "Return Purchases";
         }
         
 

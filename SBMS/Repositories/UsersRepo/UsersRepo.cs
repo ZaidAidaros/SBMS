@@ -25,8 +25,8 @@ namespace SBMS.Repositories
             userM.Name = result[1].ToString();
             userM.Employee = result[2].ToString();
             userM.Permission = result[3].ToString();
-            userM.Employeem.Id = (int)result[4];
-            userM.Permissionm.Id = (int)result[5];
+            userM.EmployeeId = (int)result[4];
+            userM.PermissionId = (int)result[5];
             return userM;
         }
         private static PermissionM GetPermissionM(List<object> result)
@@ -70,7 +70,6 @@ namespace SBMS.Repositories
             }
             return repoResult;
         }
-
         public static async Task<RepoResultM> SearchUserAsync(string searchValueIdName)
         {
             SqlParameter[] parameters = {
@@ -95,40 +94,37 @@ namespace SBMS.Repositories
             }
             return repoResult;
         }
-
         public static async Task<RepoResultM> LogInAsync(string name, string password)
         {
             SqlParameter[] parameters = {
-                new SqlParameter("@name", SqlDbType.NChar),
-                new SqlParameter("@password", SqlDbType.NChar)
+                new SqlParameter("@name", name),
+                new SqlParameter("@password", password)
             };
-            parameters[0].Value = name;
-            parameters[1].Value = password;
             RepoResultM repoResult = new RepoResultM();
             DBResult result = await DBHelper.ExcuteStoredProcedQueryAsync(logInProcedName, parameters);
             repoResult.IsSucess = result.IsSucess;
             repoResult.ErrorMsg = result.ErrorMsg;
-            if (result.ErrorMsg == "No Result") repoResult.ErrorMsg = "User Name OR Password Incorrect";
-            if (result.IsSucess)
+            if (result.ErrorMsg == "No Result")
+            {
+                repoResult.IsSucess = false;
+                repoResult.ErrorMsg = "User Name OR Password Incorrect";
+            }
+            if (repoResult.IsSucess)
             {
                 repoResult.ResData.Add(GetUserM(result.ResData[0]));
             }
             return repoResult;
         }
-
-        static public async System.Threading.Tasks.Task<RepoResultM> AddUserAsync(UserM user)
+        static public async Task<RepoResultM> AddUserAsync(UserM user)
         {
             SqlParameter[] parameters =
             {
-                new SqlParameter("@name", SqlDbType.NVarChar),
-                new SqlParameter("@password", SqlDbType.NVarChar),
-                new SqlParameter("@empId", SqlDbType.Int),
-                new SqlParameter("@permId", SqlDbType.Int)
+                new SqlParameter("@name", user.Name),
+                new SqlParameter("@password",user.Password),
+                new SqlParameter("@empId", user.EmployeeId),
+                new SqlParameter("@permId", user.PermissionId)
             };
-            parameters[0].Value = user.Name;
-            parameters[1].Value = user.Password;
-            parameters[2].Value = user.Employeem.Id;
-            parameters[3].Value = user.Permissionm.Id;
+
             DBResult result = await DBHelper.ExcuteStoredProcedNonQueryAsync(addProcedName, parameters,"");
             RepoResultM repoResult = new RepoResultM();
             repoResult.IsSucess = result.IsSucess;
@@ -136,22 +132,16 @@ namespace SBMS.Repositories
             repoResult.ErrorMsg = result.ErrorMsg;
             return repoResult;
         }
-
-        public static async System.Threading.Tasks.Task<RepoResultM> UpdateUserAsync(UserM user)
+        public static async Task<RepoResultM> UpdateUserAsync(UserM user)
         {
             SqlParameter[] parameters =
             {
-                new SqlParameter("@id", SqlDbType.Int),
-                new SqlParameter("@name", SqlDbType.NVarChar),
-                new SqlParameter("@password", SqlDbType.NVarChar),
-                new SqlParameter("@empId", SqlDbType.Int),
-                new SqlParameter("@permId", SqlDbType.Int)
+                new SqlParameter("@id", user.Id),
+                new SqlParameter("@name", user.Name),
+                new SqlParameter("@password", user.Password),
+                new SqlParameter("@empId", user.EmployeeId),
+                new SqlParameter("@permId", user.PermissionId)
             };
-            parameters[0].Value = user.Id;
-            parameters[1].Value = user.Name;
-            parameters[2].Value = user.Password;
-            parameters[3].Value = user.Employeem.Id;
-            parameters[4].Value = user.Permissionm.Id;
 
             DBResult result = await DBHelper.ExcuteStoredProcedNonQueryAsync(updateProcedName, parameters,"");
             RepoResultM repoResult = new RepoResultM();
@@ -160,11 +150,10 @@ namespace SBMS.Repositories
             repoResult.ErrorMsg = result.ErrorMsg;
             return repoResult;
         }
-
-        public static async System.Threading.Tasks.Task<RepoResultM> DeleteUserAsync(int id)
+        public static async Task<RepoResultM> DeleteUserAsync(int id)
         {
-            SqlParameter[] parameters = { new SqlParameter("@id", SqlDbType.Int) };
-            parameters[0].Value = id;
+            SqlParameter[] parameters = { new SqlParameter("@id", id) };
+
             DBResult result = await DBHelper.ExcuteStoredProcedNonQueryAsync(deleteProcedName, parameters,"");
             RepoResultM repoResult = new RepoResultM();
             repoResult.IsSucess = result.IsSucess;

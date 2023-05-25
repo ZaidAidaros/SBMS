@@ -8,7 +8,7 @@ SELECT [dbo].Users.Id,
        [dbo].Users.empId,
        [dbo].Users.permId
 FROM [dbo].Users 
-INNER JOIN [dbo].Employees ON [dbo].Users.empId = [dbo].Employees.Id
-INNER JOIN [dbo].Permission ON [dbo].Users.permId = [dbo].Permission.Id
+INNER JOIN [dbo].Employees ON [dbo].Employees.Id = [dbo].Users.empId
+INNER JOIN [dbo].Permission ON [dbo].Permission.Id = [dbo].Users.permId
 WHERE [dbo].Users.name = @name AND [dbo].Users.password = @password
 End

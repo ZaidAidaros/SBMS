@@ -237,7 +237,7 @@ namespace SBMS.Presenters.SalesPres
                 else
                 {
                     InvoiceM invoiceM = new InvoiceM();
-                    invoiceM.EmpId = SalesHVPres.GetInstance().EmpId;
+                    invoiceM.EmpId = SalesHVPres.GetInstance(null).user.EmployeeId;
                     invoiceM.CustomerId = ((CustomerM)this.newSaleInvoiceV.CBXCustomers.SelectedItem).Id;
                     invoiceM.MonyStateId = ((MonyStateM)this.newSaleInvoiceV.CBXMonyState.SelectedItem).Id;
                     invoiceM.InvoiceTypeId = 2;
