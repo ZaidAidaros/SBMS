@@ -135,15 +135,14 @@
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.defPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.barCodeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.defPriceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalQuantityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.barCodeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalQuantityDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlProductInfoView.SuspendLayout();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdInfo)).BeginInit();
@@ -193,7 +192,7 @@
             this.pnlProductInfoView.Controls.Add(this.dgvProdInfo);
             this.pnlProductInfoView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlProductInfoView.Location = new System.Drawing.Point(0, 0);
-            this.pnlProductInfoView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlProductInfoView.Margin = new System.Windows.Forms.Padding(4);
             this.pnlProductInfoView.Name = "pnlProductInfoView";
             this.pnlProductInfoView.Size = new System.Drawing.Size(1410, 762);
             this.pnlProductInfoView.TabIndex = 0;
@@ -203,7 +202,7 @@
             this.panel10.Controls.Add(this.button1);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(1410, 42);
             this.panel10.TabIndex = 13;
@@ -215,7 +214,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(1364, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(46, 42);
             this.button1.TabIndex = 8;
@@ -238,7 +237,7 @@
             this.dgvProdInfo.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProdInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProdInfo.Location = new System.Drawing.Point(0, 0);
-            this.dgvProdInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvProdInfo.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProdInfo.MultiSelect = false;
             this.dgvProdInfo.Name = "dgvProdInfo";
             this.dgvProdInfo.ReadOnly = true;
@@ -255,7 +254,7 @@
             this.pnlProdCategoriesView.Controls.Add(this.fpnlAECategoryForms);
             this.pnlProdCategoriesView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlProdCategoriesView.Location = new System.Drawing.Point(0, 0);
-            this.pnlProdCategoriesView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlProdCategoriesView.Margin = new System.Windows.Forms.Padding(4);
             this.pnlProdCategoriesView.Name = "pnlProdCategoriesView";
             this.pnlProdCategoriesView.Size = new System.Drawing.Size(1410, 762);
             this.pnlProdCategoriesView.TabIndex = 0;
@@ -275,7 +274,7 @@
             this.dgvCategories.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCategories.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCategories.Location = new System.Drawing.Point(261, 0);
-            this.dgvCategories.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCategories.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCategories.MultiSelect = false;
             this.dgvCategories.Name = "dgvCategories";
             this.dgvCategories.ReadOnly = true;
@@ -291,9 +290,9 @@
             this.gbCategoriesControl.Dock = System.Windows.Forms.DockStyle.Left;
             this.gbCategoriesControl.ForeColor = System.Drawing.Color.Crimson;
             this.gbCategoriesControl.Location = new System.Drawing.Point(0, 0);
-            this.gbCategoriesControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbCategoriesControl.Margin = new System.Windows.Forms.Padding(4);
             this.gbCategoriesControl.Name = "gbCategoriesControl";
-            this.gbCategoriesControl.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbCategoriesControl.Padding = new System.Windows.Forms.Padding(4);
             this.gbCategoriesControl.Size = new System.Drawing.Size(261, 762);
             this.gbCategoriesControl.TabIndex = 7;
             this.gbCategoriesControl.TabStop = false;
@@ -305,7 +304,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnEditCategory);
             this.flowLayoutPanel1.Controls.Add(this.btnDeleteCategory);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 23);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(252, 137);
             this.flowLayoutPanel1.TabIndex = 0;
@@ -315,7 +314,7 @@
             this.btnAddCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCategory.ForeColor = System.Drawing.Color.Green;
             this.btnAddCategory.Location = new System.Drawing.Point(4, 4);
-            this.btnAddCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddCategory.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddCategory.Name = "btnAddCategory";
             this.btnAddCategory.Size = new System.Drawing.Size(243, 34);
             this.btnAddCategory.TabIndex = 6;
@@ -327,7 +326,7 @@
             this.btnEditCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditCategory.ForeColor = System.Drawing.Color.Green;
             this.btnEditCategory.Location = new System.Drawing.Point(4, 46);
-            this.btnEditCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditCategory.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditCategory.Name = "btnEditCategory";
             this.btnEditCategory.Size = new System.Drawing.Size(243, 34);
             this.btnEditCategory.TabIndex = 6;
@@ -339,7 +338,7 @@
             this.btnDeleteCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteCategory.ForeColor = System.Drawing.Color.Green;
             this.btnDeleteCategory.Location = new System.Drawing.Point(4, 88);
-            this.btnDeleteCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteCategory.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteCategory.Name = "btnDeleteCategory";
             this.btnDeleteCategory.Size = new System.Drawing.Size(243, 34);
             this.btnDeleteCategory.TabIndex = 6;
@@ -354,7 +353,7 @@
             this.fpnlAECategoryForms.Dock = System.Windows.Forms.DockStyle.Right;
             this.fpnlAECategoryForms.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fpnlAECategoryForms.Location = new System.Drawing.Point(1134, 0);
-            this.fpnlAECategoryForms.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fpnlAECategoryForms.Margin = new System.Windows.Forms.Padding(4);
             this.fpnlAECategoryForms.Name = "fpnlAECategoryForms";
             this.fpnlAECategoryForms.Size = new System.Drawing.Size(276, 762);
             this.fpnlAECategoryForms.TabIndex = 9;
@@ -364,7 +363,7 @@
             this.panel1.Controls.Add(this.tbCategoryName);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(266, 102);
             this.panel1.TabIndex = 9;
@@ -373,7 +372,7 @@
             // 
             this.tbCategoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCategoryName.Location = new System.Drawing.Point(14, 50);
-            this.tbCategoryName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCategoryName.Margin = new System.Windows.Forms.Padding(4);
             this.tbCategoryName.Name = "tbCategoryName";
             this.tbCategoryName.Size = new System.Drawing.Size(224, 30);
             this.tbCategoryName.TabIndex = 0;
@@ -397,7 +396,7 @@
             this.panel3.Controls.Add(this.tbCategoryDescription);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Location = new System.Drawing.Point(4, 114);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(267, 152);
             this.panel3.TabIndex = 8;
@@ -406,7 +405,7 @@
             // 
             this.tbCategoryDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCategoryDescription.Location = new System.Drawing.Point(14, 50);
-            this.tbCategoryDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCategoryDescription.Margin = new System.Windows.Forms.Padding(4);
             this.tbCategoryDescription.Multiline = true;
             this.tbCategoryDescription.Name = "tbCategoryDescription";
             this.tbCategoryDescription.Size = new System.Drawing.Size(238, 73);
@@ -431,7 +430,7 @@
             this.flowLayoutPanel4.Controls.Add(this.btnAECategoryCancel);
             this.flowLayoutPanel4.Controls.Add(this.btnAECategorySave);
             this.flowLayoutPanel4.Location = new System.Drawing.Point(4, 274);
-            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(266, 41);
             this.flowLayoutPanel4.TabIndex = 6;
@@ -441,7 +440,7 @@
             this.btnAECategoryCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAECategoryCancel.ForeColor = System.Drawing.Color.Maroon;
             this.btnAECategoryCancel.Location = new System.Drawing.Point(4, 4);
-            this.btnAECategoryCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAECategoryCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnAECategoryCancel.Name = "btnAECategoryCancel";
             this.btnAECategoryCancel.Size = new System.Drawing.Size(105, 34);
             this.btnAECategoryCancel.TabIndex = 9;
@@ -453,7 +452,7 @@
             this.btnAECategorySave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAECategorySave.ForeColor = System.Drawing.Color.Green;
             this.btnAECategorySave.Location = new System.Drawing.Point(117, 4);
-            this.btnAECategorySave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAECategorySave.Margin = new System.Windows.Forms.Padding(4);
             this.btnAECategorySave.Name = "btnAECategorySave";
             this.btnAECategorySave.Size = new System.Drawing.Size(135, 34);
             this.btnAECategorySave.TabIndex = 10;
@@ -468,7 +467,7 @@
             this.pnlProductsView.Controls.Add(this.pnlProductInfoView);
             this.pnlProductsView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlProductsView.Location = new System.Drawing.Point(0, 0);
-            this.pnlProductsView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlProductsView.Margin = new System.Windows.Forms.Padding(4);
             this.pnlProductsView.Name = "pnlProductsView";
             this.pnlProductsView.Size = new System.Drawing.Size(1410, 762);
             this.pnlProductsView.TabIndex = 0;
@@ -477,7 +476,6 @@
             // 
             this.dgvProducts.AllowUserToAddRows = false;
             this.dgvProducts.AllowUserToDeleteRows = false;
-            this.dgvProducts.AllowUserToOrderColumns = true;
             this.dgvProducts.AllowUserToResizeColumns = false;
             this.dgvProducts.AllowUserToResizeRows = false;
             this.dgvProducts.AutoGenerateColumns = false;
@@ -486,14 +484,13 @@
             this.dgvProducts.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn1,
-            this.barCodeDataGridViewTextBoxColumn1,
-            this.nameDataGridViewTextBoxColumn1,
-            this.descriptionDataGridViewTextBoxColumn1,
-            this.categoryDataGridViewTextBoxColumn1,
-            this.unitDataGridViewTextBoxColumn1,
-            this.defPriceDataGridViewTextBoxColumn1,
-            this.totalQuantityDataGridViewTextBoxColumn1});
+            this.idDataGridViewTextBoxColumn2,
+            this.barCodeDataGridViewTextBoxColumn2,
+            this.nameDataGridViewTextBoxColumn2,
+            this.descriptionDataGridViewTextBoxColumn2,
+            this.categoryDataGridViewTextBoxColumn2,
+            this.unitDataGridViewTextBoxColumn2,
+            this.totalQuantityDataGridViewTextBoxColumn2});
             this.dgvProducts.DataSource = this.productMBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
@@ -505,7 +502,7 @@
             this.dgvProducts.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProducts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProducts.Location = new System.Drawing.Point(255, 0);
-            this.dgvProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvProducts.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProducts.MultiSelect = false;
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.ReadOnly = true;
@@ -527,7 +524,7 @@
             this.fpnlAEProductForms.Controls.Add(this.fpnlSaveCancelBtns);
             this.fpnlAEProductForms.Dock = System.Windows.Forms.DockStyle.Right;
             this.fpnlAEProductForms.Location = new System.Drawing.Point(1143, 0);
-            this.fpnlAEProductForms.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fpnlAEProductForms.Margin = new System.Windows.Forms.Padding(4);
             this.fpnlAEProductForms.Name = "fpnlAEProductForms";
             this.fpnlAEProductForms.Size = new System.Drawing.Size(267, 762);
             this.fpnlAEProductForms.TabIndex = 5;
@@ -537,7 +534,7 @@
             this.pnlPName.Controls.Add(this.tbProductName);
             this.pnlPName.Controls.Add(this.label10);
             this.pnlPName.Location = new System.Drawing.Point(4, 4);
-            this.pnlPName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlPName.Margin = new System.Windows.Forms.Padding(4);
             this.pnlPName.Name = "pnlPName";
             this.pnlPName.Size = new System.Drawing.Size(256, 102);
             this.pnlPName.TabIndex = 9;
@@ -546,7 +543,7 @@
             // 
             this.tbProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbProductName.Location = new System.Drawing.Point(14, 50);
-            this.tbProductName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbProductName.Margin = new System.Windows.Forms.Padding(4);
             this.tbProductName.Name = "tbProductName";
             this.tbProductName.Size = new System.Drawing.Size(224, 30);
             this.tbProductName.TabIndex = 0;
@@ -570,7 +567,7 @@
             this.pnlPBC.Controls.Add(this.tbProductBarCode);
             this.pnlPBC.Controls.Add(this.label7);
             this.pnlPBC.Location = new System.Drawing.Point(4, 114);
-            this.pnlPBC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlPBC.Margin = new System.Windows.Forms.Padding(4);
             this.pnlPBC.Name = "pnlPBC";
             this.pnlPBC.Size = new System.Drawing.Size(256, 102);
             this.pnlPBC.TabIndex = 8;
@@ -579,7 +576,7 @@
             // 
             this.tbProductBarCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbProductBarCode.Location = new System.Drawing.Point(14, 50);
-            this.tbProductBarCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbProductBarCode.Margin = new System.Windows.Forms.Padding(4);
             this.tbProductBarCode.Name = "tbProductBarCode";
             this.tbProductBarCode.Size = new System.Drawing.Size(224, 30);
             this.tbProductBarCode.TabIndex = 0;
@@ -603,7 +600,7 @@
             this.panel11.Controls.Add(this.tbProdDefPrice);
             this.panel11.Controls.Add(this.label16);
             this.panel11.Location = new System.Drawing.Point(4, 224);
-            this.panel11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel11.Margin = new System.Windows.Forms.Padding(4);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(256, 102);
             this.panel11.TabIndex = 10;
@@ -612,7 +609,7 @@
             // 
             this.tbProdDefPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbProdDefPrice.Location = new System.Drawing.Point(14, 50);
-            this.tbProdDefPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbProdDefPrice.Margin = new System.Windows.Forms.Padding(4);
             this.tbProdDefPrice.Name = "tbProdDefPrice";
             this.tbProdDefPrice.Size = new System.Drawing.Size(224, 30);
             this.tbProdDefPrice.TabIndex = 0;
@@ -636,7 +633,7 @@
             this.pnlPC.Controls.Add(this.tbProductDescription);
             this.pnlPC.Controls.Add(this.label6);
             this.pnlPC.Location = new System.Drawing.Point(4, 334);
-            this.pnlPC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlPC.Margin = new System.Windows.Forms.Padding(4);
             this.pnlPC.Name = "pnlPC";
             this.pnlPC.Size = new System.Drawing.Size(256, 102);
             this.pnlPC.TabIndex = 7;
@@ -645,7 +642,7 @@
             // 
             this.tbProductDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbProductDescription.Location = new System.Drawing.Point(14, 50);
-            this.tbProductDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbProductDescription.Margin = new System.Windows.Forms.Padding(4);
             this.tbProductDescription.Name = "tbProductDescription";
             this.tbProductDescription.Size = new System.Drawing.Size(224, 30);
             this.tbProductDescription.TabIndex = 0;
@@ -669,7 +666,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.cbxCatagorySelect);
             this.panel2.Location = new System.Drawing.Point(4, 444);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(256, 102);
             this.panel2.TabIndex = 6;
@@ -695,7 +692,7 @@
             this.cbxCatagorySelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxCatagorySelect.FormattingEnabled = true;
             this.cbxCatagorySelect.Location = new System.Drawing.Point(14, 50);
-            this.cbxCatagorySelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxCatagorySelect.Margin = new System.Windows.Forms.Padding(4);
             this.cbxCatagorySelect.Name = "cbxCatagorySelect";
             this.cbxCatagorySelect.Size = new System.Drawing.Size(224, 33);
             this.cbxCatagorySelect.TabIndex = 2;
@@ -705,7 +702,7 @@
             this.pnlPU.Controls.Add(this.cbxUnitSelect);
             this.pnlPU.Controls.Add(this.label5);
             this.pnlPU.Location = new System.Drawing.Point(4, 554);
-            this.pnlPU.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlPU.Margin = new System.Windows.Forms.Padding(4);
             this.pnlPU.Name = "pnlPU";
             this.pnlPU.Size = new System.Drawing.Size(256, 102);
             this.pnlPU.TabIndex = 5;
@@ -717,7 +714,7 @@
             this.cbxUnitSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxUnitSelect.FormattingEnabled = true;
             this.cbxUnitSelect.Location = new System.Drawing.Point(14, 50);
-            this.cbxUnitSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxUnitSelect.Margin = new System.Windows.Forms.Padding(4);
             this.cbxUnitSelect.Name = "cbxUnitSelect";
             this.cbxUnitSelect.Size = new System.Drawing.Size(224, 33);
             this.cbxUnitSelect.TabIndex = 3;
@@ -741,7 +738,7 @@
             this.fpnlSaveCancelBtns.Controls.Add(this.btnAEProductCancel);
             this.fpnlSaveCancelBtns.Controls.Add(this.btnAEProductSubmit);
             this.fpnlSaveCancelBtns.Location = new System.Drawing.Point(4, 664);
-            this.fpnlSaveCancelBtns.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fpnlSaveCancelBtns.Margin = new System.Windows.Forms.Padding(4);
             this.fpnlSaveCancelBtns.Name = "fpnlSaveCancelBtns";
             this.fpnlSaveCancelBtns.Size = new System.Drawing.Size(254, 41);
             this.fpnlSaveCancelBtns.TabIndex = 6;
@@ -751,7 +748,7 @@
             this.btnAEProductCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAEProductCancel.ForeColor = System.Drawing.Color.Maroon;
             this.btnAEProductCancel.Location = new System.Drawing.Point(4, 4);
-            this.btnAEProductCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAEProductCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnAEProductCancel.Name = "btnAEProductCancel";
             this.btnAEProductCancel.Size = new System.Drawing.Size(105, 34);
             this.btnAEProductCancel.TabIndex = 9;
@@ -763,7 +760,7 @@
             this.btnAEProductSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAEProductSubmit.ForeColor = System.Drawing.Color.Green;
             this.btnAEProductSubmit.Location = new System.Drawing.Point(117, 4);
-            this.btnAEProductSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAEProductSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnAEProductSubmit.Name = "btnAEProductSubmit";
             this.btnAEProductSubmit.Size = new System.Drawing.Size(120, 34);
             this.btnAEProductSubmit.TabIndex = 10;
@@ -777,7 +774,7 @@
             this.fpnlProductControl.Controls.Add(this.gbProductsControl);
             this.fpnlProductControl.Dock = System.Windows.Forms.DockStyle.Left;
             this.fpnlProductControl.Location = new System.Drawing.Point(0, 0);
-            this.fpnlProductControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fpnlProductControl.Margin = new System.Windows.Forms.Padding(4);
             this.fpnlProductControl.Name = "fpnlProductControl";
             this.fpnlProductControl.Size = new System.Drawing.Size(255, 762);
             this.fpnlProductControl.TabIndex = 2;
@@ -789,7 +786,7 @@
             this.pnlSearch.Controls.Add(this.tbSearchProduct);
             this.pnlSearch.Controls.Add(this.label2);
             this.pnlSearch.Location = new System.Drawing.Point(4, 4);
-            this.pnlSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlSearch.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSearch.Name = "pnlSearch";
             this.pnlSearch.Size = new System.Drawing.Size(248, 156);
             this.pnlSearch.TabIndex = 2;
@@ -799,7 +796,7 @@
             this.btnProdVRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProdVRefresh.ForeColor = System.Drawing.Color.Green;
             this.btnProdVRefresh.Location = new System.Drawing.Point(111, 4);
-            this.btnProdVRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProdVRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.btnProdVRefresh.Name = "btnProdVRefresh";
             this.btnProdVRefresh.Size = new System.Drawing.Size(130, 34);
             this.btnProdVRefresh.TabIndex = 8;
@@ -811,7 +808,7 @@
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.Green;
             this.btnSearch.Location = new System.Drawing.Point(99, 115);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(130, 34);
             this.btnSearch.TabIndex = 7;
@@ -822,7 +819,7 @@
             // 
             this.tbSearchProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSearchProduct.Location = new System.Drawing.Point(14, 77);
-            this.tbSearchProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbSearchProduct.Margin = new System.Windows.Forms.Padding(4);
             this.tbSearchProduct.Name = "tbSearchProduct";
             this.tbSearchProduct.Size = new System.Drawing.Size(214, 30);
             this.tbSearchProduct.TabIndex = 1;
@@ -846,7 +843,7 @@
             this.pnlFilter.Controls.Add(this.label3);
             this.pnlFilter.Controls.Add(this.cbxCategoryFilter);
             this.pnlFilter.Location = new System.Drawing.Point(4, 168);
-            this.pnlFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlFilter.Margin = new System.Windows.Forms.Padding(4);
             this.pnlFilter.Name = "pnlFilter";
             this.pnlFilter.Size = new System.Drawing.Size(248, 117);
             this.pnlFilter.TabIndex = 9;
@@ -874,7 +871,7 @@
             this.cbxCategoryFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxCategoryFilter.FormattingEnabled = true;
             this.cbxCategoryFilter.Location = new System.Drawing.Point(9, 61);
-            this.cbxCategoryFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxCategoryFilter.Margin = new System.Windows.Forms.Padding(4);
             this.cbxCategoryFilter.Name = "cbxCategoryFilter";
             this.cbxCategoryFilter.Size = new System.Drawing.Size(218, 33);
             this.cbxCategoryFilter.TabIndex = 1;
@@ -884,9 +881,9 @@
             this.gbProductsControl.Controls.Add(this.flowLayoutPanel2);
             this.gbProductsControl.ForeColor = System.Drawing.Color.Crimson;
             this.gbProductsControl.Location = new System.Drawing.Point(4, 293);
-            this.gbProductsControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbProductsControl.Margin = new System.Windows.Forms.Padding(4);
             this.gbProductsControl.Name = "gbProductsControl";
-            this.gbProductsControl.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbProductsControl.Padding = new System.Windows.Forms.Padding(4);
             this.gbProductsControl.Size = new System.Drawing.Size(248, 162);
             this.gbProductsControl.TabIndex = 8;
             this.gbProductsControl.TabStop = false;
@@ -899,7 +896,7 @@
             this.flowLayoutPanel2.Controls.Add(this.btnDeleteProduct);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(4, 24);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(240, 134);
             this.flowLayoutPanel2.TabIndex = 0;
@@ -909,7 +906,7 @@
             this.btnAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddProduct.ForeColor = System.Drawing.Color.Green;
             this.btnAddProduct.Location = new System.Drawing.Point(4, 4);
-            this.btnAddProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddProduct.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(248, 34);
             this.btnAddProduct.TabIndex = 7;
@@ -921,7 +918,7 @@
             this.btnEditProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditProduct.ForeColor = System.Drawing.Color.Green;
             this.btnEditProduct.Location = new System.Drawing.Point(4, 46);
-            this.btnEditProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditProduct.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.Size = new System.Drawing.Size(248, 34);
             this.btnEditProduct.TabIndex = 8;
@@ -933,7 +930,7 @@
             this.btnDeleteProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteProduct.ForeColor = System.Drawing.Color.Green;
             this.btnDeleteProduct.Location = new System.Drawing.Point(4, 88);
-            this.btnDeleteProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteProduct.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteProduct.Name = "btnDeleteProduct";
             this.btnDeleteProduct.Size = new System.Drawing.Size(248, 34);
             this.btnDeleteProduct.TabIndex = 9;
@@ -947,7 +944,7 @@
             this.pnlStoreBody.Controls.Add(this.pnlProdCategoriesView);
             this.pnlStoreBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlStoreBody.Location = new System.Drawing.Point(0, 42);
-            this.pnlStoreBody.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlStoreBody.Margin = new System.Windows.Forms.Padding(4);
             this.pnlStoreBody.Name = "pnlStoreBody";
             this.pnlStoreBody.Size = new System.Drawing.Size(1410, 762);
             this.pnlStoreBody.TabIndex = 1;
@@ -959,7 +956,7 @@
             this.pnlProdUnitsView.Controls.Add(this.groupBox1);
             this.pnlProdUnitsView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlProdUnitsView.Location = new System.Drawing.Point(0, 0);
-            this.pnlProdUnitsView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlProdUnitsView.Margin = new System.Windows.Forms.Padding(4);
             this.pnlProdUnitsView.Name = "pnlProdUnitsView";
             this.pnlProdUnitsView.Size = new System.Drawing.Size(1410, 762);
             this.pnlProdUnitsView.TabIndex = 1;
@@ -979,7 +976,7 @@
             this.dgvUnits.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvUnits.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvUnits.Location = new System.Drawing.Point(261, 0);
-            this.dgvUnits.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvUnits.Margin = new System.Windows.Forms.Padding(4);
             this.dgvUnits.MultiSelect = false;
             this.dgvUnits.Name = "dgvUnits";
             this.dgvUnits.ReadOnly = true;
@@ -1000,7 +997,7 @@
             this.fpnlAEUnitForms.Controls.Add(this.flowLayoutPanel6);
             this.fpnlAEUnitForms.Dock = System.Windows.Forms.DockStyle.Right;
             this.fpnlAEUnitForms.Location = new System.Drawing.Point(1134, 0);
-            this.fpnlAEUnitForms.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fpnlAEUnitForms.Margin = new System.Windows.Forms.Padding(4);
             this.fpnlAEUnitForms.Name = "fpnlAEUnitForms";
             this.fpnlAEUnitForms.Size = new System.Drawing.Size(276, 762);
             this.fpnlAEUnitForms.TabIndex = 9;
@@ -1010,7 +1007,7 @@
             this.panel5.Controls.Add(this.tbUnitName);
             this.panel5.Controls.Add(this.label9);
             this.panel5.Location = new System.Drawing.Point(4, 4);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(266, 102);
             this.panel5.TabIndex = 9;
@@ -1019,7 +1016,7 @@
             // 
             this.tbUnitName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUnitName.Location = new System.Drawing.Point(14, 50);
-            this.tbUnitName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbUnitName.Margin = new System.Windows.Forms.Padding(4);
             this.tbUnitName.Name = "tbUnitName";
             this.tbUnitName.Size = new System.Drawing.Size(224, 30);
             this.tbUnitName.TabIndex = 0;
@@ -1043,7 +1040,7 @@
             this.panel4.Controls.Add(this.tbUnitSymbol);
             this.panel4.Controls.Add(this.label12);
             this.panel4.Location = new System.Drawing.Point(4, 114);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(266, 102);
             this.panel4.TabIndex = 10;
@@ -1052,7 +1049,7 @@
             // 
             this.tbUnitSymbol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUnitSymbol.Location = new System.Drawing.Point(14, 50);
-            this.tbUnitSymbol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbUnitSymbol.Margin = new System.Windows.Forms.Padding(4);
             this.tbUnitSymbol.Name = "tbUnitSymbol";
             this.tbUnitSymbol.Size = new System.Drawing.Size(224, 30);
             this.tbUnitSymbol.TabIndex = 0;
@@ -1076,7 +1073,7 @@
             this.panel7.Controls.Add(this.tbSubUnitName);
             this.panel7.Controls.Add(this.label13);
             this.panel7.Location = new System.Drawing.Point(4, 224);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(266, 102);
             this.panel7.TabIndex = 11;
@@ -1085,7 +1082,7 @@
             // 
             this.tbSubUnitName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSubUnitName.Location = new System.Drawing.Point(14, 50);
-            this.tbSubUnitName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbSubUnitName.Margin = new System.Windows.Forms.Padding(4);
             this.tbSubUnitName.Name = "tbSubUnitName";
             this.tbSubUnitName.Size = new System.Drawing.Size(224, 30);
             this.tbSubUnitName.TabIndex = 0;
@@ -1109,7 +1106,7 @@
             this.panel8.Controls.Add(this.tbSubUnitSymbol);
             this.panel8.Controls.Add(this.label14);
             this.panel8.Location = new System.Drawing.Point(4, 334);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(266, 102);
             this.panel8.TabIndex = 12;
@@ -1118,7 +1115,7 @@
             // 
             this.tbSubUnitSymbol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSubUnitSymbol.Location = new System.Drawing.Point(14, 50);
-            this.tbSubUnitSymbol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbSubUnitSymbol.Margin = new System.Windows.Forms.Padding(4);
             this.tbSubUnitSymbol.Name = "tbSubUnitSymbol";
             this.tbSubUnitSymbol.Size = new System.Drawing.Size(224, 30);
             this.tbSubUnitSymbol.TabIndex = 0;
@@ -1142,7 +1139,7 @@
             this.panel9.Controls.Add(this.tbSubUintRate);
             this.panel9.Controls.Add(this.label15);
             this.panel9.Location = new System.Drawing.Point(4, 444);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(266, 102);
             this.panel9.TabIndex = 13;
@@ -1151,7 +1148,7 @@
             // 
             this.tbSubUintRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSubUintRate.Location = new System.Drawing.Point(14, 50);
-            this.tbSubUintRate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbSubUintRate.Margin = new System.Windows.Forms.Padding(4);
             this.tbSubUintRate.Name = "tbSubUintRate";
             this.tbSubUintRate.Size = new System.Drawing.Size(224, 30);
             this.tbSubUintRate.TabIndex = 0;
@@ -1175,7 +1172,7 @@
             this.panel6.Controls.Add(this.tbUnitDescription);
             this.panel6.Controls.Add(this.label11);
             this.panel6.Location = new System.Drawing.Point(4, 554);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(267, 120);
             this.panel6.TabIndex = 8;
@@ -1184,7 +1181,7 @@
             // 
             this.tbUnitDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUnitDescription.Location = new System.Drawing.Point(14, 50);
-            this.tbUnitDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbUnitDescription.Margin = new System.Windows.Forms.Padding(4);
             this.tbUnitDescription.Multiline = true;
             this.tbUnitDescription.Name = "tbUnitDescription";
             this.tbUnitDescription.Size = new System.Drawing.Size(238, 52);
@@ -1209,7 +1206,7 @@
             this.flowLayoutPanel6.Controls.Add(this.btnAEUnitCancel);
             this.flowLayoutPanel6.Controls.Add(this.btnAEUnitSubmit);
             this.flowLayoutPanel6.Location = new System.Drawing.Point(4, 682);
-            this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             this.flowLayoutPanel6.Size = new System.Drawing.Size(266, 41);
             this.flowLayoutPanel6.TabIndex = 6;
@@ -1219,7 +1216,7 @@
             this.btnAEUnitCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAEUnitCancel.ForeColor = System.Drawing.Color.Maroon;
             this.btnAEUnitCancel.Location = new System.Drawing.Point(4, 4);
-            this.btnAEUnitCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAEUnitCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnAEUnitCancel.Name = "btnAEUnitCancel";
             this.btnAEUnitCancel.Size = new System.Drawing.Size(105, 34);
             this.btnAEUnitCancel.TabIndex = 9;
@@ -1231,7 +1228,7 @@
             this.btnAEUnitSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAEUnitSubmit.ForeColor = System.Drawing.Color.Green;
             this.btnAEUnitSubmit.Location = new System.Drawing.Point(117, 4);
-            this.btnAEUnitSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAEUnitSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnAEUnitSubmit.Name = "btnAEUnitSubmit";
             this.btnAEUnitSubmit.Size = new System.Drawing.Size(135, 34);
             this.btnAEUnitSubmit.TabIndex = 10;
@@ -1244,9 +1241,9 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.ForeColor = System.Drawing.Color.Crimson;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(261, 762);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
@@ -1259,7 +1256,7 @@
             this.flowLayoutPanel7.Controls.Add(this.btnDeleteProdUnit);
             this.flowLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel7.Location = new System.Drawing.Point(4, 24);
-            this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
             this.flowLayoutPanel7.Size = new System.Drawing.Size(253, 734);
             this.flowLayoutPanel7.TabIndex = 0;
@@ -1269,7 +1266,7 @@
             this.btnAddProdUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddProdUnit.ForeColor = System.Drawing.Color.Green;
             this.btnAddProdUnit.Location = new System.Drawing.Point(4, 4);
-            this.btnAddProdUnit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddProdUnit.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddProdUnit.Name = "btnAddProdUnit";
             this.btnAddProdUnit.Size = new System.Drawing.Size(243, 34);
             this.btnAddProdUnit.TabIndex = 6;
@@ -1281,7 +1278,7 @@
             this.btnEditProdUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditProdUnit.ForeColor = System.Drawing.Color.Green;
             this.btnEditProdUnit.Location = new System.Drawing.Point(4, 46);
-            this.btnEditProdUnit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditProdUnit.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditProdUnit.Name = "btnEditProdUnit";
             this.btnEditProdUnit.Size = new System.Drawing.Size(243, 34);
             this.btnEditProdUnit.TabIndex = 6;
@@ -1293,7 +1290,7 @@
             this.btnDeleteProdUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteProdUnit.ForeColor = System.Drawing.Color.Green;
             this.btnDeleteProdUnit.Location = new System.Drawing.Point(4, 88);
-            this.btnDeleteProdUnit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteProdUnit.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteProdUnit.Name = "btnDeleteProdUnit";
             this.btnDeleteProdUnit.Size = new System.Drawing.Size(243, 34);
             this.btnDeleteProdUnit.TabIndex = 6;
@@ -1309,7 +1306,7 @@
             this.pnlStoreHeadControls.Controls.Add(this.btnShowProductsView);
             this.pnlStoreHeadControls.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlStoreHeadControls.Location = new System.Drawing.Point(0, 0);
-            this.pnlStoreHeadControls.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlStoreHeadControls.Margin = new System.Windows.Forms.Padding(4);
             this.pnlStoreHeadControls.Name = "pnlStoreHeadControls";
             this.pnlStoreHeadControls.Size = new System.Drawing.Size(1410, 42);
             this.pnlStoreHeadControls.TabIndex = 2;
@@ -1333,7 +1330,7 @@
             this.btnShowProdUnitsView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowProdUnitsView.ForeColor = System.Drawing.Color.Green;
             this.btnShowProdUnitsView.Location = new System.Drawing.Point(392, 0);
-            this.btnShowProdUnitsView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShowProdUnitsView.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowProdUnitsView.Name = "btnShowProdUnitsView";
             this.btnShowProdUnitsView.Size = new System.Drawing.Size(196, 42);
             this.btnShowProdUnitsView.TabIndex = 10;
@@ -1346,7 +1343,7 @@
             this.btnShowProdCategoriesView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowProdCategoriesView.ForeColor = System.Drawing.Color.Green;
             this.btnShowProdCategoriesView.Location = new System.Drawing.Point(196, 0);
-            this.btnShowProdCategoriesView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShowProdCategoriesView.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowProdCategoriesView.Name = "btnShowProdCategoriesView";
             this.btnShowProdCategoriesView.Size = new System.Drawing.Size(196, 42);
             this.btnShowProdCategoriesView.TabIndex = 9;
@@ -1359,7 +1356,7 @@
             this.btnShowProductsView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowProductsView.ForeColor = System.Drawing.Color.Green;
             this.btnShowProductsView.Location = new System.Drawing.Point(0, 0);
-            this.btnShowProductsView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShowProductsView.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowProductsView.Name = "btnShowProductsView";
             this.btnShowProductsView.Size = new System.Drawing.Size(196, 42);
             this.btnShowProductsView.TabIndex = 8;
@@ -1438,73 +1435,65 @@
             this.totalQuantityDataGridViewTextBoxColumn.ReadOnly = true;
             this.totalQuantityDataGridViewTextBoxColumn.Width = 150;
             // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // barCodeDataGridViewTextBoxColumn1
-            // 
-            this.barCodeDataGridViewTextBoxColumn1.DataPropertyName = "BarCode";
-            this.barCodeDataGridViewTextBoxColumn1.HeaderText = "BarCode";
-            this.barCodeDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.barCodeDataGridViewTextBoxColumn1.Name = "barCodeDataGridViewTextBoxColumn1";
-            this.barCodeDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn1
-            // 
-            this.descriptionDataGridViewTextBoxColumn1.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn1.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.descriptionDataGridViewTextBoxColumn1.Name = "descriptionDataGridViewTextBoxColumn1";
-            this.descriptionDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // categoryDataGridViewTextBoxColumn1
-            // 
-            this.categoryDataGridViewTextBoxColumn1.DataPropertyName = "Category";
-            this.categoryDataGridViewTextBoxColumn1.HeaderText = "Category";
-            this.categoryDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.categoryDataGridViewTextBoxColumn1.Name = "categoryDataGridViewTextBoxColumn1";
-            this.categoryDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // unitDataGridViewTextBoxColumn1
-            // 
-            this.unitDataGridViewTextBoxColumn1.DataPropertyName = "Unit";
-            this.unitDataGridViewTextBoxColumn1.HeaderText = "Unit";
-            this.unitDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.unitDataGridViewTextBoxColumn1.Name = "unitDataGridViewTextBoxColumn1";
-            this.unitDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // defPriceDataGridViewTextBoxColumn1
-            // 
-            this.defPriceDataGridViewTextBoxColumn1.DataPropertyName = "DefPrice";
-            this.defPriceDataGridViewTextBoxColumn1.HeaderText = "DefPrice";
-            this.defPriceDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.defPriceDataGridViewTextBoxColumn1.Name = "defPriceDataGridViewTextBoxColumn1";
-            this.defPriceDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // totalQuantityDataGridViewTextBoxColumn1
-            // 
-            this.totalQuantityDataGridViewTextBoxColumn1.DataPropertyName = "TotalQuantity";
-            this.totalQuantityDataGridViewTextBoxColumn1.HeaderText = "TotalQuantity";
-            this.totalQuantityDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.totalQuantityDataGridViewTextBoxColumn1.Name = "totalQuantityDataGridViewTextBoxColumn1";
-            this.totalQuantityDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
             // productMBindingSource
             // 
             this.productMBindingSource.DataSource = typeof(SBMS.Models.Stores.ProductM);
+            // 
+            // idDataGridViewTextBoxColumn2
+            // 
+            this.idDataGridViewTextBoxColumn2.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn2.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn2.MinimumWidth = 8;
+            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
+            this.idDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // barCodeDataGridViewTextBoxColumn2
+            // 
+            this.barCodeDataGridViewTextBoxColumn2.DataPropertyName = "BarCode";
+            this.barCodeDataGridViewTextBoxColumn2.HeaderText = "BarCode";
+            this.barCodeDataGridViewTextBoxColumn2.MinimumWidth = 8;
+            this.barCodeDataGridViewTextBoxColumn2.Name = "barCodeDataGridViewTextBoxColumn2";
+            this.barCodeDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn2
+            // 
+            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn2.MinimumWidth = 8;
+            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
+            this.nameDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn2
+            // 
+            this.descriptionDataGridViewTextBoxColumn2.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn2.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn2.MinimumWidth = 8;
+            this.descriptionDataGridViewTextBoxColumn2.Name = "descriptionDataGridViewTextBoxColumn2";
+            this.descriptionDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // categoryDataGridViewTextBoxColumn2
+            // 
+            this.categoryDataGridViewTextBoxColumn2.DataPropertyName = "Category";
+            this.categoryDataGridViewTextBoxColumn2.HeaderText = "Category";
+            this.categoryDataGridViewTextBoxColumn2.MinimumWidth = 8;
+            this.categoryDataGridViewTextBoxColumn2.Name = "categoryDataGridViewTextBoxColumn2";
+            this.categoryDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // unitDataGridViewTextBoxColumn2
+            // 
+            this.unitDataGridViewTextBoxColumn2.DataPropertyName = "Unit";
+            this.unitDataGridViewTextBoxColumn2.HeaderText = "Unit";
+            this.unitDataGridViewTextBoxColumn2.MinimumWidth = 8;
+            this.unitDataGridViewTextBoxColumn2.Name = "unitDataGridViewTextBoxColumn2";
+            this.unitDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // totalQuantityDataGridViewTextBoxColumn2
+            // 
+            this.totalQuantityDataGridViewTextBoxColumn2.DataPropertyName = "TotalQuantity";
+            this.totalQuantityDataGridViewTextBoxColumn2.HeaderText = "TotalQuantity";
+            this.totalQuantityDataGridViewTextBoxColumn2.MinimumWidth = 8;
+            this.totalQuantityDataGridViewTextBoxColumn2.Name = "totalQuantityDataGridViewTextBoxColumn2";
+            this.totalQuantityDataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // StoresV
             // 
@@ -1515,7 +1504,7 @@
             this.Controls.Add(this.pnlStoreBody);
             this.Controls.Add(this.pnlStoreHeadControls);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "StoresV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Stores";
@@ -1685,14 +1674,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn defPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalQuantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn barCodeDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn defPriceDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalQuantityDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn barCodeDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalQuantityDataGridViewTextBoxColumn2;
         private System.Windows.Forms.BindingSource productMBindingSource;
     }
 }

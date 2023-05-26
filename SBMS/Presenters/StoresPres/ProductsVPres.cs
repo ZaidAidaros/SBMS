@@ -34,7 +34,7 @@ namespace SBMS.Presenters.StoresPres
             this.ProductsV.ShowAddProductForm += delegate { this.ShowAddProductForm(); };
             this.ProductsV.ShowEditProductForm += delegate { this.ShowEditProductForm(); };
             this.ProductsV.DeleteSelectedProduct += async delegate { await this.DeleteSelectedProductAsync(); };
-            this.ProductsV.OnAEProductSave += delegate { this.OnAEProductSaveAsync(); };
+            this.ProductsV.OnAEProductSave += async delegate { await this.OnAEProductSaveAsync(); };
             this.ProductsV.OnAEProductCancel += delegate { OnAEProductCancel(); };
             this.ProductsV.OnSelectProduct += delegate { this.OnSelectProduct(); };
             this.ProductsV.OnCategoryFilterChanged += async delegate { await OnCategoryFilterChangedAsync(); };

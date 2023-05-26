@@ -76,7 +76,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -225,7 +224,7 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSetUsers</DataSetName>
+        <DataSetName>UsersDataSet</DataSetName>
         <Top>2.63384cm</Top>
         <Left>0.53799cm</Left>
         <Height>1.2cm</Height>
@@ -284,7 +283,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>2023-1-1</Value>
+                  <Value>=Globals!ExecutionTime</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -402,7 +401,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSetUsers">
+    <DataSet Name="UsersDataSet">
       <Query>
         <DataSourceName>SBMSModelsUsers</DataSourceName>
         <CommandText>/* Local Query */</CommandText>

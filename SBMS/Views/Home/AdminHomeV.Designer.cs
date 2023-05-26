@@ -60,7 +60,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1749, 73);
             this.panel1.TabIndex = 0;
@@ -120,7 +120,7 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 73);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(308, 763);
             this.panel2.TabIndex = 1;
@@ -137,7 +137,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnAboutV);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 170);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(308, 593);
             this.flowLayoutPanel1.TabIndex = 3;
@@ -149,7 +149,7 @@
             this.btnEmployeesMV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmployeesMV.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnEmployeesMV.Location = new System.Drawing.Point(4, 4);
-            this.btnEmployeesMV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEmployeesMV.Margin = new System.Windows.Forms.Padding(4);
             this.btnEmployeesMV.Name = "btnEmployeesMV";
             this.btnEmployeesMV.Size = new System.Drawing.Size(300, 44);
             this.btnEmployeesMV.TabIndex = 4;
@@ -163,7 +163,7 @@
             this.btnUsersV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsersV.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnUsersV.Location = new System.Drawing.Point(4, 56);
-            this.btnUsersV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUsersV.Margin = new System.Windows.Forms.Padding(4);
             this.btnUsersV.Name = "btnUsersV";
             this.btnUsersV.Size = new System.Drawing.Size(300, 44);
             this.btnUsersV.TabIndex = 4;
@@ -177,7 +177,7 @@
             this.btnStoresV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStoresV.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnStoresV.Location = new System.Drawing.Point(4, 108);
-            this.btnStoresV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStoresV.Margin = new System.Windows.Forms.Padding(4);
             this.btnStoresV.Name = "btnStoresV";
             this.btnStoresV.Size = new System.Drawing.Size(300, 44);
             this.btnStoresV.TabIndex = 4;
@@ -191,7 +191,7 @@
             this.btnSalesV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalesV.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnSalesV.Location = new System.Drawing.Point(4, 160);
-            this.btnSalesV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalesV.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalesV.Name = "btnSalesV";
             this.btnSalesV.Size = new System.Drawing.Size(300, 44);
             this.btnSalesV.TabIndex = 4;
@@ -205,7 +205,7 @@
             this.btnPurchaseV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPurchaseV.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnPurchaseV.Location = new System.Drawing.Point(4, 212);
-            this.btnPurchaseV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPurchaseV.Margin = new System.Windows.Forms.Padding(4);
             this.btnPurchaseV.Name = "btnPurchaseV";
             this.btnPurchaseV.Size = new System.Drawing.Size(300, 44);
             this.btnPurchaseV.TabIndex = 4;
@@ -219,7 +219,7 @@
             this.btnReportsV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportsV.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnReportsV.Location = new System.Drawing.Point(4, 264);
-            this.btnReportsV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReportsV.Margin = new System.Windows.Forms.Padding(4);
             this.btnReportsV.Name = "btnReportsV";
             this.btnReportsV.Size = new System.Drawing.Size(300, 44);
             this.btnReportsV.TabIndex = 4;
@@ -233,7 +233,7 @@
             this.btnSettingsV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettingsV.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnSettingsV.Location = new System.Drawing.Point(4, 316);
-            this.btnSettingsV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSettingsV.Margin = new System.Windows.Forms.Padding(4);
             this.btnSettingsV.Name = "btnSettingsV";
             this.btnSettingsV.Size = new System.Drawing.Size(300, 44);
             this.btnSettingsV.TabIndex = 4;
@@ -248,7 +248,7 @@
             this.btnAboutV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAboutV.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnAboutV.Location = new System.Drawing.Point(4, 368);
-            this.btnAboutV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAboutV.Margin = new System.Windows.Forms.Padding(4);
             this.btnAboutV.Name = "btnAboutV";
             this.btnAboutV.Size = new System.Drawing.Size(300, 44);
             this.btnAboutV.TabIndex = 4;
@@ -264,7 +264,7 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(308, 170);
             this.panel3.TabIndex = 4;
@@ -338,12 +338,13 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminHomeV";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminHomeV_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

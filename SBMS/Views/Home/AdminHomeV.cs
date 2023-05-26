@@ -76,5 +76,10 @@ namespace SBMS.Views.Home
             btnSettingsV.Click += delegate { ShowSettingsMV?.Invoke(this, EventArgs.Empty); };
             btnAboutV.Click += delegate { ShowAboutV?.Invoke(this, EventArgs.Empty); };
         }
+
+        private void AdminHomeV_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

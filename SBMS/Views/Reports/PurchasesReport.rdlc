@@ -545,7 +545,7 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSetPurchases</DataSetName>
+        <DataSetName>PurchasesDataSet</DataSetName>
         <Top>1.46967cm</Top>
         <Left>0.57042cm</Left>
         <Height>1.2cm</Height>
@@ -722,7 +722,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSetPurchases">
+    <DataSet Name="PurchasesDataSet">
       <Query>
         <DataSourceName>SBMSModelsGeneral</DataSourceName>
         <CommandText>/* Local Query */</CommandText>

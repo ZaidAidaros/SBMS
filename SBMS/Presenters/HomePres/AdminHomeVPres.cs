@@ -37,6 +37,7 @@ namespace SBMS.Presenters
             StoresV.GetInstance().MdiParent = AdminHomeV.GetInstance();
             CustomersHV.GetInstance().MdiParent = AdminHomeV.GetInstance();
             SuppliersHV.GetInstance().MdiParent = AdminHomeV.GetInstance();
+            ReportsHV.GetInstance().MdiParent = AdminHomeV.GetInstance();
             AdminHomeV.GetInstance().Show();
         }
 
@@ -76,18 +77,19 @@ namespace SBMS.Presenters
         private void ShowPurchaseMV()
         {
             PurchasesHVPres.GetInstance(user);
-            //PurchaseHomeV.GetInstance().Show();
+            PurchaseHomeV.GetInstance().Show();
         }
 
         private void ShowSalesMV()
         {
             SalesHVPres.GetInstance(user);
-            //SalesHomeV.GetInstance().Show();
+            SalesHomeV.GetInstance().Show();
         }
 
         private void ShowReportsMV()
         {
-            ReportsHV.GetInstance();
+            ReportsHV.GetInstance().Dock = System.Windows.Forms.DockStyle.Fill;
+            ReportsHV.GetInstance().Show();
         }
 
         private void ShowStoresMV()

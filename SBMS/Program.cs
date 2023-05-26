@@ -15,6 +15,7 @@ namespace SBMS
             Application.SetCompatibleTextRenderingDefault(false);
             LogInV.GetInstance().Show();
             Application.Run();
+            
         }
     }
 }

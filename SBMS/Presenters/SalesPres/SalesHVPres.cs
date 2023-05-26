@@ -24,7 +24,6 @@ namespace SBMS.Presenters.SalesPres
             if(userM != null) user = userM;
 
             this.salesHomeV = SalesHomeV.GetInstance();
-            SalesHomeV.GetInstance().Show();
             ShowSalesView();
             this.salesHomeV.ShowSalesView += delegate { ShowSalesView(); };
             this.salesHomeV.ShowNewSalesInvView += delegate { ShowNewSalesInvView(); };
