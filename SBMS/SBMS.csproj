@@ -281,9 +281,14 @@
     <EmbeddedResource Include="Views\Purchases\PurchaseInvoicesV.resx">
       <DependentUpon>PurchaseInvoicesV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\EmployeesReport.rdlc" />
+    <EmbeddedResource Include="Views\Reports\ProductsReport.rdlc" />
+    <EmbeddedResource Include="Views\Reports\PurchasesReport.rdlc" />
     <EmbeddedResource Include="Views\Reports\Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\SalesReport.rdlc" />
+    <EmbeddedResource Include="Views\Reports\UsersReport.rdlc" />
     <EmbeddedResource Include="Views\Sales\NewRetSaleInvoiceV.resx">
       <DependentUpon>NewRetSaleInvoiceV.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +307,7 @@
     <EmbeddedResource Include="Views\Suppliers\SuppliersHV.resx">
       <DependentUpon>SuppliersHV.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\SBMS.Models.Employees.EmployeeM.datasource" />
     <None Include="Properties\DataSources\SBMS.Models.General.InvoiceItemM.datasource" />
     <None Include="Properties\DataSources\SBMS.Models.General.InvoiceM.datasource" />
     <None Include="Properties\DataSources\SBMS.Models.Purchases.PurchaseInvItemM.datasource" />

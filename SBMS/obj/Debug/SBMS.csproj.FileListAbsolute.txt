@@ -22,10 +22,6 @@ C:\Users\za\Desktop\VisualProjects\SBMS\SBMS\bin\Debug\SBMS.exe
 C:\Users\za\Desktop\VisualProjects\SBMS\SBMS\bin\Debug\SBMS.pdb
 C:\Users\za\Desktop\VisualProjects\SBMS\SBMS\obj\Debug\SBMS.exe
 C:\Users\za\Desktop\VisualProjects\SBMS\SBMS\obj\Debug\SBMS.pdb
-C:\Users\daood\Desktop\SBMS\SBMS\bin\Debug\SBMS.exe.config
-C:\Users\daood\Desktop\SBMS\SBMS\bin\Debug\SBMS.exe
-C:\Users\daood\Desktop\SBMS\SBMS\bin\Debug\SBMS.pdb
-C:\Users\daood\Desktop\SBMS\SBMS\obj\Debug\SBMS.csproj.AssemblyReference.cache
 C:\Users\daood\Desktop\SBMS\SBMS\obj\Debug\SBMS.Properties.Resources.resources
 C:\Users\daood\Desktop\SBMS\SBMS\obj\Debug\SBMS.Views.Auth.LogInV.resources
 C:\Users\daood\Desktop\SBMS\SBMS\obj\Debug\SBMS.Views.Auth.UsersV.resources
@@ -37,6 +33,7 @@ C:\Users\daood\Desktop\SBMS\SBMS\obj\Debug\SBMS.Views.Purchases.NewPurchaseInvV.
 C:\Users\daood\Desktop\SBMS\SBMS\obj\Debug\SBMS.Views.Purchases.NewRetPurchaseInvV.resources
 C:\Users\daood\Desktop\SBMS\SBMS\obj\Debug\SBMS.Views.Purchases.PurchaseHomeV.resources
 C:\Users\daood\Desktop\SBMS\SBMS\obj\Debug\SBMS.Views.Purchases.PurchaseInvoicesV.resources
+C:\Users\daood\Desktop\SBMS\SBMS\obj\Debug\SBMS.Views.Reports.ReportsHV.resources
 C:\Users\daood\Desktop\SBMS\SBMS\obj\Debug\SBMS.Views.Sales.NewRetSaleInvoiceV.resources
 C:\Users\daood\Desktop\SBMS\SBMS\obj\Debug\SBMS.Views.Sales.NewSaleInvoiceV.resources
 C:\Users\daood\Desktop\SBMS\SBMS\obj\Debug\SBMS.Views.Sales.SaleInvoicesV.resources
@@ -44,7 +41,5 @@ C:\Users\daood\Desktop\SBMS\SBMS\obj\Debug\SBMS.Views.Sales.SalesHomeV.resources
 C:\Users\daood\Desktop\SBMS\SBMS\obj\Debug\SBMS.Views.StoresV.StoresV.resources
 C:\Users\daood\Desktop\SBMS\SBMS\obj\Debug\SBMS.Views.Suppliers.SuppliersHV.resources
 C:\Users\daood\Desktop\SBMS\SBMS\obj\Debug\SBMS.csproj.GenerateResource.cache
-C:\Users\daood\Desktop\SBMS\SBMS\obj\Debug\SBMS.csproj.CoreCompileInputs.cache
-C:\Users\daood\Desktop\SBMS\SBMS\obj\Debug\SBMS.exe
-C:\Users\daood\Desktop\SBMS\SBMS\obj\Debug\SBMS.pdb
-C:\Users\daood\Desktop\SBMS\SBMS\obj\Debug\SBMS.Views.Reports.Reports.resources
+C:\Users\daood\Desktop\SBMS\SBMS\obj\Debug\RdlCompile.cache
+C:\Users\daood\Desktop\SBMS\SBMS\obj\Debug\RdlCompile.compiled

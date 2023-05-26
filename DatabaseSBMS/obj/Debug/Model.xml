@@ -6556,6 +6556,7 @@ End]]></Value>
 				<Value><![CDATA[
 Begin
 SELECT  [dbo].SalesItems.Id,
+        [dbo].Products.[barCode],
         [dbo].Products.[name],
         [dbo].[ProdUnits].[name],
         [dbo].SalesItems.quantity,
@@ -6615,6 +6616,9 @@ End]]></Value>
 					<References Name="[dbo].[SalesItems].[Id]" />
 				</Entry>
 				<Entry>
+					<References Name="[dbo].[Products].[barCode]" />
+				</Entry>
+				<Entry>
 					<References Name="[dbo].[Products].[name]" />
 				</Entry>
 				<Entry>
@@ -6662,7 +6666,7 @@ End]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="692" />
+				<Property Name="Length" Value="727" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetSaleItems] &#xD;&#xA;      @saleId int&#xD;&#xA;AS" />

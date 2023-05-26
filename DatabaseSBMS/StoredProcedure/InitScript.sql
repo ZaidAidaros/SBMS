@@ -1,4 +1,6 @@
-﻿use DatabaseSBMS;
+﻿
+
+use DatabaseSBMS;
 INSERT INTO [dbo].[Gender]  VALUES(1,'Male');
 INSERT INTO [dbo].[Gender]  VALUES(2,'FMale');
 INSERT INTO [dbo].[MonyState]  VALUES(1,'Cash','نقدا');
@@ -10,6 +12,9 @@ INSERT INTO [dbo].[Offers]  VALUES('No Offer','there is no offer');
 
 
 INSERT INTO [dbo].[JobTitle] VALUES ('Owner','Owner');
+INSERT INTO [dbo].[JobTitle] VALUES ('Administrator','For Administration');
+INSERT INTO [dbo].[JobTitle] VALUES ('Purchase Stuff','For Managing Purchases');
+INSERT INTO [dbo].[JobTitle] VALUES ('Sales Stuff','For Managing Sales');
 INSERT INTO [dbo].[Employees] (
             [dbo].[Employees].[name],
             [dbo].[Employees].[NIC],

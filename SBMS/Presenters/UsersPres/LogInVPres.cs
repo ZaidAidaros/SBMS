@@ -1,6 +1,9 @@
 ﻿using SBMS.Models.Users;
+using SBMS.Presenters.PurchasesPres;
+using SBMS.Presenters.SalesPres;
 using SBMS.Repositories;
 using SBMS.Views.Auth;
+using SBMS.Views.Sales;
 using System.Threading.Tasks;
 
 namespace SBMS.Presenters
@@ -48,11 +51,11 @@ namespace SBMS.Presenters
             }
             else if(user.PermissionId == 3)
             {
-
+                SalesHVPres.GetInstance(user);
             }
             else if (user.PermissionId == 4)
             {
-
+                PurchasesHVPres.GetInstance(user);
             }
             else
             {

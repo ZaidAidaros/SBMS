@@ -11,6 +11,7 @@ using SBMS.Views.Customers;
 using SBMS.Views.Suppliers;
 using SBMS.Presenters.SalesPres;
 using SBMS.Presenters.PurchasesPres;
+using SBMS.Views.Reports;
 
 namespace SBMS.Presenters
 {
@@ -75,18 +76,18 @@ namespace SBMS.Presenters
         private void ShowPurchaseMV()
         {
             PurchasesHVPres.GetInstance(user);
-            PurchaseHomeV.GetInstance().Show();
+            //PurchaseHomeV.GetInstance().Show();
         }
 
         private void ShowSalesMV()
         {
             SalesHVPres.GetInstance(user);
-            SalesHomeV.GetInstance().Show();
+            //SalesHomeV.GetInstance().Show();
         }
 
         private void ShowReportsMV()
         {
-            
+            ReportsHV.GetInstance();
         }
 
         private void ShowStoresMV()

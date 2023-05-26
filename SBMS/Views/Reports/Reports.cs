@@ -10,9 +10,24 @@ using System.Windows.Forms;
 
 namespace SBMS.Views.Reports
 {
-    public partial class Reports : Form
+    public partial class ReportsHV : Form
     {
-        public Reports()
+        private static ReportsHV instance;
+        public static ReportsHV GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new ReportsHV();
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                    instance.WindowState = FormWindowState.Normal;
+                instance.BringToFront();
+            }
+            return instance;
+        }
+        private ReportsHV()
         {
             InitializeComponent();
         }

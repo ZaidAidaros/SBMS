@@ -17,6 +17,7 @@ namespace SBMS.Presenters.PurchasesPres
         {
             if (userM != null) user = userM;
             this.PurchaseHv = PurchaseHomeV.GetInstance();
+            PurchaseHomeV.GetInstance().Show();
             ShowPurchasesView();
             this.PurchaseHv.ShowPurchasesView += delegate { ShowPurchasesView(); };
             this.PurchaseHv.ShowNewPurchaseView += delegate { ShowNewPurchaseView(); };
