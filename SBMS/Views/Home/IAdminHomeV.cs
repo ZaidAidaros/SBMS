@@ -13,7 +13,8 @@ namespace SBMS.Views.Home
         string TodayDate { get; set; }
 
         //Events
-        event EventHandler ShowAccountsMV;
+        event EventHandler ShowHome;
+        event EventHandler ShowEmployeesMV;
         event EventHandler ShowStoresMV;
         event EventHandler ShowSalesMV;
         event EventHandler ShowPurchaseMV;
@@ -22,6 +23,5 @@ namespace SBMS.Views.Home
         event EventHandler ShowSettingsMV;
         event EventHandler ShowAboutV;
 
-        void ShowThis();
     }
 }

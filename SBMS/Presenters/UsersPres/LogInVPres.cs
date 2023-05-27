@@ -36,7 +36,7 @@ namespace SBMS.Presenters
             {
                 iLogInV.Message = "Log In Successfully...";
                 GoHome((UserM)repoResult.ResData[0]);
-                LogInV.GetInstance().Close();
+                LogInV.GetInstance().Hide();
             }
             else
             {

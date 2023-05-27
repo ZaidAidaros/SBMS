@@ -28,8 +28,8 @@ namespace SBMS.Repositories.StoresRepo
             product.BarCode = (int)result[1];
             product.Name = result[2].ToString();
             product.Description = result[3].ToString();
-            product.PCategory.Name = result[4].ToString();
-            product.PUnit.Name = result[5].ToString();
+            product.Category = result[4].ToString();
+            product.Unit = result[5].ToString();
             product.DefPrice = decimal.Parse(result[6].ToString());
             product.TotalQuantity = decimal.Parse(result[7].ToString());
             return product;

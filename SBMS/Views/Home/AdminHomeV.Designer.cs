@@ -47,6 +47,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblUName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnHome = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -127,6 +128,7 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.btnHome);
             this.flowLayoutPanel1.Controls.Add(this.btnEmployeesMV);
             this.flowLayoutPanel1.Controls.Add(this.btnUsersV);
             this.flowLayoutPanel1.Controls.Add(this.btnStoresV);
@@ -148,7 +150,7 @@
             this.btnEmployeesMV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployeesMV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmployeesMV.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnEmployeesMV.Location = new System.Drawing.Point(4, 4);
+            this.btnEmployeesMV.Location = new System.Drawing.Point(4, 56);
             this.btnEmployeesMV.Margin = new System.Windows.Forms.Padding(4);
             this.btnEmployeesMV.Name = "btnEmployeesMV";
             this.btnEmployeesMV.Size = new System.Drawing.Size(300, 44);
@@ -162,7 +164,7 @@
             this.btnUsersV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsersV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsersV.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnUsersV.Location = new System.Drawing.Point(4, 56);
+            this.btnUsersV.Location = new System.Drawing.Point(4, 108);
             this.btnUsersV.Margin = new System.Windows.Forms.Padding(4);
             this.btnUsersV.Name = "btnUsersV";
             this.btnUsersV.Size = new System.Drawing.Size(300, 44);
@@ -176,7 +178,7 @@
             this.btnStoresV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStoresV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStoresV.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnStoresV.Location = new System.Drawing.Point(4, 108);
+            this.btnStoresV.Location = new System.Drawing.Point(4, 160);
             this.btnStoresV.Margin = new System.Windows.Forms.Padding(4);
             this.btnStoresV.Name = "btnStoresV";
             this.btnStoresV.Size = new System.Drawing.Size(300, 44);
@@ -190,7 +192,7 @@
             this.btnSalesV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalesV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalesV.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSalesV.Location = new System.Drawing.Point(4, 160);
+            this.btnSalesV.Location = new System.Drawing.Point(4, 212);
             this.btnSalesV.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalesV.Name = "btnSalesV";
             this.btnSalesV.Size = new System.Drawing.Size(300, 44);
@@ -204,7 +206,7 @@
             this.btnPurchaseV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPurchaseV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPurchaseV.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPurchaseV.Location = new System.Drawing.Point(4, 212);
+            this.btnPurchaseV.Location = new System.Drawing.Point(4, 264);
             this.btnPurchaseV.Margin = new System.Windows.Forms.Padding(4);
             this.btnPurchaseV.Name = "btnPurchaseV";
             this.btnPurchaseV.Size = new System.Drawing.Size(300, 44);
@@ -218,7 +220,7 @@
             this.btnReportsV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReportsV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportsV.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnReportsV.Location = new System.Drawing.Point(4, 264);
+            this.btnReportsV.Location = new System.Drawing.Point(4, 316);
             this.btnReportsV.Margin = new System.Windows.Forms.Padding(4);
             this.btnReportsV.Name = "btnReportsV";
             this.btnReportsV.Size = new System.Drawing.Size(300, 44);
@@ -232,7 +234,7 @@
             this.btnSettingsV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettingsV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettingsV.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSettingsV.Location = new System.Drawing.Point(4, 316);
+            this.btnSettingsV.Location = new System.Drawing.Point(4, 368);
             this.btnSettingsV.Margin = new System.Windows.Forms.Padding(4);
             this.btnSettingsV.Name = "btnSettingsV";
             this.btnSettingsV.Size = new System.Drawing.Size(300, 44);
@@ -247,7 +249,7 @@
             this.btnAboutV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAboutV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAboutV.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAboutV.Location = new System.Drawing.Point(4, 368);
+            this.btnAboutV.Location = new System.Drawing.Point(4, 420);
             this.btnAboutV.Margin = new System.Windows.Forms.Padding(4);
             this.btnAboutV.Name = "btnAboutV";
             this.btnAboutV.Size = new System.Drawing.Size(300, 44);
@@ -329,6 +331,20 @@
             this.label2.Text = "User Name: ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnHome.Location = new System.Drawing.Point(4, 4);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(300, 44);
+            this.btnHome.TabIndex = 5;
+            this.btnHome.Text = "Home";
+            this.btnHome.UseVisualStyleBackColor = false;
+            // 
             // AdminHomeV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -376,5 +392,6 @@
         private System.Windows.Forms.Button btnUsersV;
         private System.Windows.Forms.Button btnSettingsV;
         private System.Windows.Forms.Button btnAboutV;
+        private System.Windows.Forms.Button btnHome;
     }
 }

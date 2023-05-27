@@ -62,7 +62,7 @@ namespace SBMS.Presenters.ReportsPres
         {
             reportsHV.ReportsViewer.LocalReport.ReportEmbeddedResource = SalesReport;
             reportDataSource.Name = SalesDataSet;
-            await LoadSalesInvoicesAsync(null);
+            await LoadSalesInvoicesAsync(false);
         }
 
         private async Task ShowPurchasesReportViewAsync()
@@ -94,16 +94,16 @@ namespace SBMS.Presenters.ReportsPres
             await LoadUsersAsync();
         }
 
-        private async Task LoadSalesInvoicesAsync(string searchValue)
+        private async Task LoadSalesInvoicesAsync(bool IsFilter)
         {
             RepoResultM res;
-            if (searchValue == null)
+            if (IsFilter)
             {
-                res = await SalesRepo.GetSaleInvoicesAsync();
+                res = await SalesRepo.SalesReport(1000, 1, 1, "", "2000-1-1", "3000-1-1"); 
             }
             else
             {
-                res = await SalesRepo.SearchSaleInvAsync(searchValue);
+                res = await SalesRepo.GetSaleInvoicesAsync();
             }
             if (res.IsSucess)
             {

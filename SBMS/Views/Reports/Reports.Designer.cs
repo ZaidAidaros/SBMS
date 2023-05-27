@@ -39,20 +39,31 @@
             this.btnShowProductsReportView = new System.Windows.Forms.Button();
             this.btnShowPurchasesReportView = new System.Windows.Forms.Button();
             this.btnShowSalesReportView = new System.Windows.Forms.Button();
-            this.lblHeaderTitle = new System.Windows.Forms.Label();
             this.pnlReportViewer = new System.Windows.Forms.Panel();
             this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
+            this.gbxDates = new System.Windows.Forms.GroupBox();
+            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbInvName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbInvTotal = new System.Windows.Forms.TextBox();
+            this.btnReportReLoad = new System.Windows.Forms.Button();
             this.pnlReportHeader.SuspendLayout();
+            this.pnlInvReportControl.SuspendLayout();
             this.pnlReportHeadControls.SuspendLayout();
             this.pnlReportViewer.SuspendLayout();
+            this.gbxDates.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlReportHeader
             // 
+            this.pnlReportHeader.Controls.Add(this.pnlInvReportControl);
             this.pnlReportHeader.Controls.Add(this.pnlUsersReportControl);
             this.pnlReportHeader.Controls.Add(this.pnlEmployeesReportControl);
             this.pnlReportHeader.Controls.Add(this.pnlProductsReportControl);
-            this.pnlReportHeader.Controls.Add(this.pnlInvReportControl);
             this.pnlReportHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlReportHeader.Location = new System.Drawing.Point(0, 42);
             this.pnlReportHeader.Name = "pnlReportHeader";
@@ -85,7 +96,13 @@
             // 
             // pnlInvReportControl
             // 
+            this.pnlInvReportControl.Controls.Add(this.label4);
+            this.pnlInvReportControl.Controls.Add(this.tbInvTotal);
+            this.pnlInvReportControl.Controls.Add(this.label3);
+            this.pnlInvReportControl.Controls.Add(this.tbInvName);
+            this.pnlInvReportControl.Controls.Add(this.gbxDates);
             this.pnlInvReportControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInvReportControl.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlInvReportControl.Location = new System.Drawing.Point(0, 0);
             this.pnlInvReportControl.Name = "pnlInvReportControl";
             this.pnlInvReportControl.Size = new System.Drawing.Size(1408, 146);
@@ -94,12 +111,12 @@
             // pnlReportHeadControls
             // 
             this.pnlReportHeadControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnlReportHeadControls.Controls.Add(this.btnReportReLoad);
             this.pnlReportHeadControls.Controls.Add(this.btnShowUsersReportView);
             this.pnlReportHeadControls.Controls.Add(this.btnShowEmployeesReportView);
             this.pnlReportHeadControls.Controls.Add(this.btnShowProductsReportView);
             this.pnlReportHeadControls.Controls.Add(this.btnShowPurchasesReportView);
             this.pnlReportHeadControls.Controls.Add(this.btnShowSalesReportView);
-            this.pnlReportHeadControls.Controls.Add(this.lblHeaderTitle);
             this.pnlReportHeadControls.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlReportHeadControls.Location = new System.Drawing.Point(0, 0);
             this.pnlReportHeadControls.Margin = new System.Windows.Forms.Padding(4);
@@ -172,19 +189,6 @@
             this.btnShowSalesReportView.Text = "Sales Report";
             this.btnShowSalesReportView.UseVisualStyleBackColor = true;
             // 
-            // lblHeaderTitle
-            // 
-            this.lblHeaderTitle.AutoSize = true;
-            this.lblHeaderTitle.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblHeaderTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeaderTitle.ForeColor = System.Drawing.Color.White;
-            this.lblHeaderTitle.Location = new System.Drawing.Point(1311, 0);
-            this.lblHeaderTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblHeaderTitle.Name = "lblHeaderTitle";
-            this.lblHeaderTitle.Size = new System.Drawing.Size(97, 25);
-            this.lblHeaderTitle.TabIndex = 11;
-            this.lblHeaderTitle.Text = "Products";
-            // 
             // pnlReportViewer
             // 
             this.pnlReportViewer.Controls.Add(this.reportViewer);
@@ -203,6 +207,101 @@
             this.reportViewer.Size = new System.Drawing.Size(1408, 862);
             this.reportViewer.TabIndex = 0;
             // 
+            // dtpFromDate
+            // 
+            this.dtpFromDate.Location = new System.Drawing.Point(133, 31);
+            this.dtpFromDate.Name = "dtpFromDate";
+            this.dtpFromDate.Size = new System.Drawing.Size(276, 34);
+            this.dtpFromDate.TabIndex = 0;
+            // 
+            // gbxDates
+            // 
+            this.gbxDates.BackColor = System.Drawing.Color.Black;
+            this.gbxDates.Controls.Add(this.label2);
+            this.gbxDates.Controls.Add(this.label1);
+            this.gbxDates.Controls.Add(this.dtpToDate);
+            this.gbxDates.Controls.Add(this.dtpFromDate);
+            this.gbxDates.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gbxDates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gbxDates.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbxDates.ForeColor = System.Drawing.Color.White;
+            this.gbxDates.Location = new System.Drawing.Point(0, 0);
+            this.gbxDates.Name = "gbxDates";
+            this.gbxDates.Size = new System.Drawing.Size(421, 146);
+            this.gbxDates.TabIndex = 1;
+            this.gbxDates.TabStop = false;
+            this.gbxDates.Text = "Date Filter";
+            // 
+            // dtpToDate
+            // 
+            this.dtpToDate.Location = new System.Drawing.Point(133, 88);
+            this.dtpToDate.Name = "dtpToDate";
+            this.dtpToDate.Size = new System.Drawing.Size(276, 34);
+            this.dtpToDate.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 27);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "From :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 27);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "To :";
+            // 
+            // tbInvName
+            // 
+            this.tbInvName.Location = new System.Drawing.Point(630, 28);
+            this.tbInvName.Name = "tbInvName";
+            this.tbInvName.Size = new System.Drawing.Size(199, 34);
+            this.tbInvName.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(435, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(189, 27);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Name On Invoice:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(435, 88);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(153, 27);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Invoice Total :";
+            // 
+            // tbInvTotal
+            // 
+            this.tbInvTotal.Location = new System.Drawing.Point(630, 81);
+            this.tbInvTotal.Name = "tbInvTotal";
+            this.tbInvTotal.Size = new System.Drawing.Size(199, 34);
+            this.tbInvTotal.TabIndex = 4;
+            // 
+            // btnReportReLoad
+            // 
+            this.btnReportReLoad.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnReportReLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportReLoad.ForeColor = System.Drawing.Color.Green;
+            this.btnReportReLoad.Location = new System.Drawing.Point(1234, 0);
+            this.btnReportReLoad.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReportReLoad.Name = "btnReportReLoad";
+            this.btnReportReLoad.Size = new System.Drawing.Size(174, 42);
+            this.btnReportReLoad.TabIndex = 11;
+            this.btnReportReLoad.Text = "ReLoad Report";
+            this.btnReportReLoad.UseVisualStyleBackColor = true;
+            // 
             // ReportsHV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -219,9 +318,12 @@
             this.Text = "Reports";
             this.Load += new System.EventHandler(this.ReportsHV_Load);
             this.pnlReportHeader.ResumeLayout(false);
+            this.pnlInvReportControl.ResumeLayout(false);
+            this.pnlInvReportControl.PerformLayout();
             this.pnlReportHeadControls.ResumeLayout(false);
-            this.pnlReportHeadControls.PerformLayout();
             this.pnlReportViewer.ResumeLayout(false);
+            this.gbxDates.ResumeLayout(false);
+            this.gbxDates.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -231,7 +333,6 @@
         private System.Windows.Forms.Panel pnlReportHeader;
         private System.Windows.Forms.Panel pnlReportViewer;
         private System.Windows.Forms.Panel pnlReportHeadControls;
-        private System.Windows.Forms.Label lblHeaderTitle;
         private System.Windows.Forms.Button btnShowUsersReportView;
         private System.Windows.Forms.Button btnShowEmployeesReportView;
         private System.Windows.Forms.Button btnShowProductsReportView;
@@ -242,5 +343,15 @@
         private System.Windows.Forms.Panel pnlEmployeesReportControl;
         private System.Windows.Forms.Panel pnlProductsReportControl;
         private System.Windows.Forms.Panel pnlInvReportControl;
+        private System.Windows.Forms.GroupBox gbxDates;
+        private System.Windows.Forms.DateTimePicker dtpFromDate;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dtpToDate;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbInvName;
+        private System.Windows.Forms.Button btnReportReLoad;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tbInvTotal;
     }
 }

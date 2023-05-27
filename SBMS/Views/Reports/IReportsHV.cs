@@ -6,7 +6,12 @@ namespace SBMS.Views.Reports
 {
     interface IReportsHV
     {
+        string InvName { get; }
+        string InvTotal { get; }
+        string FromDate { get; }
+        string ToDate { get; }
         ReportViewer ReportsViewer { get; }
+        Panel invContorolPanel { get; }
 
         // View Header
         event EventHandler ShowSalesReportView;

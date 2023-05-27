@@ -21,8 +21,7 @@ namespace SBMS.Views.Home
             if (instance == null || instance.IsDisposed)
             {
                 instance = new AdminHomeV();
-                Program.mainView = instance;
-                HomeWelcomV.GetInstance();
+                
             }
             else
             {
@@ -49,7 +48,7 @@ namespace SBMS.Views.Home
             set { lblTodayDate.Text = value; }
         }
 
-        public event EventHandler ShowAccountsMV;
+        public event EventHandler ShowEmployeesMV;
         public event EventHandler ShowStoresMV;
         public event EventHandler ShowSalesMV;
         public event EventHandler ShowPurchaseMV;
@@ -57,17 +56,13 @@ namespace SBMS.Views.Home
         public event EventHandler ShowUsersMV;
         public event EventHandler ShowSettingsMV;
         public event EventHandler ShowAboutV;
-
-        public void ShowThis()
-        {
-            this.Show();
-            
-        }
+        public event EventHandler ShowHome;
 
         void Subscribe()
         {
             //btnClose.Click += delegate { this.Close(); };
-            btnEmployeesMV.Click += delegate { ShowAccountsMV?.Invoke(this, EventArgs.Empty); };
+            btnHome.Click += delegate { ShowHome?.Invoke(this, EventArgs.Empty); };
+            btnEmployeesMV.Click += delegate { ShowEmployeesMV?.Invoke(this, EventArgs.Empty); };
             btnStoresV.Click += delegate { ShowStoresMV?.Invoke(this, EventArgs.Empty); };
             btnSalesV.Click += delegate { ShowSalesMV?.Invoke(this, EventArgs.Empty); };
             btnPurchaseV.Click += delegate { ShowPurchaseMV?.Invoke(this, EventArgs.Empty); };

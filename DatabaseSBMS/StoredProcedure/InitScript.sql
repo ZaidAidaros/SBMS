@@ -1,5 +1,4 @@
 ﻿
-
 use DatabaseSBMS;
 INSERT INTO [dbo].[Gender]  VALUES(1,'Male');
 INSERT INTO [dbo].[Gender]  VALUES(2,'FMale');

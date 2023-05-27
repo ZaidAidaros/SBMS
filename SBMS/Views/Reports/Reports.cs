@@ -1,13 +1,6 @@
 ﻿using Microsoft.Reporting.WinForms;
 using SBMS.Presenters.ReportsPres;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SBMS.Views.Reports
@@ -44,6 +37,16 @@ namespace SBMS.Views.Reports
         public event EventHandler ShowEmployeesReportView;
         public event EventHandler ShowUsersReportView;
         public ReportViewer ReportsViewer => reportViewer;
+
+        public string InvName => this.tbInvName.Text;
+
+        public string InvTotal => this.tbInvTotal.Text;
+
+        public string FromDate => this.dtpFromDate.Value.ToShortDateString();
+
+        public string ToDate => this.dtpToDate.Value.ToShortDateString();
+
+        public Panel invContorolPanel => this.pnlInvReportControl;
 
         private void EventsSubs()
         {

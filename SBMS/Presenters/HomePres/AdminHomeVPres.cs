@@ -32,6 +32,7 @@ namespace SBMS.Presenters
             Subscribe();
             adminHomeV.UName = user.Name;
             adminHomeV.SName = user.Employee;
+            HomeWelcomV.GetInstance().MdiParent = AdminHomeV.GetInstance();
             EmployeesHV.GetInstance().MdiParent = AdminHomeV.GetInstance();
             UsersV.GetInstance().MdiParent = AdminHomeV.GetInstance();
             StoresV.GetInstance().MdiParent = AdminHomeV.GetInstance();
@@ -43,7 +44,8 @@ namespace SBMS.Presenters
 
         void Subscribe()
         {
-            adminHomeV.ShowAccountsMV += delegate { ShowEmploeesMV(); };
+            adminHomeV.ShowEmployeesMV += delegate { ShowHome(); };
+            adminHomeV.ShowEmployeesMV += delegate { ShowEmploeesMV(); };
             adminHomeV.ShowStoresMV += delegate { ShowStoresMV(); }; 
             adminHomeV.ShowSalesMV += delegate { ShowSalesMV(); };
             adminHomeV.ShowPurchaseMV += delegate { ShowPurchaseMV(); };
@@ -53,7 +55,11 @@ namespace SBMS.Presenters
             adminHomeV.ShowAboutV += delegate { ShowAboutV(); };
            
         }
-
+        private void ShowHome()
+        {
+            HomeWelcomV.GetInstance().Dock = System.Windows.Forms.DockStyle.Fill;
+            HomeWelcomV.GetInstance().Show();
+        }
         private void ShowAboutV()
         {
             

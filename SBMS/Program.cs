@@ -1,5 +1,6 @@
 ﻿using SBMS.Views.Auth;
 using SBMS.Views.Sales;
+using SBMS.Views.StoresV;
 using System;
 using System.Windows.Forms;
 
@@ -13,8 +14,9 @@ namespace SBMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            LogInV.GetInstance().Show();
-            Application.Run();
+            
+            //Application.Run(LogInV.GetInstance());
+            Application.Run(StoresV.GetInstance());
             
         }
     }

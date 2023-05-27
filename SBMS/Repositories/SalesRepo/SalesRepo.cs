@@ -72,6 +72,32 @@ namespace SBMS.Repositories.SalesRepo
             }
             return repoResult;
         }
+        public static async Task<RepoResultM> SalesReport(decimal invTotal,int invTypeId,int monyStateId,string custName,string fromDate,string toDate)
+        {
+
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@invTotal", invTotal),
+                new SqlParameter("@invTypId", invTypeId),
+                new SqlParameter("@monyStaeId", monyStateId),
+                new SqlParameter("@name", custName),
+                new SqlParameter("@fromDate", fromDate),
+                new SqlParameter("@toDate", toDate)
+            };
+            RepoResultM repoResult = new RepoResultM();
+            DBResult result = await DBHelper.ExcuteStoredProcedQueryAsync(searchProcedName, parameters);
+            repoResult.IsSucess = result.IsSucess;
+            repoResult.ErrorMsg = result.ErrorMsg;
+            if (result.IsSucess)
+            {
+                for (int i = 0; i < result.ResData.Count; i++)
+                {
+                    repoResult.ResData.Add((InvoiceM)GetSaleInvM(result.ResData[i]));
+                }
+            }
+            return repoResult;
+        }
+
         static public async Task<RepoResultM> AddSaleInvAsync(InvoiceM saleInvM)
         {
             SqlParameter[] parameters =
