@@ -308,8 +308,10 @@ namespace SBMS.Presenters.StoresPres
             selectedProduct.BarCode = int.Parse(this.ProductsV.ProductBarCode);
             selectedProduct.DefPrice = decimal.Parse(this.ProductsV.ProdDefPrice);
             selectedProduct.Description = this.ProductsV.ProductDescription;
-            selectedProduct.PCategory = (ProdCategoryM)this.ProductsV.PCategroySelectList.SelectedItem;
-            selectedProduct.PUnit = (ProdUnitM)this.ProductsV.PUnitSelectList.SelectedItem;
+            selectedProduct.CategoryId = ((ProdCategoryM)this.ProductsV.PCategroySelectList.SelectedItem).Id;
+            selectedProduct.Category = ((ProdCategoryM)this.ProductsV.PCategroySelectList.SelectedItem).Name;
+            selectedProduct.UnitId = ((ProdUnitM)this.ProductsV.PUnitSelectList.SelectedItem).Id;
+            selectedProduct.Unit = ((ProdUnitM)this.ProductsV.PUnitSelectList.SelectedItem).Name;
             return selectedProduct;
         }
         private async Task EditProductAsync()

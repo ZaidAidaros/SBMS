@@ -15,7 +15,7 @@ namespace SBMS.Views.Reports
             if (instance == null || instance.IsDisposed)
             {
                 instance = new ReportsHV();
-                ReportsHVPres.GetInstance();
+                
             }
             else
             {
@@ -36,6 +36,9 @@ namespace SBMS.Views.Reports
         public event EventHandler ShowProductsReportView;
         public event EventHandler ShowEmployeesReportView;
         public event EventHandler ShowUsersReportView;
+        public event EventHandler ShowCustomersReportView;
+        public event EventHandler ShowSuppliersReportView;
+
         public ReportViewer ReportsViewer => reportViewer;
 
         public string InvName => this.tbInvName.Text;
@@ -55,6 +58,8 @@ namespace SBMS.Views.Reports
             this.btnShowProductsReportView.Click += delegate { ShowProductsReportView?.Invoke(this, EventArgs.Empty); };
             this.btnShowEmployeesReportView.Click += delegate { ShowEmployeesReportView?.Invoke(this, EventArgs.Empty); };
             this.btnShowUsersReportView.Click += delegate { ShowUsersReportView?.Invoke(this, EventArgs.Empty); };
+            this.btnCustomers.Click += delegate { ShowCustomersReportView?.Invoke(this, EventArgs.Empty); };
+            this.btnSuppliers.Click += delegate { ShowSuppliersReportView?.Invoke(this, EventArgs.Empty); };
         }
         public bool ShowMsgBox(string msg, string title, bool isYesNo)
         {
@@ -67,10 +72,6 @@ namespace SBMS.Views.Reports
             {
                 return false;
             }
-
-        }
-        private void ReportsHV_Load(object sender, EventArgs e)
-        {
 
         }
 

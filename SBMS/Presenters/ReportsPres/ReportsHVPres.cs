@@ -56,7 +56,19 @@ namespace SBMS.Presenters.ReportsPres
             reportsHV.ShowProductsReportView += async delegate { await ShowProductsReportViewAsync(); };
             reportsHV.ShowEmployeesReportView += async delegate { await ShowEmployeesReportViewAsync(); };
             reportsHV.ShowUsersReportView += async delegate { await ShowUsersReportViewAsync(); };
+            //reportsHV.ShowCustomersReportView += async delegate { await ShowCustomersReportView(); };
+            //reportsHV.ShowSuppliersReportView += async delegate { await ShowSuppliersReportView(); };
         }
+
+        //private Task ShowCustomersReportView()
+        //{
+            
+        //}
+
+        //private Task ShowSuppliersReportView()
+        //{
+            
+        //}
 
         private async Task ShowSalesReportViewAsync()
         {

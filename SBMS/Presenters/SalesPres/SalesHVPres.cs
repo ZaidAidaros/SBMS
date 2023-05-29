@@ -21,19 +21,23 @@ namespace SBMS.Presenters.SalesPres
         }
         private SalesHVPres(UserM userM)
         {
-            if(userM != null) user = userM;
-
-            this.salesHomeV = SalesHomeV.GetInstance();
+            user = userM; 
+            salesHomeV = SalesHomeV.GetInstance();
+            salesHomeV.HeaderTitle = "Sales";
+            salesHomeV.UserName = user.Name;
+            salesHomeV.StuffName = user.Employee;
             ShowSalesView();
-            this.salesHomeV.ShowSalesView += delegate { ShowSalesView(); };
-            this.salesHomeV.ShowNewSalesInvView += delegate { ShowNewSalesInvView(); };
-            this.salesHomeV.ShowNewRetSalesInvView += delegate { ShowNewRetSalesInvView(); };
+            salesHomeV.ShowSalesView += delegate { ShowSalesView(); };
+            salesHomeV.ShowNewSalesInvView += delegate { ShowNewSalesInvView(); };
+            salesHomeV.ShowNewRetSalesInvView += delegate { ShowNewRetSalesInvView(); };
+            salesHomeV.OnClose += delegate { OnClose(); };
         }
+
+        
+
         private void ShowSalesView()
         {
-            this.salesHomeV.HeaderTitle = "Sales";
-            this.salesHomeV.UserName = user.Name;
-            this.salesHomeV.StuffName = user.Employee;
+            
             SaleInvoicesVPres.GetInstance();
             SaleInvoicesV.GetInstance().Dock = System.Windows.Forms.DockStyle.Fill;
             SaleInvoicesV.GetInstance().IsInvItemsVisable = false;
@@ -57,6 +61,10 @@ namespace SBMS.Presenters.SalesPres
             NewRetSaleInvoiceV.GetInstance().Show();
             this.salesHomeV.HeaderTitle = "Return Sale Invoice";
         }
-        
+        private void OnClose()
+        {
+            instance = null;
+        }
+
     }
 }

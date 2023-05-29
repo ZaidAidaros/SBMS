@@ -41,7 +41,7 @@ namespace SBMS.Presenters.SalesPres
             if (this.saleInvoicesV.DGVInvoices.SelectedRows.Count == 1)
             {
                 selectedSaleInvM = (InvoiceM)this.saleInvoicesV.DGVInvoices.SelectedRows[0].DataBoundItem;
-                await this.LoadInvoiceItemsAsync(selectedSaleInvM.Id);
+                await LoadInvoiceItemsAsync(selectedSaleInvM.Id);
             }
 
         }

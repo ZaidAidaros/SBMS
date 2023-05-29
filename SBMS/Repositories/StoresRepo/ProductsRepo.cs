@@ -203,8 +203,8 @@ namespace SBMS.Repositories.StoresRepo
                 new SqlParameter("@name", product.Name),
                 new SqlParameter("@description",product.Description),
                 new SqlParameter("@defPrice", product.DefPrice),
-                new SqlParameter("@cateId", product.PCategory.Id),
-                new SqlParameter("@unitId", product.PUnit.Id)
+                new SqlParameter("@cateId", product.CategoryId),
+                new SqlParameter("@unitId", product.UnitId)
             };
 
             DBResult result = await DBHelper.ExcuteStoredProcedNonQueryAsync(AddProcedName, parameters, "");
@@ -218,21 +218,14 @@ namespace SBMS.Repositories.StoresRepo
         {
             SqlParameter[] parameters =
             {
-                new SqlParameter("@id", SqlDbType.Int),
-                new SqlParameter("@barCode", SqlDbType.Int),
-                new SqlParameter("@name", SqlDbType.NVarChar),
-                new SqlParameter("@description", SqlDbType.NVarChar),
-                new SqlParameter("@defPrice", SqlDbType.Real),
-                new SqlParameter("@cateId", SqlDbType.Int),
-                new SqlParameter("@unitId", SqlDbType.Int)
+                new SqlParameter("@id", product.Id),
+                new SqlParameter("@barCode", product.BarCode),
+                new SqlParameter("@name", product.Name),
+                new SqlParameter("@description", product.Description),
+                new SqlParameter("@defPrice", product.DefPrice),
+                new SqlParameter("@cateId", product.CategoryId),
+                new SqlParameter("@unitId", product.UnitId)
             };
-            parameters[0].Value = product.Id;
-            parameters[1].Value = product.BarCode;
-            parameters[2].Value = product.Name;
-            parameters[3].Value = product.Description;
-            parameters[4].Value = product.DefPrice;
-            parameters[5].Value = product.PCategory.Id;
-            parameters[6].Value = product.PUnit.Id;
 
             DBResult result = await DBHelper.ExcuteStoredProcedNonQueryAsync(UpdateProcedName, parameters, "");
             RepoResultM repoResult = new RepoResultM();

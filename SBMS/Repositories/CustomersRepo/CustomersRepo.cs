@@ -26,8 +26,8 @@ namespace SBMS.Repositories.CustomersRepo
             customerM.BirthDate = result[3].ToString();
             customerM.Address = result[4].ToString();
             customerM.Phone = result[5].ToString();
-            customerM.GenderM.Name = result[6].ToString();
-            customerM.CategoryM.Name = result[7].ToString();
+            customerM.Gender = result[6].ToString();
+            customerM.Category = result[7].ToString();
             return customerM;
         }
         public static async System.Threading.Tasks.Task<RepoResultM> GetCustomersAsync()
@@ -101,8 +101,8 @@ namespace SBMS.Repositories.CustomersRepo
                 new SqlParameter("@birthDate", customerM.BirthDate),
                 new SqlParameter("@address", customerM.Address),
                 new SqlParameter("@phone", customerM.Phone),
-                new SqlParameter("@genId", customerM.GenderM.Id),
-                new SqlParameter("@cateId", customerM.CategoryM.Id)
+                new SqlParameter("@genId", customerM.GenderId),
+                new SqlParameter("@cateId", customerM.CategoryId)
             };
 
             DBResult result = await DBHelper.ExcuteStoredProcedNonQueryAsync(addProcedName, parameters, "");
@@ -123,8 +123,8 @@ namespace SBMS.Repositories.CustomersRepo
                 new SqlParameter("@birthDate", customerM.BirthDate),
                 new SqlParameter("@address", customerM.Address),
                 new SqlParameter("@phone", customerM.Phone),
-                new SqlParameter("@genId", customerM.GenderM.Id),
-                new SqlParameter("@cateId", customerM.CategoryM.Id)
+                new SqlParameter("@genId", customerM.GenderId),
+                new SqlParameter("@cateId", customerM.CategoryId)
             };
 
             DBResult result = await DBHelper.ExcuteStoredProcedNonQueryAsync(updateProcedName, parameters, "");

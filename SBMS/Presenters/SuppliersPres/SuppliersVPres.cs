@@ -2,6 +2,7 @@
 using SBMS.Repositories;
 using SBMS.Repositories.SuppliersRepo;
 using SBMS.Views.Suppliers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -28,48 +29,54 @@ namespace SBMS.Presenters.SuppliersPres
         /// 
         private SuppliersVPres()
         {
-            this.SuppliersV = SuppliersHV.GetInstance();
-            this.LoadSuppliersAsync();
-            this.LoadCategoryListAsync();
-            this.SuppliersV.ShowAddSupplierForm += delegate { this.ShowAddSupplierForm(); };
-            this.SuppliersV.ShowEditSupplierForm += delegate { this.ShowEditSupplierForm(); };
-            this.SuppliersV.DeleteSelectedSupplier += delegate { this.DeleteSelectedSupplierAsync(); };
-            this.SuppliersV.OnAESupplierSave += delegate { this.OnAESupplierSave(); };
-            this.SuppliersV.OnAESupplierCancel += delegate { OnAESupplierCancel(); };
-            this.SuppliersV.OnSelectSupplier += delegate { this.OnSelectSupplier(); };
-            this.SuppliersV.OnCategoryFilterChanged += delegate { OnCategoryFilterChangedAsync(); };
-            this.SuppliersV.OnSearchButtonClicked += delegate { OnSearchButtonClickedAsync(); };
-            this.SuppliersV.OnVRefresh += delegate { OnRefreshSV(); };
+            SuppliersV = SuppliersHV.GetInstance();
+            OnInitAsync();
+            
+        }
+
+        private async Task OnInitAsync()
+        {
+            await LoadSuppliersAsync();
+            await LoadCategoryListAsync();
+            SuppliersV.ShowAddSupplierForm += delegate { ShowAddSupplierForm(); };
+            SuppliersV.ShowEditSupplierForm += delegate { ShowEditSupplierForm(); };
+            SuppliersV.DeleteSelectedSupplier += async delegate { await DeleteSelectedSupplierAsync(); };
+            SuppliersV.OnAESupplierSave += async delegate { await OnAESupplierSaveAsync(); };
+            SuppliersV.OnAESupplierCancel += delegate { OnAESupplierCancel(); };
+            SuppliersV.OnSelectSupplier += delegate { OnSelectSupplier(); };
+            SuppliersV.OnCategoryFilterChanged += async delegate { await OnCategoryFilterChangedAsync(); };
+            SuppliersV.OnSearchButtonClicked += async delegate { await OnSearchButtonClickedAsync(); };
+            SuppliersV.OnVRefresh += delegate { OnRefreshSVAsync(); };
         }
 
         private void ShowAddSupplierForm()
         {
-            this.IsEdit = false;
-            this.SuppliersV.IsAESupplierFormVisable = true;
+            IsEdit = false;
+            SuppliersV.IsAESupplierFormVisable = true;
         }
 
         private void ShowEditSupplierForm()
         {
-            if (this.SelectedSupplier == null)
+            if ( SelectedSupplier == null)
             {
-                this.SuppliersV.ShowMsgBox("Must Select Product To Edit From List.", "Error:", false);
+                SuppliersV.ShowMsgBox("Must Select Product To Edit From List.", "Error:", false);
                 return;
             }
-            this.IsEdit = true;
-            this.SetFields();
-            this.SuppliersV.IsAESupplierFormVisable = true;
+            IsEdit = true;
+            SetFields();
+            SuppliersV.IsAESupplierFormVisable = true;
         }
 
         private void SetFields()
         {
-            this.SuppliersV.SupplierName = this.SelectedSupplier.Name;
-            this.SuppliersV.SupplierPhone = this.SelectedSupplier.Phone;
-            this.SuppliersV.SupplierAddress = this.SelectedSupplier.Address;
-            for (int i = 0; i < this.SuppliersV.CBXSupplierCategory.Items.Count; i++)
+            SuppliersV.SupplierName = SelectedSupplier.Name;
+            SuppliersV.SupplierPhone = SelectedSupplier.Phone;
+            SuppliersV.SupplierAddress = SelectedSupplier.Address;
+            for (int i = 0; i < SuppliersV.CBXSupplierCategory.Items.Count; i++)
             {
-                if (((SuppCategory)this.SuppliersV.CBXSupplierCategory.Items[i]).Name == this.SelectedSupplier.Category)
+                if (((SuppCategory) SuppliersV.CBXSupplierCategory.Items[i]).Name ==  SelectedSupplier.Category)
                 {
-                    this.SuppliersV.CBXSupplierCategory.SelectedIndex = i;
+                    SuppliersV.CBXSupplierCategory.SelectedIndex = i;
                     break;
                 }
             }
@@ -77,54 +84,54 @@ namespace SBMS.Presenters.SuppliersPres
 
         private async Task DeleteSelectedSupplierAsync()
         {
-            if (this.SelectedSupplier == null)
+            if ( SelectedSupplier == null)
             {
-                this.SuppliersV.ShowMsgBox("Must Select Unit To Delete From List", "Error:", false);
+                SuppliersV.ShowMsgBox("Must Select Unit To Delete From List", "Error:", false);
                 return;
             }
-            if (this.SuppliersV.ShowMsgBox("Are You Sure?\n You Want To Delete It", "Confirm:", true))
+            if ( SuppliersV.ShowMsgBox("Are You Sure?\n You Want To Delete It", "Confirm:", true))
             {
-                RepoResultM res = await SuppliersRepo.DeleteCustomerAsync(this.SelectedSupplier.Id);
+                RepoResultM res = await SuppliersRepo.DeleteCustomerAsync( SelectedSupplier.Id);
                 if (res.IsSucess)
                 {
-                    this.LoadSuppliersAsync();
-                    this.ResetAll();
+                    await LoadSuppliersAsync();
+                    ResetAll();
                 }
                 else
                 {
-                    this.SuppliersV.ShowMsgBox(res.ErrorMsg, "Error:", false);
+                    SuppliersV.ShowMsgBox(res.ErrorMsg, "Error:", false);
                 }
             }
         }
 
-        private void OnAESupplierSave()
+        private async Task OnAESupplierSaveAsync()
         {
 
-            if (this.IsEdit)
+            if ( IsEdit)
             {
-                this.EditSupplierAsync();
+                await EditSupplierAsync();
             }
             else
             {
-                this.AddSupplierAsync();
+                await AddSupplierAsync();
             }
         }
 
         private async Task AddSupplierAsync()
         {
 
-            if (this.SuppliersV.ShowMsgBox("Are You Sure?\nYou Want To Save", "Confirm:", true))
+            if (SuppliersV.ShowMsgBox("Are You Sure?\nYou Want To Save", "Confirm:", true))
             {
                 RepoResultM res = await SuppliersRepo.AddCustomerAsync(SetCustomerM(null));
                 if (res.IsSucess)
                 {
-                    this.LoadSuppliersAsync();
-                    this.ResetAll();
-                    this.SuppliersV.ShowMsgBox("Save Sucessful", "Sucess:", false);
+                    await LoadSuppliersAsync();
+                    ResetAll();
+                    SuppliersV.ShowMsgBox("Save Sucessful", "Sucess:", false);
                 }
                 else
                 {
-                    this.SuppliersV.ShowMsgBox(res.ErrorMsg, "Error:", false);
+                    SuppliersV.ShowMsgBox(res.ErrorMsg, "Error:", false);
                 }
             }
         }
@@ -132,73 +139,74 @@ namespace SBMS.Presenters.SuppliersPres
         private SupplierM SetCustomerM(SupplierM supplier)
         {
             if (supplier == null) supplier = new SupplierM();
-            supplier.Name = this.SuppliersV.SupplierName;
-            supplier.Phone = this.SuppliersV.SupplierPhone;
-            supplier.Address = this.SuppliersV.SupplierAddress;
-            supplier.CategoryM = (SuppCategory)this.SuppliersV.CBXSupplierCategory.SelectedItem;
+            supplier.Name = SuppliersV.SupplierName;
+            supplier.Phone = SuppliersV.SupplierPhone;
+            supplier.Address = SuppliersV.SupplierAddress;
+            supplier.CategoryId = ((SuppCategory) SuppliersV.CBXSupplierCategory.SelectedItem).Id;
+            supplier.Category = ((SuppCategory) SuppliersV.CBXSupplierCategory.SelectedItem).Name;
             return supplier;
         }
 
         private async Task EditSupplierAsync()
         {
 
-            if (this.SuppliersV.ShowMsgBox("Are You Sure?\nYou Want To Save Changes", "Confirm:", true))
+            if (SuppliersV.ShowMsgBox("Are You Sure?\nYou Want To Save Changes", "Confirm:", true))
             {
-                RepoResultM res = await SuppliersRepo.UpdateCustomerAsync(SetCustomerM(this.SelectedSupplier));
+                RepoResultM res = await SuppliersRepo.UpdateCustomerAsync(SetCustomerM(SelectedSupplier));
                 if (res.IsSucess)
                 {
-                    this.LoadSuppliersAsync();
-                    this.ResetAll();
-                    this.SuppliersV.ShowMsgBox("Save Changes Sucessful", "Sucess:", false);
+                    await LoadSuppliersAsync();
+                    ResetAll();
+                    SuppliersV.ShowMsgBox("Save Changes Sucessful", "Sucess:", false);
                 }
                 else
                 {
-                    this.SuppliersV.ShowMsgBox(res.ErrorMsg, "Error:", false);
+                    SuppliersV.ShowMsgBox(res.ErrorMsg, "Error:", false);
                 }
             }
         }
 
         private void OnAESupplierCancel()
         {
-            this.ResetAll();
+             ResetAll();
         }
 
         private void OnSelectSupplier()
         {
-            if (this.SuppliersV.DGVSuppliers.SelectedRows.Count == 1)
-                this.SelectedSupplier = (SupplierM)this.SuppliersV.DGVSuppliers.SelectedRows[0].DataBoundItem;
+            if ( SuppliersV.DGVSuppliers.SelectedRows.Count == 1)
+                SelectedSupplier = (SupplierM)this.SuppliersV.DGVSuppliers.SelectedRows[0].DataBoundItem;
         }
 
         private async Task OnSearchButtonClickedAsync()
         {
-            if (string.IsNullOrWhiteSpace(this.SuppliersV.SearchValue) || string.IsNullOrEmpty(this.SuppliersV.SearchValue)) return;
-            RepoResultM res = await SuppliersRepo.SearchSupplierAsync(this.SuppliersV.SearchValue);
+            if (string.IsNullOrWhiteSpace( SuppliersV.SearchValue) || string.IsNullOrEmpty( SuppliersV.SearchValue)) return;
+            RepoResultM res = await SuppliersRepo.SearchSupplierAsync( SuppliersV.SearchValue);
             if (res.IsSucess)
             {
-                List<ISupplierM> customers = new List<ISupplierM>();
+                List<SupplierM> customers = new List<SupplierM>();
                 for (int i = 0; i < res.ResData.Count; i++)
                 {
-                    customers.Add((ISupplierM)res.ResData[i]);
+                    customers.Add((SupplierM)res.ResData[i]);
                 }
                 if (customers.Count > 0)
                 {
-                    this.SuppliersV.DGVSuppliers.DataSource = null;
-                    this.SuppliersV.DGVSuppliers.DataSource = customers;
-                    this.SuppliersV.DGVSuppliers.ClearSelection();
+                    SuppliersV.DGVSuppliers.DataSource = null;
+                    SuppliersV.DGVSuppliers.DataSource = customers;
+                    SuppliersV.DGVSuppliers.ClearSelection();
                 }
             }
             else
             {
-                this.LoadSuppliersAsync();
-                this.SuppliersV.ShowMsgBox(res.ErrorMsg, "Error:", false);
+                await LoadSuppliersAsync();
+                SuppliersV.ShowMsgBox(res.ErrorMsg, "Error:", false);
             }
         }
 
-        private void OnRefreshSV()
+        private async Task OnRefreshSVAsync()
         {
             this.ResetAll();
-            this.LoadSuppliersAsync();
-            this.LoadCategoryListAsync();
+            await LoadSuppliersAsync();
+            await LoadCategoryListAsync();
         }
 
         private async Task LoadCategoryListAsync()
@@ -206,21 +214,21 @@ namespace SBMS.Presenters.SuppliersPres
             SuppCategory prodCategoryM = new SuppCategory();
             prodCategoryM.Id = 0;
             prodCategoryM.Name = "All";
-            this.SuppliersV.CBXCategoryFilter.Items.Clear();
-            this.SuppliersV.CBXSupplierCategory.Items.Clear();
-            this.SuppliersV.CBXCategoryFilter.Items.Add(prodCategoryM);
+            SuppliersV.CBXCategoryFilter.Items.Clear();
+            SuppliersV.CBXSupplierCategory.Items.Clear();
+            SuppliersV.CBXCategoryFilter.Items.Add(prodCategoryM);
             RepoResultM res = await SuppCategoriesRepo.GetSuppCategoriesAsync();
             if (res.IsSucess)
             {
-                this.SuppliersV.CBXCategoryFilter.DisplayMember = "Name";
-                this.SuppliersV.CBXCategoryFilter.ValueMember = "Id";
-                this.SuppliersV.CBXSupplierCategory.DisplayMember = "Name";
-                this.SuppliersV.CBXSupplierCategory.ValueMember = "Id";
+                SuppliersV.CBXCategoryFilter.DisplayMember = "Name";
+                SuppliersV.CBXCategoryFilter.ValueMember = "Id";
+                SuppliersV.CBXSupplierCategory.DisplayMember = "Name";
+                SuppliersV.CBXSupplierCategory.ValueMember = "Id";
                 for (int i = 0; i < res.ResData.Count; i++)
                 {
-                    this.SuppliersV.CBXCategoryFilter.Items.Add((SuppCategory)res.ResData[i]);
-                    this.SuppliersV.CBXSupplierCategory.Items.Add((SuppCategory)res.ResData[i]);
-                    this.SuppliersV.CBXCategoryFilter.SelectedIndex = 0;
+                    SuppliersV.CBXCategoryFilter.Items.Add((SuppCategory)res.ResData[i]);
+                    SuppliersV.CBXSupplierCategory.Items.Add((SuppCategory)res.ResData[i]);
+                    SuppliersV.CBXCategoryFilter.SelectedIndex = 0;
                 }
 
             }
@@ -228,69 +236,68 @@ namespace SBMS.Presenters.SuppliersPres
             {
                 if (res.ErrorMsg == "No Result")
                 {
-                    this.SuppliersV.ShowMsgBox("The Category List Is Empty", "Note:", false);
+                    SuppliersV.ShowMsgBox("The Category List Is Empty", "Note:", false);
                     return;
                 }
-                this.SuppliersV.ShowMsgBox(res.ErrorMsg, "Error:", false);
+                SuppliersV.ShowMsgBox(res.ErrorMsg, "Error:", false);
             }
         }
-
 
         private async Task LoadSuppliersAsync()
         {
             RepoResultM res = await SuppliersRepo.GetSuppliersAsync();
-            this.SuppliersV.DGVSuppliers.DataSource = null;
+            SuppliersV.DGVSuppliers.DataSource = null;
             if (res.IsSucess)
             {
-                List<ISupplierM> Suppliers = new List<ISupplierM>();
+                List<SupplierM> Suppliers = new List<SupplierM>();
                 for (int i = 0; i < res.ResData.Count; i++)
                 {
-                    Suppliers.Add((ISupplierM)res.ResData[i]);
+                    Suppliers.Add((SupplierM)res.ResData[i]);
                 }
                 if (Suppliers.Count > 0)
                 {
-                    this.SuppliersV.DGVSuppliers.DataSource = Suppliers;
-                    this.SuppliersV.DGVSuppliers.ClearSelection();
+                    SuppliersV.DGVSuppliers.DataSource = Suppliers;
+                    SuppliersV.DGVSuppliers.ClearSelection();
                 }
             }
             else
             {
                 if (res.ErrorMsg == "No Result")
                 {
-                    this.SuppliersV.ShowMsgBox("The Suppliers List Is Empty", "Note:", false);
+                    SuppliersV.ShowMsgBox("The Suppliers List Is Empty", "Note:", false);
                     return;
                 }
-                this.SuppliersV.ShowMsgBox(res.ErrorMsg, "Error:", false);
+                SuppliersV.ShowMsgBox(res.ErrorMsg, "Error:", false);
             }
         }
         private async Task OnCategoryFilterChangedAsync()
         {
-            RepoResultM res = await SuppliersRepo.FilterSuppliersByCategoryAsync(((SuppCategory)this.SuppliersV.CBXCategoryFilter.SelectedItem).Id);
+            RepoResultM res = await SuppliersRepo.FilterSuppliersByCategoryAsync(((SuppCategory) SuppliersV.CBXCategoryFilter.SelectedItem).Id);
 
             if (res.IsSucess)
             {
-                List<ISupplierM> productsList = new List<ISupplierM>();
+                List<SupplierM> productsList = new List<SupplierM>();
                 for (int i = 0; i < res.ResData.Count; i++)
                 {
-                    productsList.Add((ISupplierM)res.ResData[i]);
+                    productsList.Add((SupplierM)res.ResData[i]);
                 }
                 if (productsList.Count > 0)
                 {
-                    this.SuppliersV.DGVSuppliers.DataSource = null;
-                    this.SuppliersV.DGVSuppliers.DataSource = productsList;
-                    this.SuppliersV.DGVSuppliers.ClearSelection();
+                    SuppliersV.DGVSuppliers.DataSource = null;
+                    SuppliersV.DGVSuppliers.DataSource = productsList;
+                    SuppliersV.DGVSuppliers.ClearSelection();
                 }
             }
             else
             {
                 if (res.ErrorMsg == "No Result")
                 {
-                    this.LoadSuppliersAsync();
-                    if (this.SuppliersV.CBXCategoryFilter.SelectedIndex == 0) return;
-                    this.SuppliersV.ShowMsgBox("No Supplier In This Category", "Note:", false);
+                    await LoadSuppliersAsync();
+                    if ( SuppliersV.CBXCategoryFilter.SelectedIndex == 0) return;
+                    SuppliersV.ShowMsgBox("No Supplier In This Category", "Note:", false);
                     return;
                 }
-                this.SuppliersV.ShowMsgBox(res.ErrorMsg, "Error:", false);
+                SuppliersV.ShowMsgBox(res.ErrorMsg, "Error:", false);
             }
 
 
@@ -298,11 +305,11 @@ namespace SBMS.Presenters.SuppliersPres
 
         private void ResetAll()
         {
-            this.IsEdit = false;
-            this.SuppliersV.IsAESupplierFormVisable = false;
-            this.SuppliersV.SupplierName = null;
-            this.SuppliersV.SupplierPhone = null;
-            this.SuppliersV.SupplierAddress = null;
+            IsEdit = false;
+            SuppliersV.IsAESupplierFormVisable = false;
+            SuppliersV.SupplierName = null;
+            SuppliersV.SupplierPhone = null;
+            SuppliersV.SupplierAddress = null;
         }
     }
 }

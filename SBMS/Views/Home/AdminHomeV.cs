@@ -57,6 +57,8 @@ namespace SBMS.Views.Home
         public event EventHandler ShowSettingsMV;
         public event EventHandler ShowAboutV;
         public event EventHandler ShowHome;
+        public event EventHandler ShowCustomersMV;
+        public event EventHandler ShowSuppliersMV;
 
         void Subscribe()
         {
@@ -68,6 +70,8 @@ namespace SBMS.Views.Home
             btnPurchaseV.Click += delegate { ShowPurchaseMV?.Invoke(this, EventArgs.Empty); };
             btnReportsV.Click += delegate { ShowReportsMV?.Invoke(this, EventArgs.Empty); };
             btnUsersV.Click += delegate { ShowUsersMV?.Invoke(this, EventArgs.Empty); };
+            btnCustomers.Click += delegate { ShowCustomersMV?.Invoke(this, EventArgs.Empty); };
+            btnSuppliers.Click += delegate { ShowSuppliersMV?.Invoke(this, EventArgs.Empty); };
             btnSettingsV.Click += delegate { ShowSettingsMV?.Invoke(this, EventArgs.Empty); };
             btnAboutV.Click += delegate { ShowAboutV?.Invoke(this, EventArgs.Empty); };
         }

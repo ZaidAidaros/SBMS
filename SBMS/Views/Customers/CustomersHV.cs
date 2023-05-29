@@ -25,7 +25,6 @@ namespace SBMS.Views.Customers
             if (instance == null || instance.IsDisposed)
             {
                 instance = new CustomersHV();
-                CustomersHVPres.GetInstance();
             }
             else
             {

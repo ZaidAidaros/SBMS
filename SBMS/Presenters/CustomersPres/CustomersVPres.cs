@@ -153,8 +153,10 @@ namespace SBMS.Presenters.CustomersPres
             customer.NIC = int.Parse( CustomersV.CustomerNIC);
             customer.Phone = CustomersV.CustomerPhone;
             customer.Address = CustomersV.CustomerAddress;
-            customer.CategoryM = (CustCategoryM) CustomersV.CBXCustomerCategory.SelectedItem;
-            customer.GenderM = (GenderM) CustomersV.CBXCustomerGender.SelectedItem;
+            customer.CategoryId = ((CustCategoryM)CustomersV.CBXCustomerCategory.SelectedItem).Id;
+            customer.Category = ((CustCategoryM)CustomersV.CBXCustomerCategory.SelectedItem).Name;
+            customer.GenderId = ((GenderM)CustomersV.CBXCustomerGender.SelectedItem).Id;
+            customer.Gender = ((GenderM)CustomersV.CBXCustomerGender.SelectedItem).Name;
             customer.BirthDate =  CustomersV.DTCustomerBirthDay.ToShortDateString();
             return customer;
         }

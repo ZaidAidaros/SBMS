@@ -18,7 +18,6 @@ namespace SBMS.Views.Auth
             if (instance == null || instance.IsDisposed)
             {
                 instance = new UsersV();
-                UsersVPres.GetInstance();
             }
             else
             {

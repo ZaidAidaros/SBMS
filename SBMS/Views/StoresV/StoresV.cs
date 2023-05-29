@@ -30,7 +30,6 @@ namespace SBMS.Views.StoresV
             if (instance == null || instance.IsDisposed)
             {
                 instance = new StoresV();
-                StoresVPres.GetInstance();
             }
             else
             {

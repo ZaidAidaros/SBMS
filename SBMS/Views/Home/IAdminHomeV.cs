@@ -20,6 +20,8 @@ namespace SBMS.Views.Home
         event EventHandler ShowPurchaseMV;
         event EventHandler ShowReportsMV;
         event EventHandler ShowUsersMV;
+        event EventHandler ShowCustomersMV;
+        event EventHandler ShowSuppliersMV;
         event EventHandler ShowSettingsMV;
         event EventHandler ShowAboutV;
 

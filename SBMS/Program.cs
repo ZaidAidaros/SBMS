@@ -15,8 +15,7 @@ namespace SBMS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
-            //Application.Run(LogInV.GetInstance());
-            Application.Run(StoresV.GetInstance());
+            Application.Run(LogInV.GetInstance());
             
         }
     }

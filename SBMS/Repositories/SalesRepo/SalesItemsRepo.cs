@@ -22,6 +22,7 @@ namespace SBMS.Repositories.SalesRepo
             saleItemM.Quantity = decimal.Parse(result[4].ToString());
             saleItemM.Price = decimal.Parse(result[5].ToString());
             saleItemM.ExpireDate = DateTime.Parse(result[6].ToString()).ToShortDateString();
+            saleItemM.Offer = result[7].ToString();
             return saleItemM;
         }
         public static async Task<RepoResultM> GetSaleItemsAsync(int saleId)

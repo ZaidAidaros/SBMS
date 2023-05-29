@@ -1,17 +1,22 @@
 ﻿using SBMS.Models.Users;
+using SBMS.Presenters.CustomersPres;
+using SBMS.Presenters.EmployeesPres;
+using SBMS.Presenters.PurchasesPres;
+using SBMS.Presenters.ReportsPres;
+using SBMS.Presenters.SalesPres;
+using SBMS.Presenters.StoresPres;
+using SBMS.Presenters.SuppliersPres;
 using SBMS.Presenters.UsersPres;
 using SBMS.Views.Auth;
-using SBMS.Views.Home;
-using SBMS.Views.Employees;
-using SBMS.Views.StoresV;
-using System;
-using SBMS.Views.Purchases;
-using SBMS.Views.Sales;
 using SBMS.Views.Customers;
-using SBMS.Views.Suppliers;
-using SBMS.Presenters.SalesPres;
-using SBMS.Presenters.PurchasesPres;
+using SBMS.Views.Employees;
+using SBMS.Views.Home;
+using SBMS.Views.Purchases;
 using SBMS.Views.Reports;
+using SBMS.Views.Sales;
+using SBMS.Views.StoresV;
+using SBMS.Views.Suppliers;
+using System;
 
 namespace SBMS.Presenters
 {
@@ -40,6 +45,7 @@ namespace SBMS.Presenters
             SuppliersHV.GetInstance().MdiParent = AdminHomeV.GetInstance();
             ReportsHV.GetInstance().MdiParent = AdminHomeV.GetInstance();
             AdminHomeV.GetInstance().Show();
+            ShowHome();
         }
 
         void Subscribe()
@@ -51,10 +57,15 @@ namespace SBMS.Presenters
             adminHomeV.ShowPurchaseMV += delegate { ShowPurchaseMV(); };
             adminHomeV.ShowReportsMV += delegate { ShowReportsMV(); };
             adminHomeV.ShowUsersMV += delegate { ShowUsersMV(); };
+            adminHomeV.ShowCustomersMV += delegate { ShowCustomersMV(); };
+            adminHomeV.ShowSuppliersMV += delegate { ShowSuppliersMV(); };
             adminHomeV.ShowSettingsMV += delegate { ShowSettingsMV(); };
             adminHomeV.ShowAboutV += delegate { ShowAboutV(); };
            
         }
+
+        
+
         private void ShowHome()
         {
             HomeWelcomV.GetInstance().Dock = System.Windows.Forms.DockStyle.Fill;
@@ -71,11 +82,13 @@ namespace SBMS.Presenters
         }
         private void ShowEmploeesMV()
         {
+            EmployeesHVPres.GetInstance();
             EmployeesHV.GetInstance().Dock = System.Windows.Forms.DockStyle.Fill;
             EmployeesHV.GetInstance().Show();
         }
         private void ShowUsersMV()
         {
+            UsersVPres.GetInstance();
             UsersV.GetInstance().Dock = System.Windows.Forms.DockStyle.Fill;
             UsersV.GetInstance().Show();
         }
@@ -94,16 +107,30 @@ namespace SBMS.Presenters
 
         private void ShowReportsMV()
         {
+            ReportsHVPres.GetInstance();
             ReportsHV.GetInstance().Dock = System.Windows.Forms.DockStyle.Fill;
             ReportsHV.GetInstance().Show();
         }
 
         private void ShowStoresMV()
         {
+            StoresVPres.GetInstance();
             StoresV.GetInstance().Dock = System.Windows.Forms.DockStyle.Fill;
             StoresV.GetInstance().Show();
         }
+        private void ShowSuppliersMV()
+        {
+            SuppliersHVPres.GetInstance();
+            SuppliersHV.GetInstance().Dock = System.Windows.Forms.DockStyle.Fill;
+            SuppliersHV.GetInstance().Show();
+        }
 
-        
+        private void ShowCustomersMV()
+        {
+            CustomersHVPres.GetInstance();
+            CustomersHV.GetInstance().Dock = System.Windows.Forms.DockStyle.Fill;
+            CustomersHV.GetInstance().Show();
+        }
+
     }
 }

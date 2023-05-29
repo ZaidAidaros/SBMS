@@ -24,7 +24,6 @@ namespace SBMS.Views.Suppliers
             if (instance == null || instance.IsDisposed)
             {
                 instance = new SuppliersHV();
-                SuppliersHVPres.GetInstance();
             }
             else
             {

@@ -31,7 +31,6 @@ namespace SBMS.Views.Employees
             if (instance == null || instance.IsDisposed)
             {
                 instance = new EmployeesHV();
-                EmployeesHVPres.GetInstance();
             }
             else
             {

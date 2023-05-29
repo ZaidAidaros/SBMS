@@ -340,6 +340,7 @@
       <DependentUpon>SuppliersHV.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\SBMS.Models.Customers.CustomerM.datasource" />
     <None Include="Properties\DataSources\SBMS.Models.Employees.EmployeeM.datasource" />
     <None Include="Properties\DataSources\SBMS.Models.General.InvoiceItemM.datasource" />
     <None Include="Properties\DataSources\SBMS.Models.General.InvoiceM.datasource" />
@@ -351,6 +352,7 @@
     <None Include="Properties\DataSources\SBMS.Models.Stores.IProductM.datasource" />
     <None Include="Properties\DataSources\SBMS.Models.Stores.ProductDetialsM.datasource" />
     <None Include="Properties\DataSources\SBMS.Models.Stores.ProductM.datasource" />
+    <None Include="Properties\DataSources\SBMS.Models.Suppliers.SupplierM.datasource" />
     <None Include="Properties\DataSources\SBMS.Models.Users.UserM.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

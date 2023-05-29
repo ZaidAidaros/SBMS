@@ -30,6 +30,7 @@ namespace SBMS.Views.Sales
             this.btnNewReSaleInv.Click += delegate { this.ShowNewRetSalesInvView?.Invoke(this, EventArgs.Empty); };
             this.btnSales.Click += delegate { this.ShowSalesView?.Invoke(this, EventArgs.Empty); };
             this.btnClose.Click += delegate { this.Close(); this.OnClose?.Invoke(this, EventArgs.Empty); };
+            this.Disposed += delegate { OnClose?.Invoke(this, EventArgs.Empty); };
 
             SaleInvoicesV.GetInstance().MdiParent = this;
             NewSaleInvoiceV.GetInstance().MdiParent = this;

@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="DBServerName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">DESKTOP-OBK8210</Value>
+      <Value Profile="(Default)">DESKTOP-AQ6QOF4</Value>
     </Setting>
     <Setting Name="DBName" Type="System.String" Scope="User">
       <Value Profile="(Default)">DatabaseSBMS</Value>
