@@ -84,6 +84,7 @@ namespace SBMS.Views.Employees
         public event EventHandler OnAEJobSave;
         public event EventHandler OnAEJobCancel;
         public event EventHandler OnSelectJob;
+        public event EventHandler OnDisposed;
 
         private void SbsEmployeesHVEvents()
         {
@@ -102,6 +103,7 @@ namespace SBMS.Views.Employees
             this.btnVRefresh.Click += delegate { this.OnVRefresh?.Invoke(this, EventArgs.Empty); };
             this.cbxJobFilter.SelectedIndexChanged += delegate { this.OnJobFilterChanged?.Invoke(this, EventArgs.Empty); };
             this.dgvEmployees.SelectionChanged += delegate { this.OnSelectEmployee?.Invoke(this, EventArgs.Empty); };
+            this.Disposed += delegate { this.OnDisposed?.Invoke(this, EventArgs.Empty); };
         }
         private void SbsJobsVEvents()
         {

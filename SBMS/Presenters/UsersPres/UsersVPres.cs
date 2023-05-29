@@ -24,10 +24,10 @@ namespace SBMS.Presenters.UsersPres
             if (instance == null) instance = new UsersVPres();
             return instance;
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// 
+        public static void Dispose()
+        {
+            instance = null;
+        }
         private UsersVPres()
         {
             this.usersV = UsersV.GetInstance();
@@ -48,7 +48,8 @@ namespace SBMS.Presenters.UsersPres
             this.usersV.OnSelectUser += delegate { this.OnSelectUser(); };
             this.usersV.OnPermmisionFilterChanged += async delegate { await OnPermissionFilterChangedAsync(); };
             this.usersV.OnSearchBClicked += async delegate { await OnSearchButtonClickedAsync(); };
-            this.usersV.OnVRefresh += delegate { OnVRefreshAsync(); };
+            this.usersV.OnVRefresh += async delegate { await OnVRefreshAsync(); };
+            this.usersV.OnDisposed += delegate { Dispose(); };
         }
 
         private void ShowAddUserForm()

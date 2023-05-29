@@ -19,28 +19,33 @@ namespace SBMS.Presenters.SalesPres
             if (instance == null) instance = new SaleInvoicesVPres();
             return instance;
         }
+        public static void Dispose()
+        {
+            instance = null;
+        }
         private SaleInvoicesVPres()
         {
-            this.saleInvoicesV = SaleInvoicesV.GetInstance();
+            saleInvoicesV = SaleInvoicesV.GetInstance();
             OnInitAsync();
         }
         private async Task OnInitAsync()
         {
-            this.LoadInvoiceTypesAsync();
-            await this.LoadInvoicesAsync(null);
-            this.saleInvoicesV.DGVInvoices.ClearSelection();
-            this.saleInvoicesV.DGVInvItems.ClearSelection();
-            this.saleInvoicesV.OnInvSearchBClicked += async delegate { await OnSearchAsync(); };
-            this.saleInvoicesV.CBXInvFilter.SelectedIndexChanged += async delegate { await OnFilterAsync(); };
-            this.saleInvoicesV.DGVInvoices.SelectionChanged += async delegate { await OnSelectInvAsync(); };
+            LoadInvoiceTypesAsync();
+            await LoadInvoicesAsync(null);
+            saleInvoicesV.DGVInvoices.ClearSelection();
+            saleInvoicesV.DGVInvItems.ClearSelection();
+            saleInvoicesV.OnInvSearchBClicked += async delegate { await OnSearchAsync(); };
+            saleInvoicesV.CBXInvFilter.SelectedIndexChanged += async delegate { await OnFilterAsync(); };
+            saleInvoicesV.DGVInvoices.SelectionChanged += async delegate { await OnSelectInvAsync(); };
+            saleInvoicesV.OnDisposed += delegate { Dispose(); };
             
             
         }
         private async Task OnSelectInvAsync()
         {
-            if (this.saleInvoicesV.DGVInvoices.SelectedRows.Count == 1)
+            if ( saleInvoicesV.DGVInvoices.SelectedRows.Count == 1)
             {
-                selectedSaleInvM = (InvoiceM)this.saleInvoicesV.DGVInvoices.SelectedRows[0].DataBoundItem;
+                selectedSaleInvM = (InvoiceM) saleInvoicesV.DGVInvoices.SelectedRows[0].DataBoundItem;
                 await LoadInvoiceItemsAsync(selectedSaleInvM.Id);
             }
 
@@ -58,7 +63,7 @@ namespace SBMS.Presenters.SalesPres
             }
             if (res.IsSucess)
             {
-                this.saleInvoicesV.DGVInvoices.DataSource = null;
+                saleInvoicesV.DGVInvoices.DataSource = null;
                 List<InvoiceM> Invoices = new List<InvoiceM>();
                 for (int i = 0; i < res.ResData.Count; i++)
                 {
@@ -67,7 +72,7 @@ namespace SBMS.Presenters.SalesPres
                 }
                 if (Invoices.Count > 0)
                 {
-                    this.saleInvoicesV.DGVInvoices.DataSource = Invoices;
+                    saleInvoicesV.DGVInvoices.DataSource = Invoices;
                 }
 
             }
@@ -75,10 +80,10 @@ namespace SBMS.Presenters.SalesPres
             {
                 if (res.ErrorMsg == "No Result")
                 {
-                    this.saleInvoicesV.ShowMsgBox("The Invoices List Is Empty", "Note:", false);
+                    saleInvoicesV.ShowMsgBox("The Invoices List Is Empty", "Note:", false);
                     return;
                 }
-                this.saleInvoicesV.ShowMsgBox(res.ErrorMsg, "Error:", false);
+                saleInvoicesV.ShowMsgBox(res.ErrorMsg, "Error:", false);
             }
         }
         private async Task LoadInvoiceItemsAsync(int invId)
@@ -88,7 +93,7 @@ namespace SBMS.Presenters.SalesPres
             if (res.IsSucess)
             {
 
-                this.saleInvoicesV.DGVInvItems.DataSource = null;
+                saleInvoicesV.DGVInvItems.DataSource = null;
                 List<InvoiceItemM> InvItems = new List<InvoiceItemM>();
                 for (int i = 0; i < res.ResData.Count; i++)
                 {
@@ -96,8 +101,8 @@ namespace SBMS.Presenters.SalesPres
                 }
                 if (InvItems.Count > 0)
                 {
-                    this.saleInvoicesV.DGVInvItems.DataSource = InvItems;
-                    this.saleInvoicesV.IsInvItemsVisable = true;
+                    saleInvoicesV.DGVInvItems.DataSource = InvItems;
+                    saleInvoicesV.IsInvItemsVisable = true;
                 }
 
             }
@@ -105,11 +110,11 @@ namespace SBMS.Presenters.SalesPres
             {
                 if (res.ErrorMsg == "No Result")
                 {
-                    this.saleInvoicesV.IsInvItemsVisable = false;
-                    this.saleInvoicesV.ShowMsgBox("The Invoice Items List Is Empty", "Note:", false);
+                    saleInvoicesV.IsInvItemsVisable = false;
+                    saleInvoicesV.ShowMsgBox("The Invoice Items List Is Empty", "Note:", false);
                     return;
                 }
-                this.saleInvoicesV.ShowMsgBox(res.ErrorMsg, "Error:", false);
+                saleInvoicesV.ShowMsgBox(res.ErrorMsg, "Error:", false);
             }
         }
         private void LoadInvoiceTypesAsync()
@@ -123,16 +128,16 @@ namespace SBMS.Presenters.SalesPres
             InvoiceTypeM invoiceTypeM2 = new InvoiceTypeM();
             invoiceTypeM2.Id = 2;
             invoiceTypeM2.Name = "Return Invoice";
-            this.saleInvoicesV.CBXInvFilter.ValueMember = "Id";
-            this.saleInvoicesV.CBXInvFilter.DisplayMember = "Name";
-            this.saleInvoicesV.CBXInvFilter.Items.Add((InvoiceTypeM)invoiceTypeM);
-            this.saleInvoicesV.CBXInvFilter.Items.Add((InvoiceTypeM)invoiceTypeM1);
-            this.saleInvoicesV.CBXInvFilter.Items.Add((InvoiceTypeM)invoiceTypeM2);
-            this.saleInvoicesV.CBXInvFilter.SelectedIndex = 0;
+            saleInvoicesV.CBXInvFilter.ValueMember = "Id";
+            saleInvoicesV.CBXInvFilter.DisplayMember = "Name";
+            saleInvoicesV.CBXInvFilter.Items.Add((InvoiceTypeM)invoiceTypeM);
+            saleInvoicesV.CBXInvFilter.Items.Add((InvoiceTypeM)invoiceTypeM1);
+            saleInvoicesV.CBXInvFilter.Items.Add((InvoiceTypeM)invoiceTypeM2);
+            saleInvoicesV.CBXInvFilter.SelectedIndex = 0;
         }
         private async Task OnSearchAsync()
         {
-            await LoadInvoicesAsync(this.saleInvoicesV.InvSearchField);
+            await LoadInvoicesAsync(saleInvoicesV.InvSearchField);
         }
         private async Task OnFilterAsync()
         {
@@ -146,12 +151,12 @@ namespace SBMS.Presenters.SalesPres
             }
 
         }
-        private void RestAll()
+        private async Task RestAllAsync()
         {
-            this.saleInvoicesV.CBXInvFilter.SelectedIndex = 0;
-            this.saleInvoicesV.InvSearchField = null;
-            this.saleInvoicesV.IsInvItemsVisable = false;
-            this.LoadInvoicesAsync(null);
+            saleInvoicesV.CBXInvFilter.SelectedIndex = 0;
+            saleInvoicesV.InvSearchField = null;
+            saleInvoicesV.IsInvItemsVisable = false;
+            await LoadInvoicesAsync(null);
         }
     }
 }

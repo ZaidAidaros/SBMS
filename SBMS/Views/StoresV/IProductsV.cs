@@ -31,6 +31,7 @@ namespace SBMS.Views.StoresV
         event EventHandler OnAEProductCancel;
         event EventHandler ShowSelectedProductInfo;
         event EventHandler OnProductsVRefresh;
+        event EventHandler OnDisposed;
 
 
 

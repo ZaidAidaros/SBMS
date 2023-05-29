@@ -21,21 +21,30 @@ namespace SBMS.Presenters.StoresPres
             if (instance == null) instance = new PUnitsVPres();
             return instance;
         }
+        public static void Dispose()
+        {
+            instance = null;
+        }
         private PUnitsVPres()
         {
             PUnitsV = StoresV.GetInstance();
+            OnInitAsync();
             
+        }
+
+        private async Task OnInitAsync()
+        {
+            await LoadUnitsAsync();
             this.PUnitsV.ShowAddProdUnitForm += delegate { ShowAddUnitForm(); };
             this.PUnitsV.ShowEditProdUnitForm += delegate { ShowEditUnitForm(); };
-            this.PUnitsV.DeleteSelectedProdUnit += delegate { OnDeleteSelectedUnitAsync(); };
+            this.PUnitsV.DeleteSelectedProdUnit +=async delegate { await OnDeleteSelectedUnitAsync(); };
             this.PUnitsV.OnAEUnitSave += delegate { OnAEUintSave(); };
             this.PUnitsV.OnAEUnitCancel += delegate { OnAEUnitCancel(); };
             this.PUnitsV.OnSelectUnit += delegate { OnSelectUnit(); };
             this.PUnitsV.OnClickUnitView += delegate { OnClickUnitView(); };
-            this.LoadUnitsAsync();
+            this.PUnitsV.OnDisposed += delegate { Dispose(); };
         }
 
-        
         private async Task LoadUnitsAsync()
         {
             RepoResultM res = await ProdUnitsRepo.GetProdUnitsAsync();

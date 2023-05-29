@@ -58,6 +58,7 @@ namespace SBMS.Presenters.SalesPres
             this.newSaleInvoiceV.DGVInvItems.CellClick += delegate { OnSelectInvItem(); };
             this.newSaleInvoiceV.DGVProducts.SelectionChanged += delegate { OnSelectProduct(); };
             this.newSaleInvoiceV.OnClose += delegate { OnClose(); };
+            this.newSaleInvoiceV.OnDisposed += delegate { Dispose(); };
 
         }
         private void OnSelectProduct()

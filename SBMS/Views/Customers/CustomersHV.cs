@@ -78,6 +78,7 @@ namespace SBMS.Views.Customers
         public event EventHandler OnAECustomerSave;
         public event EventHandler OnAECustomerCancel;
         public event EventHandler OnVRefresh;
+        public event EventHandler OnDisposed;
 
         private void InitProp()
         {
@@ -88,6 +89,7 @@ namespace SBMS.Views.Customers
         {
             this.btnShowCustomersView.Click += delegate { this.ShowCustomersView?.Invoke(this, EventArgs.Empty); };
             this.btnShowCustCategoriesView.Click += delegate { this.ShowCustCategoriesView?.Invoke(this, EventArgs.Empty); };
+            this.Disposed += delegate { this.OnDisposed?.Invoke(this, EventArgs.Empty); };
             
         }
 

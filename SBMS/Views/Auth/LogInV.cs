@@ -12,6 +12,7 @@ namespace SBMS.Views.Auth
         {
             InitializeComponent();
             btnLogIn.Click += delegate { LogIn?.Invoke(this, EventArgs.Empty); };
+            Disposed += delegate { OnDisposed?.Invoke(this, EventArgs.Empty); };
         }
         //Singleton pattern (Open a single form instance)
         private static LogInV instance;
@@ -53,8 +54,6 @@ namespace SBMS.Views.Auth
         }
 
         public event EventHandler LogIn;
-
-
-
+        public event EventHandler OnDisposed;
     }
 }

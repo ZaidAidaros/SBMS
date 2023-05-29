@@ -23,7 +23,6 @@ namespace SBMS.Views.Home
             if (instance == null || instance.IsDisposed)
             {
                 instance = new HomeWelcomV();
-                instance.MdiParent = AdminHomeV.GetInstance();
                 instance.FormBorderStyle = FormBorderStyle.None;
                 instance.Dock = DockStyle.Fill;
                 instance.Show();

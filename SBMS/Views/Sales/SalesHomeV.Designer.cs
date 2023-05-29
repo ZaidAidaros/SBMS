@@ -61,9 +61,8 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1803, 73);
+            this.panel1.Size = new System.Drawing.Size(909, 50);
             this.panel1.TabIndex = 2;
             // 
             // lblHeader
@@ -74,10 +73,9 @@
             this.lblHeader.BackColor = System.Drawing.Color.Black;
             this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblHeader.Location = new System.Drawing.Point(948, 25);
-            this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHeader.Location = new System.Drawing.Point(632, 17);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(0, 33);
+            this.lblHeader.Size = new System.Drawing.Size(0, 24);
             this.lblHeader.TabIndex = 3;
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -87,10 +85,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.BackColor = System.Drawing.Color.Brown;
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1750, 13);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Location = new System.Drawing.Point(874, 9);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(48, 45);
+            this.btnClose.Size = new System.Drawing.Size(32, 31);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -104,10 +101,9 @@
             this.lblTodayDate.BackColor = System.Drawing.Color.Black;
             this.lblTodayDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTodayDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTodayDate.Location = new System.Drawing.Point(1522, 19);
-            this.lblTodayDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTodayDate.Location = new System.Drawing.Point(722, 13);
             this.lblTodayDate.Name = "lblTodayDate";
-            this.lblTodayDate.Size = new System.Drawing.Size(172, 37);
+            this.lblTodayDate.Size = new System.Drawing.Size(119, 25);
             this.lblTodayDate.TabIndex = 0;
             this.lblTodayDate.Text = "2022-3-27";
             this.lblTodayDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -121,10 +117,9 @@
             this.label3.BackColor = System.Drawing.Color.Black;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(664, 10);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(443, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(164, 55);
+            this.label3.Size = new System.Drawing.Size(110, 37);
             this.label3.TabIndex = 0;
             this.label3.Text = "SBMS";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -137,10 +132,9 @@
             this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(18, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(391, 47);
+            this.label1.Size = new System.Drawing.Size(262, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sales Management";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -150,10 +144,9 @@
             this.panel2.Controls.Add(this.gbProductsControl);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 73);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(0, 50);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(300, 798);
+            this.panel2.Size = new System.Drawing.Size(200, 462);
             this.panel2.TabIndex = 5;
             // 
             // gbProductsControl
@@ -161,11 +154,9 @@
             this.gbProductsControl.Controls.Add(this.flowLayoutPanel2);
             this.gbProductsControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.gbProductsControl.ForeColor = System.Drawing.Color.Crimson;
-            this.gbProductsControl.Location = new System.Drawing.Point(0, 170);
-            this.gbProductsControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbProductsControl.Location = new System.Drawing.Point(0, 116);
             this.gbProductsControl.Name = "gbProductsControl";
-            this.gbProductsControl.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbProductsControl.Size = new System.Drawing.Size(300, 267);
+            this.gbProductsControl.Size = new System.Drawing.Size(200, 183);
             this.gbProductsControl.TabIndex = 9;
             this.gbProductsControl.TabStop = false;
             this.gbProductsControl.Text = "Sales Controll";
@@ -176,20 +167,18 @@
             this.flowLayoutPanel2.Controls.Add(this.btnNewSaleInv);
             this.flowLayoutPanel2.Controls.Add(this.btnNewReSaleInv);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(4, 24);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 16);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(292, 239);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(194, 164);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
             // btnSales
             // 
             this.btnSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSales.ForeColor = System.Drawing.Color.Green;
-            this.btnSales.Location = new System.Drawing.Point(4, 4);
-            this.btnSales.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSales.Location = new System.Drawing.Point(3, 3);
             this.btnSales.Name = "btnSales";
-            this.btnSales.Size = new System.Drawing.Size(282, 34);
+            this.btnSales.Size = new System.Drawing.Size(188, 23);
             this.btnSales.TabIndex = 9;
             this.btnSales.Text = "Sales";
             this.btnSales.UseVisualStyleBackColor = true;
@@ -198,10 +187,9 @@
             // 
             this.btnNewSaleInv.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewSaleInv.ForeColor = System.Drawing.Color.Green;
-            this.btnNewSaleInv.Location = new System.Drawing.Point(4, 46);
-            this.btnNewSaleInv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNewSaleInv.Location = new System.Drawing.Point(3, 32);
             this.btnNewSaleInv.Name = "btnNewSaleInv";
-            this.btnNewSaleInv.Size = new System.Drawing.Size(282, 34);
+            this.btnNewSaleInv.Size = new System.Drawing.Size(188, 23);
             this.btnNewSaleInv.TabIndex = 7;
             this.btnNewSaleInv.Text = "New  Invoice";
             this.btnNewSaleInv.UseVisualStyleBackColor = true;
@@ -210,10 +198,9 @@
             // 
             this.btnNewReSaleInv.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewReSaleInv.ForeColor = System.Drawing.Color.Green;
-            this.btnNewReSaleInv.Location = new System.Drawing.Point(4, 88);
-            this.btnNewReSaleInv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNewReSaleInv.Location = new System.Drawing.Point(3, 61);
             this.btnNewReSaleInv.Name = "btnNewReSaleInv";
-            this.btnNewReSaleInv.Size = new System.Drawing.Size(282, 34);
+            this.btnNewReSaleInv.Size = new System.Drawing.Size(188, 23);
             this.btnNewReSaleInv.TabIndex = 8;
             this.btnNewReSaleInv.Text = "New Return Invoice";
             this.btnNewReSaleInv.UseVisualStyleBackColor = true;
@@ -226,9 +213,8 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(300, 170);
+            this.panel3.Size = new System.Drawing.Size(200, 116);
             this.panel3.TabIndex = 4;
             // 
             // lblSName
@@ -238,10 +224,9 @@
             this.lblSName.BackColor = System.Drawing.Color.Black;
             this.lblSName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSName.Location = new System.Drawing.Point(4, 88);
-            this.lblSName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSName.Location = new System.Drawing.Point(3, 60);
             this.lblSName.Name = "lblSName";
-            this.lblSName.Size = new System.Drawing.Size(134, 25);
+            this.lblSName.Size = new System.Drawing.Size(97, 16);
             this.lblSName.TabIndex = 0;
             this.lblSName.Text = "Zaid Aidaros";
             this.lblSName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -253,10 +238,9 @@
             this.label4.BackColor = System.Drawing.Color.Black;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(4, 64);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(3, 44);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 25);
+            this.label4.Size = new System.Drawing.Size(91, 16);
             this.label4.TabIndex = 0;
             this.label4.Text = "Stuff Name: ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -268,10 +252,9 @@
             this.lblUName.BackColor = System.Drawing.Color.Black;
             this.lblUName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblUName.Location = new System.Drawing.Point(4, 28);
-            this.lblUName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUName.Location = new System.Drawing.Point(3, 19);
             this.lblUName.Name = "lblUName";
-            this.lblUName.Size = new System.Drawing.Size(54, 25);
+            this.lblUName.Size = new System.Drawing.Size(39, 16);
             this.lblUName.TabIndex = 0;
             this.lblUName.Text = "Zaid";
             this.lblUName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -283,24 +266,22 @@
             this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(4, 4);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(3, 3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 25);
+            this.label2.Size = new System.Drawing.Size(94, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "User Name: ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SalesHomeV
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1803, 871);
+            this.ClientSize = new System.Drawing.Size(909, 512);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SalesHomeV";
             this.ShowIcon = false;
             this.Text = "SalesHomeV";

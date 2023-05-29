@@ -24,6 +24,7 @@ namespace SBMS.Views.Home
         event EventHandler ShowSuppliersMV;
         event EventHandler ShowSettingsMV;
         event EventHandler ShowAboutV;
+        event EventHandler OnDisposed;
 
     }
 }

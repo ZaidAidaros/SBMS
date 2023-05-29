@@ -31,9 +31,12 @@ namespace SBMS.Views.Sales
         {
             InitializeComponent();
             this.btnInvSearch.Click += delegate { this.OnInvSearchBClicked?.Invoke(this, EventArgs.Empty); };
+            this.Disposed += delegate { this.OnDisposed?.Invoke(this, EventArgs.Empty); };
         }
 
         public event EventHandler OnInvSearchBClicked;
+        public event EventHandler OnDisposed;
+
         public string InvSearchField { get => this.tbInvSearch.Text; set => this.tbInvSearch.Text = value; }
         public bool IsInvItemsVisable { get => this.pnlInvItems.Visible; set => this.pnlInvItems.Visible = value; }
         public ComboBox CBXInvFilter => this.cbxInvFilter;

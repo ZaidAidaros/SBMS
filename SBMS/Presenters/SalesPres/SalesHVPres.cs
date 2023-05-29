@@ -19,6 +19,10 @@ namespace SBMS.Presenters.SalesPres
             if (instance == null) instance = new SalesHVPres(userM);
             return instance;
         }
+        public static void Dispose()
+        {
+            instance = null;
+        }
         private SalesHVPres(UserM userM)
         {
             user = userM; 
@@ -30,7 +34,8 @@ namespace SBMS.Presenters.SalesPres
             salesHomeV.ShowSalesView += delegate { ShowSalesView(); };
             salesHomeV.ShowNewSalesInvView += delegate { ShowNewSalesInvView(); };
             salesHomeV.ShowNewRetSalesInvView += delegate { ShowNewRetSalesInvView(); };
-            salesHomeV.OnClose += delegate { OnClose(); };
+            salesHomeV.OnClose += delegate { Dispose(); };
+            salesHomeV.OnDisposed += delegate { Dispose(); };
         }
 
         
@@ -61,10 +66,7 @@ namespace SBMS.Presenters.SalesPres
             NewRetSaleInvoiceV.GetInstance().Show();
             this.salesHomeV.HeaderTitle = "Return Sale Invoice";
         }
-        private void OnClose()
-        {
-            instance = null;
-        }
+        
 
     }
 }

@@ -13,6 +13,7 @@ namespace SBMS.Views.Purchases
 
 
         event EventHandler OnInvSearchBClicked;
+        event EventHandler OnDisposed;
 
 
         bool ShowMsgBox(string msg, string title, bool isYesNo);

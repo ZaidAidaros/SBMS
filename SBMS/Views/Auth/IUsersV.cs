@@ -29,6 +29,7 @@ namespace SBMS.Views.Auth
         event EventHandler OnVRefresh;
         event EventHandler OnPermmisionFilterChanged;
         event EventHandler OnSearchBClicked;
+        event EventHandler OnDisposed;
         //event EventHandler OnClickCategoriesView;
 
         bool ShowMsgBox(string msg, string title, bool isYesNo);

@@ -19,6 +19,7 @@ namespace SBMS.Views.StoresV
         event EventHandler OnAECategoryCancel;
         event EventHandler OnSelectCategory;
         event EventHandler OnClickCategoriesView;
+        event EventHandler OnDisposed;
 
         bool ShowMsgBox(string msg, string title, bool isYesNo);
     }

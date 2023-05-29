@@ -7,10 +7,11 @@ namespace SBMS.Presenters.EmployeesPres
         IEmployeesHV employeesHV;
         private EmployeesHVPres()
         {
-            this.employeesHV = EmployeesHV.GetInstance();
+            employeesHV = EmployeesHV.GetInstance();
             ShowEmployeesView();
-            this.employeesHV.ShowEmployeesView += delegate { ShowEmployeesView(); };
-            this.employeesHV.ShowJobsView += delegate { ShowJobsView(); };
+            employeesHV.ShowEmployeesView += delegate { ShowEmployeesView(); };
+            employeesHV.ShowJobsView += delegate { ShowJobsView(); };
+            employeesHV.OnDisposed += delegate { Dispose(); };
         }
         /// <summary>
         /// 
@@ -21,22 +22,23 @@ namespace SBMS.Presenters.EmployeesPres
             if (instance == null) instance = new EmployeesHVPres();
             return instance;
         }
-        /// <summary>
-        /// 
-        /// </summary>
+        public static void Dispose()
+        {
+            instance = null;
+        }
 
         private void ShowEmployeesView()
         {
             EmployeesVPres.GetInstance();
-            this.employeesHV.HeaderTitle = "Employees";
-            this.employeesHV.PnlEmployeesView.BringToFront();
+            employeesHV.HeaderTitle = "Employees";
+            employeesHV.PnlEmployeesView.BringToFront();
         }
 
         private void ShowJobsView()
         {
             JobsVPres.GetInstance();
-            this.employeesHV.HeaderTitle = "Employee Jobs";
-            this.employeesHV.PnlJobsView.BringToFront();
+            employeesHV.HeaderTitle = "Employee Jobs";
+            employeesHV.PnlJobsView.BringToFront();
         }
 
     }

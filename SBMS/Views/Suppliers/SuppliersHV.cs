@@ -73,11 +73,13 @@ namespace SBMS.Views.Suppliers
         public event EventHandler OnAECategorySave;
         public event EventHandler OnAECategoryCancel;
         public event EventHandler OnSelectCategory;
+        public event EventHandler OnDisposed;
 
         private void SbsSuppliersHVEvents()
         {
             this.btnShowSuppliersView.Click += delegate { this.ShowSuppliersView?.Invoke(this,EventArgs.Empty); };
             this.btnShowSuppCategoriesView.Click += delegate { this.ShowSuppCategoriesView?.Invoke(this, EventArgs.Empty); };
+            this.Disposed += delegate { this.OnDisposed?.Invoke(this, EventArgs.Empty); };
         }
         private void SbsSuppliersVEvents()
         {

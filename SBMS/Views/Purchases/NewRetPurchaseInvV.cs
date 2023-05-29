@@ -56,6 +56,7 @@ namespace SBMS.Views.Purchases
         public event EventHandler OnInvItemDecOne;
         public event EventHandler OnInvItemRemove;
         public event EventHandler OnPSearchBClicked;
+        public event EventHandler OnDisposed;
 
         private void SubsEvents()
         {
@@ -68,6 +69,7 @@ namespace SBMS.Views.Purchases
             this.btnInvItemDecOne.Click += delegate { this.OnInvItemDecOne?.Invoke(this, EventArgs.Empty); };
             this.btnRemoveItem.Click += delegate { this.OnInvItemRemove?.Invoke(this, EventArgs.Empty); };
             this.btnPSearch.Click += delegate { this.OnPSearchBClicked?.Invoke(this, EventArgs.Empty); };
+            this.Disposed += delegate { this.OnPSearchBClicked?.Invoke(this, EventArgs.Empty); };
         }
         private void InitProp()
         {

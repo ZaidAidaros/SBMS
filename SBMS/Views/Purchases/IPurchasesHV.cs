@@ -16,5 +16,6 @@ namespace SBMS.Views.Purchases
         event EventHandler ShowNewRePurchaseView;
         event EventHandler ShowPurchasesView;
         event EventHandler OnClose;
+        event EventHandler OnDisposed;
     }
 }

@@ -27,6 +27,7 @@ namespace SBMS.Views.StoresV
         event EventHandler OnAEUnitCancel;
         event EventHandler OnSelectUnit;
         event EventHandler OnClickUnitView;
+        event EventHandler OnDisposed;
 
         bool ShowMsgBox(string msg, string title, bool isYesNo);
     }

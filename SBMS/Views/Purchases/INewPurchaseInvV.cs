@@ -27,6 +27,7 @@ namespace SBMS.Views.Purchases
         event EventHandler OnInvItemDecOne;
         event EventHandler OnInvItemRemove;
         event EventHandler OnPSearchBClicked;
+        event EventHandler OnDisposed;
 
 
         bool ShowMsgBox(string msg, string title, bool isYesNo);

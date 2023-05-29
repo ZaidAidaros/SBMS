@@ -24,6 +24,7 @@ namespace SBMS.Views.Sales
         DataGridView DGVInvItems { get; }
 
         event EventHandler OnClose;
+        event EventHandler OnDisposed;
         event EventHandler OnInvSave;
         event EventHandler OnInvCancel;
         event EventHandler OnAEInvItem;

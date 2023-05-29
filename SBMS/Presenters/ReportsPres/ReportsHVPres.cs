@@ -1,13 +1,17 @@
 ﻿using Microsoft.Reporting.WinForms;
+using SBMS.Models.Customers;
 using SBMS.Models.Employees;
 using SBMS.Models.General;
 using SBMS.Models.Stores;
+using SBMS.Models.Suppliers;
 using SBMS.Models.Users;
 using SBMS.Repositories;
+using SBMS.Repositories.CustomersRepo;
 using SBMS.Repositories.EmployeesRepo;
 using SBMS.Repositories.PurchasesRepo;
 using SBMS.Repositories.SalesRepo;
 using SBMS.Repositories.StoresRepo;
+using SBMS.Repositories.SuppliersRepo;
 using SBMS.Views.Reports;
 using System;
 using System.Collections.Generic;
@@ -25,12 +29,16 @@ namespace SBMS.Presenters.ReportsPres
         const string ProductsDataSet = "ProductsDataSet";
         const string SalesDataSet = "SalesDataSet";
         const string PurchasesDataSet = "PurchasesDataSet";
+        const string CustomersDataSet = "CustomersDataSet";
+        const string SuppliersDataSet = "SuppliersDataSet";
 
         const string EmployeesReport = "SBMS.Views.Reports.EmployeesReport.rdlc";
         const string UsersReport = "SBMS.Views.Reports.UsersReport.rdlc";
         const string ProductsReport = "SBMS.Views.Reports.ProductsReport.rdlc";
         const string SalesReport = "SBMS.Views.Reports.SalesReport.rdlc";
         const string PurchasesReport = "SBMS.Views.Reports.PurchasesReport.rdlc";
+        const string CustomersReport = "SBMS.Views.Reports.CustomersReport.rdlc";
+        const string SuppliersReport = "SBMS.Views.Reports.SuppliersReport.rdlc";
 
 
         private ReportsHVPres()
@@ -48,7 +56,10 @@ namespace SBMS.Presenters.ReportsPres
             if (instance == null) instance = new ReportsHVPres();
             return instance;
         }
-
+        public static void Dispose()
+        {
+            instance = null;
+        }
         private void OnInit()
         {
             reportsHV.ShowSalesReportView += async delegate { await ShowSalesReportViewAsync(); };
@@ -56,19 +67,77 @@ namespace SBMS.Presenters.ReportsPres
             reportsHV.ShowProductsReportView += async delegate { await ShowProductsReportViewAsync(); };
             reportsHV.ShowEmployeesReportView += async delegate { await ShowEmployeesReportViewAsync(); };
             reportsHV.ShowUsersReportView += async delegate { await ShowUsersReportViewAsync(); };
-            //reportsHV.ShowCustomersReportView += async delegate { await ShowCustomersReportView(); };
-            //reportsHV.ShowSuppliersReportView += async delegate { await ShowSuppliersReportView(); };
+            reportsHV.ShowCustomersReportView += async delegate { await ShowCustomersReportView(); };
+            reportsHV.ShowSuppliersReportView += async delegate { await ShowSuppliersReportView(); };
+            reportsHV.OnDisposed += delegate { Dispose(); };
+        }
+        private async Task ShowCustomersReportView()
+        {
+            reportsHV.ReportsViewer.LocalReport.ReportEmbeddedResource = CustomersReport;
+            reportDataSource.Name = CustomersDataSet;
+            await LoadCustomersAsync(false);
         }
 
-        //private Task ShowCustomersReportView()
-        //{
-            
-        //}
+        
 
-        //private Task ShowSuppliersReportView()
-        //{
-            
-        //}
+        private async Task ShowSuppliersReportView()
+        {
+            reportsHV.ReportsViewer.LocalReport.ReportEmbeddedResource = SuppliersReport;
+            reportDataSource.Name = SuppliersDataSet;
+            await LoadSuppliersAsync(false);
+        }
+        private async Task LoadCustomersAsync(bool IsFilter)
+        {
+            RepoResultM res = await CustomersRepo.GetCustomersAsync();
+            if (res.IsSucess)
+            {
+                List<CustomerM> Customers = new List<CustomerM>();
+                for (int i = 0; i < res.ResData.Count; i++)
+                {
+                    Customers.Add((CustomerM)res.ResData[i]);
+                }
+                if (Customers.Count > 0)
+                {
+                    reportDataSource.Value = Customers;
+                    reportsHV.ReportsViewer.RefreshReport();
+                }
+            }
+            else
+            {
+                if (res.ErrorMsg == "No Result")
+                {
+                    reportsHV.ShowMsgBox("The Customers List Is Empty", "Note:", false);
+                    return;
+                }
+                reportsHV.ShowMsgBox(res.ErrorMsg, "Error:", false);
+            }
+        }
+        private async Task LoadSuppliersAsync(bool IsFilter)
+        {
+            RepoResultM res = await SuppliersRepo.GetSuppliersAsync();
+            if (res.IsSucess)
+            {
+                List<SupplierM> Suppliers = new List<SupplierM>();
+                for (int i = 0; i < res.ResData.Count; i++)
+                {
+                    Suppliers.Add((SupplierM)res.ResData[i]);
+                }
+                if (Suppliers.Count > 0)
+                {
+                    reportDataSource.Value = Suppliers;
+                    reportsHV.ReportsViewer.RefreshReport();
+                }
+            }
+            else
+            {
+                if (res.ErrorMsg == "No Result")
+                {
+                    reportsHV.ShowMsgBox("The Suppliers List Is Empty", "Note:", false);
+                    return;
+                }
+                reportsHV.ShowMsgBox(res.ErrorMsg, "Error:", false);
+            }
+        }
 
         private async Task ShowSalesReportViewAsync()
         {

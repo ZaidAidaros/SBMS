@@ -11,6 +11,7 @@ namespace SBMS.Presenters.SuppliersPres
             ShowSuppliersView();
             this.suppliersHV.ShowSuppliersView += delegate { ShowSuppliersView(); };
             this.suppliersHV.ShowSuppCategoriesView += delegate { ShowSuppCategoriesView(); };
+            this.suppliersHV.OnDisposed += delegate { Dispose(); };
         }
         /// <summary>
         /// 
@@ -21,9 +22,10 @@ namespace SBMS.Presenters.SuppliersPres
             if (instance == null) instance = new SuppliersHVPres();
             return instance;
         }
-        /// <summary>
-        /// 
-        /// </summary>
+        public static void Dispose()
+        {
+            instance = null;
+        }
 
         private void ShowSuppliersView()
         {

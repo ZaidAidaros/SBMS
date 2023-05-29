@@ -2,6 +2,7 @@
 using SBMS.Repositories;
 using SBMS.Repositories.StoresRepo;
 using SBMS.Views.StoresV;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -22,18 +23,28 @@ namespace SBMS.Presenters.StoresPres
             if (instance == null) instance = new PCategoriesVPres();
             return instance;
         }
+        public static void Dispose()
+        {
+            instance = null;
+        }
         private PCategoriesVPres()
         {
             this.PCategoriesV = StoresV.GetInstance();
-            LoadCategoriesAsync();
+
+            OnInitAsync();
+        }
+
+        private async Task OnInitAsync()
+        {
+            await LoadCategoriesAsync();
             this.PCategoriesV.ShowAddProdCategoryForm += delegate { ShowAddPCategoryForm(); };
             this.PCategoriesV.ShowEditProdCategoryForm += delegate { ShowEditPCategoryForm(); };
             this.PCategoriesV.OnAECategorySave += delegate { OnAECategorySave(); };
             this.PCategoriesV.OnAECategoryCancel += delegate { OnAECategoryCancel(); };
-            this.PCategoriesV.DeleteSelectedProdCategory += delegate { OnDeleteSelectedCategoryAsync(); };
+            this.PCategoriesV.DeleteSelectedProdCategory += async delegate { await OnDeleteSelectedCategoryAsync(); };
             this.PCategoriesV.OnSelectCategory += delegate { OnSelectCategory(); };
             this.PCategoriesV.OnClickCategoriesView += delegate { OnClicCategoriesView(); };
-            
+            this.PCategoriesV.OnDisposed += delegate { Dispose(); };
         }
 
         // Fetch Data

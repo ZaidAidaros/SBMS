@@ -32,40 +32,41 @@ namespace SBMS.Presenters.PurchasesPres
         }
         private NewRetPurchaseInvVPres()
         {
-            this.newRetPurchaseInvV = NewRetPurchaseInvV.GetInstance();
+            newRetPurchaseInvV = NewRetPurchaseInvV.GetInstance();
 
-            this.OnInitAsync();
+            OnInitAsync();
         }
         private async Task OnInitAsync()
         {
             
-            this.LoadMonyStates();
-            await this.LoadSuppliersAsync();
-            await this.LoadProdCategoiesAsync();
-            await this.LoadProductsAsync(0);
-            this.newRetPurchaseInvV.OnInvSave += async delegate { await OnSaveInvAsync(); };
-            this.newRetPurchaseInvV.OnInvCancel += delegate { OnInCancel(); };
-            this.newRetPurchaseInvV.OnInvItemIncOne += delegate { OnInvItemIncOne(); };
-            this.newRetPurchaseInvV.OnInvItemDecOne += delegate { OnInvItemDecOne(); };
-            this.newRetPurchaseInvV.OnAEInvItem += delegate { OnAEInvItem(); };
-            this.newRetPurchaseInvV.OnInvItemRemove += delegate { OnRemoveInvItem(); };
-            this.newRetPurchaseInvV.OnPSearchBClicked += async delegate { await OnPSearchBClickedAsync(); };
-            this.newRetPurchaseInvV.CBXPCategoryFilter.SelectedIndexChanged += async delegate { await OnCategoryFilterChangeAsync(); };
-            this.newRetPurchaseInvV.CBXSuppliers.SelectedIndexChanged += delegate { OnSelectSupplier(); };
-            this.newRetPurchaseInvV.DGVProducts.ClearSelection();
-            this.newRetPurchaseInvV.DGVInvItems.ClearSelection();
-            this.newRetPurchaseInvV.DGVInvItems.CellClick += delegate { OnSelectInvItem(); };
-            this.newRetPurchaseInvV.OnClose += delegate { OnClose(); };
-            this.newRetPurchaseInvV.DGVProducts.SelectionChanged += delegate { OnSelectProduct(); };
+            LoadMonyStates();
+            await LoadSuppliersAsync();
+            await LoadProdCategoiesAsync();
+            await LoadProductsAsync(0);
+            newRetPurchaseInvV.OnInvSave += async delegate { await OnSaveInvAsync(); };
+            newRetPurchaseInvV.OnInvCancel += delegate { OnInCancel(); };
+            newRetPurchaseInvV.OnInvItemIncOne += delegate { OnInvItemIncOne(); };
+            newRetPurchaseInvV.OnInvItemDecOne += delegate { OnInvItemDecOne(); };
+            newRetPurchaseInvV.OnAEInvItem += delegate { OnAEInvItem(); };
+            newRetPurchaseInvV.OnInvItemRemove += delegate { OnRemoveInvItem(); };
+            newRetPurchaseInvV.OnPSearchBClicked += async delegate { await OnPSearchBClickedAsync(); };
+            newRetPurchaseInvV.CBXPCategoryFilter.SelectedIndexChanged += async delegate { await OnCategoryFilterChangeAsync(); };
+            newRetPurchaseInvV.CBXSuppliers.SelectedIndexChanged += delegate { OnSelectSupplier(); };
+            newRetPurchaseInvV.DGVProducts.ClearSelection();
+            newRetPurchaseInvV.DGVInvItems.ClearSelection();
+            newRetPurchaseInvV.DGVInvItems.CellClick += delegate { OnSelectInvItem(); };
+            newRetPurchaseInvV.OnClose += delegate { OnClose(); };
+            newRetPurchaseInvV.DGVProducts.SelectionChanged += delegate { OnSelectProduct(); };
+            newRetPurchaseInvV.OnDisposed += delegate { Dispose(); };
         }
         private void OnSelectProduct()
         {
-            if (this.newRetPurchaseInvV.DGVProducts.SelectedRows.Count==1)
+            if (newRetPurchaseInvV.DGVProducts.SelectedRows.Count==1)
             {
-                this.newRetPurchaseInvV.AEButtonText = "Add";
-                selectedProductM = (ProductM)this.newRetPurchaseInvV.DGVProducts.SelectedRows[0].DataBoundItem;
-                this.newRetPurchaseInvV.Cost = selectedProductM.Cost.ToString();
-                this.newRetPurchaseInvV.InvItemQuantity = selectedProductM.Quantity.ToString();
+                newRetPurchaseInvV.AEButtonText = "Add";
+                selectedProductM = (ProductM)newRetPurchaseInvV.DGVProducts.SelectedRows[0].DataBoundItem;
+                newRetPurchaseInvV.Cost = selectedProductM.Cost.ToString();
+                newRetPurchaseInvV.InvItemQuantity = selectedProductM.Quantity.ToString();
             }
         }
         private void OnSelectSupplier()

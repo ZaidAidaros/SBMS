@@ -3,6 +3,7 @@ using SBMS.Models.General;
 using SBMS.Repositories;
 using SBMS.Repositories.EmployeesRepo;
 using SBMS.Views.Employees;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -22,43 +23,49 @@ namespace SBMS.Presenters.EmployeesPres
             if (instance == null) instance = new EmployeesVPres();
             return instance;
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// 
+        public static void Dispose()
+        {
+            instance = null;
+        }
         private EmployeesVPres()
         {
             this.employeesV = EmployeesHV.GetInstance();
-            this.LoadEmployeesAsync();
-            this.LoadJobListAsync();
-            this.LoadGenderList();
-            this.employeesV.ShowAddEmployeeForm += delegate { this.ShowAddCustomerForm(); };
-            this.employeesV.ShowEditEmployeeForm += delegate { this.ShowEditCustomerForm(); };
-            this.employeesV.DeleteSelectedEmployee += delegate { this.DeleteSelectedCustomerAsync(); };
-            this.employeesV.OnAEEmployeeSave += delegate { this.OnAEEmployeeSave(); };
-            this.employeesV.OnAEEmployeeCancel += delegate { OnAEEmployeeCancel(); };
-            this.employeesV.OnSelectEmployee += delegate { this.OnSelectEmployee(); };
-            this.employeesV.OnJobFilterChanged += delegate { OnCategoryFilterChangedAsync(); };
-            this.employeesV.OnSearchButtonClicked += delegate { OnSearchButtonClickedAsync(); };
-            this.employeesV.OnVRefresh += delegate { OnRefreshPV(); };
+            OnInitAsync();
+        }
+
+        private async Task OnInitAsync()
+        {
+            await LoadEmployeesAsync();
+            await LoadJobListAsync();
+            LoadGenderList();
+            employeesV.ShowAddEmployeeForm += delegate { this.ShowAddCustomerForm(); };
+            employeesV.ShowEditEmployeeForm += delegate { this.ShowEditCustomerForm(); };
+            employeesV.DeleteSelectedEmployee += async delegate { await DeleteSelectedCustomerAsync(); };
+            employeesV.OnAEEmployeeSave += delegate { this.OnAEEmployeeSave(); };
+            employeesV.OnAEEmployeeCancel += delegate { OnAEEmployeeCancel(); };
+            employeesV.OnSelectEmployee += delegate { this.OnSelectEmployee(); };
+            employeesV.OnJobFilterChanged += async delegate { await OnCategoryFilterChangedAsync(); };
+            employeesV.OnSearchButtonClicked += async delegate { await OnSearchButtonClickedAsync(); };
+            employeesV.OnVRefresh += delegate { OnRefreshPV(); };
+            employeesV.OnDisposed += delegate { Dispose(); };
         }
 
         private void ShowAddCustomerForm()
         {
-            this.IsEdit = false;
-            this.employeesV.IsAEEmployeeFormVisable = true;
+            IsEdit = false;
+            employeesV.IsAEEmployeeFormVisable = true;
         }
 
         private void ShowEditCustomerForm()
         {
-            if (this.SelectedEmployee == null)
+            if (SelectedEmployee == null)
             {
-                this.employeesV.ShowMsgBox("Must Select Employee To Edit From List.", "Error:", false);
+                employeesV.ShowMsgBox("Must Select Employee To Edit From List.", "Error:", false);
                 return;
             }
-            this.IsEdit = true;
-            this.SetFields();
-            this.employeesV.IsAEEmployeeFormVisable = true;
+            IsEdit = true;
+            SetFields();
+            employeesV.IsAEEmployeeFormVisable = true;
         }
 
         private void SetFields()

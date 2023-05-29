@@ -2,6 +2,7 @@
 using SBMS.Repositories;
 using SBMS.Repositories.SuppliersRepo;
 using SBMS.Views.Suppliers;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -21,20 +22,28 @@ namespace SBMS.Presenters.SuppliersPres
             if (instance == null) instance = new SuppCategoriesVPres();
             return instance;
         }
-        /// <summary>
-        /// 
+        public static void Dispose()
+        {
+            instance = null;
+        }
         private SuppCategoriesVPres()
         {
             this.SCategoriesV = SuppliersHV.GetInstance();
-            LoadCategoriesAsync();
+            OnInitAsync();
+
+        }
+
+        private async Task OnInitAsync()
+        {
+            await LoadCategoriesAsync();
             this.SCategoriesV.ShowAddSuppCategoryForm += delegate { ShowAddSuppCategoryForm(); };
             this.SCategoriesV.ShowEditSuppCategoryForm += delegate { ShowEditSuppCategoryForm(); };
             this.SCategoriesV.OnAECategorySave += delegate { OnAECategorySave(); };
             this.SCategoriesV.OnAECategoryCancel += delegate { OnAECategoryCancel(); };
-            this.SCategoriesV.DeleteSelectedSuppCategory += delegate { OnDeleteSelectedCategoryAsync(); };
+            this.SCategoriesV.DeleteSelectedSuppCategory += async delegate { await OnDeleteSelectedCategoryAsync(); };
             this.SCategoriesV.OnSelectCategory += delegate { OnSelectCategory(); };
+            this.SCategoriesV.OnDisposed += delegate { Dispose(); };
             this.ResetAll();
-
         }
 
         private void ShowAddSuppCategoryForm()

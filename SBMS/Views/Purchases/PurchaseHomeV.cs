@@ -30,7 +30,7 @@ namespace SBMS.Views.Purchases
             this.btnNewRePurchaseInv.Click += delegate { this.ShowNewRePurchaseView?.Invoke(this, EventArgs.Empty); };
             this.btnPurchases.Click += delegate { this.ShowPurchasesView?.Invoke(this, EventArgs.Empty); };
             this.btnClose.Click += delegate { this.Close(); this.OnClose?.Invoke(this, EventArgs.Empty); };
-
+            this.Disposed += delegate { OnDisposed?.Invoke(this, EventArgs.Empty); };
             PurchaseInvoicesV.GetInstance().MdiParent = this;
             NewPurchaseInvV.GetInstance().MdiParent = this;
             NewRetPurchaseInvV.GetInstance().MdiParent = this;
@@ -45,5 +45,6 @@ namespace SBMS.Views.Purchases
         public event EventHandler ShowNewRePurchaseView;
         public event EventHandler ShowPurchasesView;
         public event EventHandler OnClose;
+        public event EventHandler OnDisposed;
     }
 }

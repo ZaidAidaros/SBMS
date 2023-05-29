@@ -17,6 +17,7 @@ namespace SBMS.Views.Customers
         // View Header
         event EventHandler ShowCustomersView;
         event EventHandler ShowCustCategoriesView;
+        event EventHandler OnDisposed;
 
     }
 }

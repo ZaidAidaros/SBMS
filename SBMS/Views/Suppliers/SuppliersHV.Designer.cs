@@ -82,16 +82,15 @@
             this.pnlSuppliersHVBody = new System.Windows.Forms.Panel();
             this.pnlSuppliersView = new System.Windows.Forms.Panel();
             this.dgvSuppliers = new System.Windows.Forms.DataGridView();
-            this.fpnlAESupplierForm = new System.Windows.Forms.FlowLayoutPanel();
-            this.fpnlSupplierControl = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnlSuppliersHVHeadControls = new System.Windows.Forms.Panel();
-            this.supplierMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fpnlAESupplierForm = new System.Windows.Forms.FlowLayoutPanel();
+            this.fpnlSupplierControl = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlSuppliersHVHeadControls = new System.Windows.Forms.Panel();
             this.pnlCategory.SuspendLayout();
             this.gbCategoriesControl.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -112,10 +111,10 @@
             this.pnlSuppliersHVBody.SuspendLayout();
             this.pnlSuppliersView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierMBindingSource)).BeginInit();
             this.fpnlAESupplierForm.SuspendLayout();
             this.fpnlSupplierControl.SuspendLayout();
             this.pnlSuppliersHVHeadControls.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierMBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlCategory
@@ -208,8 +207,13 @@
             // 
             // dgvCategories
             // 
+            this.dgvCategories.AllowUserToAddRows = false;
+            this.dgvCategories.AllowUserToDeleteRows = false;
+            this.dgvCategories.AllowUserToResizeColumns = false;
+            this.dgvCategories.AllowUserToResizeRows = false;
             this.dgvCategories.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCategories.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgvCategories.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -669,9 +673,12 @@
             // 
             this.dgvSuppliers.AllowUserToAddRows = false;
             this.dgvSuppliers.AllowUserToDeleteRows = false;
+            this.dgvSuppliers.AllowUserToResizeColumns = false;
+            this.dgvSuppliers.AllowUserToResizeRows = false;
             this.dgvSuppliers.AutoGenerateColumns = false;
             this.dgvSuppliers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSuppliers.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgvSuppliers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvSuppliers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvSuppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSuppliers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -679,8 +686,7 @@
             this.nameDataGridViewTextBoxColumn,
             this.phoneDataGridViewTextBoxColumn,
             this.addressDataGridViewTextBoxColumn,
-            this.categoryDataGridViewTextBoxColumn,
-            this.categoryIdDataGridViewTextBoxColumn});
+            this.categoryDataGridViewTextBoxColumn});
             this.dgvSuppliers.DataSource = this.supplierMBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -700,46 +706,6 @@
             this.dgvSuppliers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSuppliers.Size = new System.Drawing.Size(628, 528);
             this.dgvSuppliers.TabIndex = 11;
-            // 
-            // fpnlAESupplierForm
-            // 
-            this.fpnlAESupplierForm.Controls.Add(this.pnlName);
-            this.fpnlAESupplierForm.Controls.Add(this.pnlCategory);
-            this.fpnlAESupplierForm.Controls.Add(this.pnlPC);
-            this.fpnlAESupplierForm.Controls.Add(this.panel4);
-            this.fpnlAESupplierForm.Controls.Add(this.fpnlSaveCancelBtns);
-            this.fpnlAESupplierForm.Dock = System.Windows.Forms.DockStyle.Right;
-            this.fpnlAESupplierForm.Location = new System.Drawing.Point(798, 0);
-            this.fpnlAESupplierForm.Name = "fpnlAESupplierForm";
-            this.fpnlAESupplierForm.Size = new System.Drawing.Size(178, 528);
-            this.fpnlAESupplierForm.TabIndex = 5;
-            // 
-            // fpnlSupplierControl
-            // 
-            this.fpnlSupplierControl.Controls.Add(this.pnlSearch);
-            this.fpnlSupplierControl.Controls.Add(this.pnlFilter);
-            this.fpnlSupplierControl.Controls.Add(this.gbSupplierControl);
-            this.fpnlSupplierControl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.fpnlSupplierControl.Location = new System.Drawing.Point(0, 0);
-            this.fpnlSupplierControl.Name = "fpnlSupplierControl";
-            this.fpnlSupplierControl.Size = new System.Drawing.Size(170, 528);
-            this.fpnlSupplierControl.TabIndex = 2;
-            // 
-            // pnlSuppliersHVHeadControls
-            // 
-            this.pnlSuppliersHVHeadControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnlSuppliersHVHeadControls.Controls.Add(this.lblHeaderTitle);
-            this.pnlSuppliersHVHeadControls.Controls.Add(this.btnShowSuppCategoriesView);
-            this.pnlSuppliersHVHeadControls.Controls.Add(this.btnShowSuppliersView);
-            this.pnlSuppliersHVHeadControls.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSuppliersHVHeadControls.Location = new System.Drawing.Point(0, 0);
-            this.pnlSuppliersHVHeadControls.Name = "pnlSuppliersHVHeadControls";
-            this.pnlSuppliersHVHeadControls.Size = new System.Drawing.Size(976, 29);
-            this.pnlSuppliersHVHeadControls.TabIndex = 6;
-            // 
-            // supplierMBindingSource
-            // 
-            this.supplierMBindingSource.DataSource = typeof(SBMS.Models.Suppliers.SupplierM);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -776,12 +742,45 @@
             this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
             this.categoryDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // categoryIdDataGridViewTextBoxColumn
+            // supplierMBindingSource
             // 
-            this.categoryIdDataGridViewTextBoxColumn.DataPropertyName = "CategoryId";
-            this.categoryIdDataGridViewTextBoxColumn.HeaderText = "CategoryId";
-            this.categoryIdDataGridViewTextBoxColumn.Name = "categoryIdDataGridViewTextBoxColumn";
-            this.categoryIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.supplierMBindingSource.DataSource = typeof(SBMS.Models.Suppliers.SupplierM);
+            // 
+            // fpnlAESupplierForm
+            // 
+            this.fpnlAESupplierForm.Controls.Add(this.pnlName);
+            this.fpnlAESupplierForm.Controls.Add(this.pnlCategory);
+            this.fpnlAESupplierForm.Controls.Add(this.pnlPC);
+            this.fpnlAESupplierForm.Controls.Add(this.panel4);
+            this.fpnlAESupplierForm.Controls.Add(this.fpnlSaveCancelBtns);
+            this.fpnlAESupplierForm.Dock = System.Windows.Forms.DockStyle.Right;
+            this.fpnlAESupplierForm.Location = new System.Drawing.Point(798, 0);
+            this.fpnlAESupplierForm.Name = "fpnlAESupplierForm";
+            this.fpnlAESupplierForm.Size = new System.Drawing.Size(178, 528);
+            this.fpnlAESupplierForm.TabIndex = 5;
+            // 
+            // fpnlSupplierControl
+            // 
+            this.fpnlSupplierControl.Controls.Add(this.pnlSearch);
+            this.fpnlSupplierControl.Controls.Add(this.pnlFilter);
+            this.fpnlSupplierControl.Controls.Add(this.gbSupplierControl);
+            this.fpnlSupplierControl.Dock = System.Windows.Forms.DockStyle.Left;
+            this.fpnlSupplierControl.Location = new System.Drawing.Point(0, 0);
+            this.fpnlSupplierControl.Name = "fpnlSupplierControl";
+            this.fpnlSupplierControl.Size = new System.Drawing.Size(170, 528);
+            this.fpnlSupplierControl.TabIndex = 2;
+            // 
+            // pnlSuppliersHVHeadControls
+            // 
+            this.pnlSuppliersHVHeadControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnlSuppliersHVHeadControls.Controls.Add(this.lblHeaderTitle);
+            this.pnlSuppliersHVHeadControls.Controls.Add(this.btnShowSuppCategoriesView);
+            this.pnlSuppliersHVHeadControls.Controls.Add(this.btnShowSuppliersView);
+            this.pnlSuppliersHVHeadControls.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSuppliersHVHeadControls.Location = new System.Drawing.Point(0, 0);
+            this.pnlSuppliersHVHeadControls.Name = "pnlSuppliersHVHeadControls";
+            this.pnlSuppliersHVHeadControls.Size = new System.Drawing.Size(976, 29);
+            this.pnlSuppliersHVHeadControls.TabIndex = 6;
             // 
             // SuppliersHV
             // 
@@ -823,11 +822,11 @@
             this.pnlSuppliersHVBody.ResumeLayout(false);
             this.pnlSuppliersView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierMBindingSource)).EndInit();
             this.fpnlAESupplierForm.ResumeLayout(false);
             this.fpnlSupplierControl.ResumeLayout(false);
             this.pnlSuppliersHVHeadControls.ResumeLayout(false);
             this.pnlSuppliersHVHeadControls.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierMBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -888,12 +887,11 @@
         private System.Windows.Forms.FlowLayoutPanel fpnlAESupplierForm;
         private System.Windows.Forms.FlowLayoutPanel fpnlSupplierControl;
         private System.Windows.Forms.Panel pnlSuppliersHVHeadControls;
+        private System.Windows.Forms.BindingSource supplierMBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource supplierMBindingSource;
     }
 }

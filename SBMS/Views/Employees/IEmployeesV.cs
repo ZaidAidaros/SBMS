@@ -32,6 +32,7 @@ namespace SBMS.Views.Employees
         event EventHandler OnAEEmployeeSave;
         event EventHandler OnAEEmployeeCancel;
         event EventHandler OnVRefresh;
+        event EventHandler OnDisposed;
 
 
 

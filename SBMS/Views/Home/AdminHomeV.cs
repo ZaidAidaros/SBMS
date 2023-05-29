@@ -59,6 +59,7 @@ namespace SBMS.Views.Home
         public event EventHandler ShowHome;
         public event EventHandler ShowCustomersMV;
         public event EventHandler ShowSuppliersMV;
+        public event EventHandler OnDisposed;
 
         void Subscribe()
         {
@@ -74,6 +75,7 @@ namespace SBMS.Views.Home
             btnSuppliers.Click += delegate { ShowSuppliersMV?.Invoke(this, EventArgs.Empty); };
             btnSettingsV.Click += delegate { ShowSettingsMV?.Invoke(this, EventArgs.Empty); };
             btnAboutV.Click += delegate { ShowAboutV?.Invoke(this, EventArgs.Empty); };
+            Disposed += delegate { OnDisposed?.Invoke(this, EventArgs.Empty); };
         }
 
         private void AdminHomeV_FormClosed(object sender, FormClosedEventArgs e)

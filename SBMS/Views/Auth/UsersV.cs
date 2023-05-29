@@ -50,6 +50,7 @@ namespace SBMS.Views.Auth
         public event EventHandler OnVRefresh;
         public event EventHandler OnPermmisionFilterChanged;
         public event EventHandler OnSearchBClicked;
+        public event EventHandler OnDisposed;
 
         private void SbsUsersVEvents()
         {
@@ -62,6 +63,7 @@ namespace SBMS.Views.Auth
             this.btnVRefresh.Click += delegate { this.OnVRefresh?.Invoke(this, EventArgs.Empty); };
             this.dgvUsers.SelectionChanged += delegate { this.OnSelectUser?.Invoke(this, EventArgs.Empty); };
             this.cbxPermissionFilter.SelectedIndexChanged += delegate { this.OnPermmisionFilterChanged?.Invoke(this, EventArgs.Empty); };
+            this.Disposed+= delegate { this.OnDisposed?.Invoke(this, EventArgs.Empty); };
         }
         private void InitProp()
         {

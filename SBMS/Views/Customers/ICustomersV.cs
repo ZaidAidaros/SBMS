@@ -30,6 +30,7 @@ namespace SBMS.Views.Customers
         event EventHandler OnAECustomerSave;
         event EventHandler OnAECustomerCancel;
         event EventHandler OnVRefresh;
+        event EventHandler OnDisposed;
 
 
 

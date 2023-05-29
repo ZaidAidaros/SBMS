@@ -15,7 +15,8 @@ namespace SBMS.Views.StoresV
         event EventHandler ShowProductsView;
         event EventHandler ShowProdCategoriesView;
         event EventHandler ShowProdUnitsView;
+        event EventHandler OnDisposed;
 
-        
+
     }
 }

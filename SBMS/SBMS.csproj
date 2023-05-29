@@ -313,6 +313,7 @@
     <EmbeddedResource Include="Views\Purchases\PurchaseInvoicesV.resx">
       <DependentUpon>PurchaseInvoicesV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\CustomersReport.rdlc" />
     <EmbeddedResource Include="Views\Reports\EmployeesReport.rdlc" />
     <EmbeddedResource Include="Views\Reports\ProductsReport.rdlc" />
     <EmbeddedResource Include="Views\Reports\PurchasesReport.rdlc" />
@@ -320,6 +321,7 @@
       <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\SalesReport.rdlc" />
+    <EmbeddedResource Include="Views\Reports\SuppliersReport.rdlc" />
     <EmbeddedResource Include="Views\Reports\UsersReport.rdlc" />
     <EmbeddedResource Include="Views\Sales\NewRetSaleInvoiceV.resx">
       <DependentUpon>NewRetSaleInvoiceV.cs</DependentUpon>

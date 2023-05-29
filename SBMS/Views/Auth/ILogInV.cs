@@ -11,6 +11,6 @@ namespace SBMS.Views.Auth
 
         //Events
         event EventHandler LogIn;
-        void onLoged();
+        event EventHandler OnDisposed;
     }
 }

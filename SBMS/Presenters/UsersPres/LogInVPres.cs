@@ -16,12 +16,14 @@ namespace SBMS.Presenters
         {
 
             iLogInV = LogInV.GetInstance();
-            iLogInV.LogIn += async delegate { await this.LogInAsync(); };
+            iLogInV.LogIn += async delegate { await LogInAsync(); };
+            iLogInV.OnDisposed +=  delegate { Dispose(); };
 
         }
-        /// <summary>
-        /// 
-        /// </summary>
+        public static void Dispose()
+        {
+            instance = null;
+        }
         private static LogInVPres instance;
         public static LogInVPres GetInstance()
         {

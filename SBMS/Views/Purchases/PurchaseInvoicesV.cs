@@ -25,6 +25,7 @@ namespace SBMS.Views.Purchases
         {
             InitializeComponent();
             this.btnInvSearch.Click += delegate { this.OnInvSearchBClicked?.Invoke(this, EventArgs.Empty); };
+            this.Disposed += delegate { this.OnDisposed?.Invoke(this, EventArgs.Empty); };
         }
 
         public string InvSearchField { get => this.tbInvSearch.Text; set => this.tbInvSearch.Text = value; }
@@ -39,6 +40,7 @@ namespace SBMS.Views.Purchases
 
 
         public event EventHandler OnInvSearchBClicked;
+        public event EventHandler OnDisposed;
 
         public bool ShowMsgBox(string msg, string title, bool isYesNo)
         {

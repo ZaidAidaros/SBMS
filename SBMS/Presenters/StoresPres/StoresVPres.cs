@@ -13,6 +13,7 @@ namespace SBMS.Presenters.StoresPres
             this.storesV.ShowProductsView += delegate { ShowProductsView(); };
             this.storesV.ShowProdCategoriesView += delegate { ShowProdCategoriesView(); };
             this.storesV.ShowProdUnitsView += delegate { ShowProdUnitsView(); };
+            this.storesV.OnDisposed += delegate { Dispose(); };
         }
         /// <summary>
         /// 
@@ -23,9 +24,10 @@ namespace SBMS.Presenters.StoresPres
             if (instance == null) instance = new StoresVPres();
             return instance;
         }
-        /// <summary>
-        /// 
-        /// </summary>
+        public static void Dispose()
+        {
+            instance = null;
+        }
 
         private void ShowProductsView()
         {

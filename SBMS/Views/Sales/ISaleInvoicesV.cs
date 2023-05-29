@@ -16,7 +16,7 @@ namespace SBMS.Views.Sales
         DataGridView DGVInvItems { get; }
 
         event EventHandler OnInvSearchBClicked;
-
+        event EventHandler OnDisposed;
         bool ShowMsgBox(string msg, string title, bool isYesNo);
     }
 }

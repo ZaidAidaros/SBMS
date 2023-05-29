@@ -30,11 +30,15 @@ namespace SBMS.Presenters
             if (instance == null) instance = new AdminHomeVPres(userM);
             return instance;
         }
+        public static void Dispose()
+        {
+            instance = null;
+        }
         private AdminHomeVPres(UserM userM)
         {
             user = userM;
             adminHomeV = AdminHomeV.GetInstance();
-            Subscribe();
+            OnInit();
             adminHomeV.UName = user.Name;
             adminHomeV.SName = user.Employee;
             HomeWelcomV.GetInstance().MdiParent = AdminHomeV.GetInstance();
@@ -48,7 +52,7 @@ namespace SBMS.Presenters
             ShowHome();
         }
 
-        void Subscribe()
+        void OnInit()
         {
             adminHomeV.ShowEmployeesMV += delegate { ShowHome(); };
             adminHomeV.ShowEmployeesMV += delegate { ShowEmploeesMV(); };
@@ -61,6 +65,8 @@ namespace SBMS.Presenters
             adminHomeV.ShowSuppliersMV += delegate { ShowSuppliersMV(); };
             adminHomeV.ShowSettingsMV += delegate { ShowSettingsMV(); };
             adminHomeV.ShowAboutV += delegate { ShowAboutV(); };
+
+            adminHomeV.OnDisposed += delegate { Dispose(); };
            
         }
 

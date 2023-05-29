@@ -13,5 +13,7 @@ namespace SBMS.Views.Employees
         // View Header
         event EventHandler ShowEmployeesView;
         event EventHandler ShowJobsView;
+        event EventHandler OnDisposed;
+
     }
 }

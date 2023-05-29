@@ -72,6 +72,7 @@ namespace SBMS.Views.StoresV
         public event EventHandler ShowSelectedProductInfo;
         public event EventHandler OnSelectProduct;
         public event EventHandler OnProductsVRefresh;
+        public event EventHandler OnDisposed;
 
         // Stores View Elements
         public Panel PnlProductsView { get => this.pnlProductsView; set => this.pnlProductsView=value; }
@@ -113,7 +114,7 @@ namespace SBMS.Views.StoresV
         {
             this.btnShowProductsView.Click += delegate { ShowProductsView?.Invoke(this, EventArgs.Empty); };
             this.btnShowProdCategoriesView.Click += delegate { ShowProdCategoriesView?.Invoke(this, EventArgs.Empty); };
-            this.btnShowProdUnitsView.Click += delegate { ShowProdUnitsView?.Invoke(this, EventArgs.Empty); };
+            this.Disposed += delegate { OnDisposed?.Invoke(this, EventArgs.Empty); };
         }
 
         private void SubProductsViewEvents()

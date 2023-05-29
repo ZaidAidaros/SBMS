@@ -23,10 +23,10 @@ namespace SBMS.Presenters.SuppliersPres
             if (instance == null) instance = new SuppliersVPres();
             return instance;
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// 
+        public static void Dispose()
+        {
+            instance = null;
+        }
         private SuppliersVPres()
         {
             SuppliersV = SuppliersHV.GetInstance();
@@ -47,6 +47,7 @@ namespace SBMS.Presenters.SuppliersPres
             SuppliersV.OnCategoryFilterChanged += async delegate { await OnCategoryFilterChangedAsync(); };
             SuppliersV.OnSearchButtonClicked += async delegate { await OnSearchButtonClickedAsync(); };
             SuppliersV.OnVRefresh += delegate { OnRefreshSVAsync(); };
+            SuppliersV.OnDisposed += delegate { Dispose(); };
         }
 
         private void ShowAddSupplierForm()

@@ -22,6 +22,7 @@ namespace SBMS.Views.Suppliers
         event EventHandler OnAECategorySave;
         event EventHandler OnAECategoryCancel;
         event EventHandler OnSelectCategory;
+        event EventHandler OnDisposed;
         //event EventHandler OnClickCategoriesView;
 
         bool ShowMsgBox(string msg, string title, bool isYesNo);

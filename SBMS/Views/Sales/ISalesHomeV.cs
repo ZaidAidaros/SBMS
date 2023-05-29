@@ -17,6 +17,7 @@ namespace SBMS.Views.Sales
         event EventHandler ShowNewRetSalesInvView;
         event EventHandler ShowSalesView;
         event EventHandler OnClose;
+        event EventHandler OnDisposed;
     }
 
 

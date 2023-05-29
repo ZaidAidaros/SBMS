@@ -36,24 +36,26 @@ namespace SBMS.Presenters.PurchasesPres
         }
         private async Task OnInitAsync()
         {
-            await this.LoadProductsAsync(0);
-            await this.LoadSuppliersAsync();
-            await this.LoadProdCategoiesAsync();
-            this.LoadMonyStates();
-            this.newPurchaseInvV.OnInvSave += async delegate { await OnSaveInvAsync(); };
-            this.newPurchaseInvV.OnInvCancel += delegate { OnInCancel(); };
-            this.newPurchaseInvV.OnInvItemIncOne += delegate { OnInvItemIncOne(); };
-            this.newPurchaseInvV.OnInvItemDecOne += delegate { OnInvItemDecOne(); };
-            this.newPurchaseInvV.OnAEInvItem += delegate { OnAEInvItem(); };
-            this.newPurchaseInvV.OnInvItemRemove += delegate { OnRemoveInvItem(); };
-            this.newPurchaseInvV.OnPSearchBClicked += async delegate { await OnPSearchBClickedAsync(); };
-            this.newPurchaseInvV.CBXPCategoryFilter.SelectedIndexChanged += async delegate { await OnCategoryFilterChangeAsync(); };
-            this.newPurchaseInvV.CBXSuppliers.SelectedIndexChanged += delegate { OnSelectSupplier(); };
-            this.newPurchaseInvV.DGVProducts.ClearSelection();
-            this.newPurchaseInvV.DGVInvItems.ClearSelection();
-            this.newPurchaseInvV.DGVInvItems.CellClick += delegate { OnSelectInvItem(); };
-            this.newPurchaseInvV.DGVProducts.SelectionChanged += delegate { this.newPurchaseInvV.AEButtonText = "Add"; };
-            this.newPurchaseInvV.OnClose += delegate { OnClose(); };
+            await LoadProductsAsync(0);
+            await LoadSuppliersAsync();
+            await LoadProdCategoiesAsync();
+            LoadMonyStates();
+            
+            newPurchaseInvV.OnInvSave += async delegate { await OnSaveInvAsync(); };
+            newPurchaseInvV.OnInvCancel += delegate { OnInCancel(); };
+            newPurchaseInvV.OnInvItemIncOne += delegate { OnInvItemIncOne(); };
+            newPurchaseInvV.OnInvItemDecOne += delegate { OnInvItemDecOne(); };
+            newPurchaseInvV.OnAEInvItem += delegate { OnAEInvItem(); };
+            newPurchaseInvV.OnInvItemRemove += delegate { OnRemoveInvItem(); };
+            newPurchaseInvV.OnPSearchBClicked += async delegate { await OnPSearchBClickedAsync(); };
+            newPurchaseInvV.CBXPCategoryFilter.SelectedIndexChanged += async delegate { await OnCategoryFilterChangeAsync(); };
+            newPurchaseInvV.CBXSuppliers.SelectedIndexChanged += delegate { OnSelectSupplier(); };
+            newPurchaseInvV.DGVProducts.ClearSelection();
+            newPurchaseInvV.DGVInvItems.ClearSelection();
+            newPurchaseInvV.DGVInvItems.CellClick += delegate { OnSelectInvItem(); };
+            newPurchaseInvV.DGVProducts.SelectionChanged += delegate { this.newPurchaseInvV.AEButtonText = "Add"; };
+            newPurchaseInvV.OnClose += delegate { OnClose(); };
+            newPurchaseInvV.OnDisposed += delegate { Dispose(); };
         }
         private void OnSelectSupplier()
         {
@@ -229,16 +231,16 @@ namespace SBMS.Presenters.PurchasesPres
         }
         private void OnInCancel()
         {
-            this.RestAll();
+            RestAll();
         }
         private void OnInvItemIncOne()
         {
-            this.newPurchaseInvV.InvItemQuantity = (decimal.Parse(this.newPurchaseInvV.InvItemQuantity) + 1).ToString();
+            newPurchaseInvV.InvItemQuantity = (decimal.Parse(this.newPurchaseInvV.InvItemQuantity) + 1).ToString();
         }
         private void OnInvItemDecOne()
         {
-            if(decimal.Parse(this.newPurchaseInvV.InvItemQuantity)>0)
-                this.newPurchaseInvV.InvItemQuantity = (decimal.Parse(this.newPurchaseInvV.InvItemQuantity) - 1).ToString();
+            if(decimal.Parse(newPurchaseInvV.InvItemQuantity)>0)
+                this.newPurchaseInvV.InvItemQuantity = (decimal.Parse(newPurchaseInvV.InvItemQuantity) - 1).ToString();
         }
         private void OnAEInvItem()
         {

@@ -17,5 +17,6 @@ namespace SBMS.Views.Suppliers
         // View Header
         event EventHandler ShowSuppliersView;
         event EventHandler ShowSuppCategoriesView;
+        event EventHandler OnDisposed;
     }
 }

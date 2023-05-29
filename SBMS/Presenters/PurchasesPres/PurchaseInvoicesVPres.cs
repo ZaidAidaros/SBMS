@@ -21,31 +21,36 @@ namespace SBMS.Presenters.PurchasesPres
             if (instance == null) instance = new PurchaseInvoicesVPres();
             return instance;
         }
+        public static void Dispose()
+        {
+            instance = null;
+        }
         private PurchaseInvoicesVPres()
         {
-            this.purchaseInvoicesV = PurchaseInvoicesV.GetInstance();
+            purchaseInvoicesV = PurchaseInvoicesV.GetInstance();
             OnInitAsync();
         }
         private async Task OnInitAsync()
         {
-            this.LoadInvoiceTypesAsync();
-            await this.LoadInvoicesAsync(null);
-            this.purchaseInvoicesV.DGVInvoices.ClearSelection();
-            this.purchaseInvoicesV.OnInvSearchBClicked += async delegate { await OnSearchAsync(); };
-            this.purchaseInvoicesV.CBXInvFilter.SelectedIndexChanged += async delegate { await this.OnFilterAsync(); };
-            this.purchaseInvoicesV.DGVInvoices.SelectionChanged += async delegate { await this.OnSelectInvAsync(); };
+            LoadInvoiceTypesAsync();
+            await LoadInvoicesAsync(null);
+            purchaseInvoicesV.DGVInvoices.ClearSelection();
+            purchaseInvoicesV.OnInvSearchBClicked += async delegate { await OnSearchAsync(); };
+            purchaseInvoicesV.CBXInvFilter.SelectedIndexChanged += async delegate { await this.OnFilterAsync(); };
+            purchaseInvoicesV.DGVInvoices.SelectionChanged += async delegate { await this.OnSelectInvAsync(); };
+            purchaseInvoicesV.OnDisposed += delegate { Dispose(); };
 
         }
         private async Task OnSelectInvAsync()
         {
-            InvoiceM purchaseInvM = this.GetSelectedInvoice();
+            InvoiceM purchaseInvM = GetSelectedInvoice();
             if (purchaseInvM == null) return;
-            await this.LoadInvoiceItemsAsync(purchaseInvM.Id);
+            await LoadInvoiceItemsAsync(purchaseInvM.Id);
             
         }
         private InvoiceM GetSelectedInvoice()
         {
-            if (this.purchaseInvoicesV.DGVInvoices.SelectedRows.Count == 1) return this.purchaseInvoicesV.DGVInvoices.SelectedRows[0].DataBoundItem as InvoiceM;
+            if (purchaseInvoicesV.DGVInvoices.SelectedRows.Count == 1) return purchaseInvoicesV.DGVInvoices.SelectedRows[0].DataBoundItem as InvoiceM;
             return null;
         }
         private async Task LoadInvoicesAsync(string searchValue)
@@ -61,7 +66,7 @@ namespace SBMS.Presenters.PurchasesPres
             }
             if (res.IsSucess)
             {
-                this.purchaseInvoicesV.DGVInvoices.DataSource = null;
+                purchaseInvoicesV.DGVInvoices.DataSource = null;
                 List<InvoiceM> Invoices = new List<InvoiceM>();
                 for (int i = 0; i < res.ResData.Count; i++)
                 {
@@ -70,7 +75,7 @@ namespace SBMS.Presenters.PurchasesPres
                 }
                 if (Invoices.Count > 0)
                 {
-                    this.purchaseInvoicesV.DGVInvoices.DataSource = Invoices;
+                    purchaseInvoicesV.DGVInvoices.DataSource = Invoices;
                 }
 
             }
@@ -78,10 +83,10 @@ namespace SBMS.Presenters.PurchasesPres
             {
                 if (res.ErrorMsg == "No Result")
                 {
-                    this.purchaseInvoicesV.ShowMsgBox("The Invoices List Is Empty", "Note:", false);
+                    purchaseInvoicesV.ShowMsgBox("The Invoices List Is Empty", "Note:", false);
                     return;
                 }
-                this.purchaseInvoicesV.ShowMsgBox(res.ErrorMsg, "Error:", false);
+                purchaseInvoicesV.ShowMsgBox(res.ErrorMsg, "Error:", false);
             }
         }
         private async Task LoadInvoiceItemsAsync(int invId)
@@ -91,7 +96,7 @@ namespace SBMS.Presenters.PurchasesPres
             if (res.IsSucess)
             {
 
-                this.purchaseInvoicesV.DGVInvItems.DataSource = null;
+                purchaseInvoicesV.DGVInvItems.DataSource = null;
                 List<InvoiceItemM> InvItems = new List<InvoiceItemM>();
                 for (int i = 0; i < res.ResData.Count; i++)
                 {
@@ -99,8 +104,8 @@ namespace SBMS.Presenters.PurchasesPres
                 }
                 if (InvItems.Count > 0)
                 {
-                    this.purchaseInvoicesV.DGVInvItems.DataSource = InvItems;
-                    this.purchaseInvoicesV.IsInvItemsVisable = true;
+                    purchaseInvoicesV.DGVInvItems.DataSource = InvItems;
+                    purchaseInvoicesV.IsInvItemsVisable = true;
                 }
 
             }
@@ -108,11 +113,11 @@ namespace SBMS.Presenters.PurchasesPres
             {
                 if (res.ErrorMsg == "No Result")
                 {
-                    this.purchaseInvoicesV.IsInvItemsVisable = false;
-                    this.purchaseInvoicesV.ShowMsgBox("The Invoice Items List Is Empty", "Note:", false);
+                    purchaseInvoicesV.IsInvItemsVisable = false;
+                    purchaseInvoicesV.ShowMsgBox("The Invoice Items List Is Empty", "Note:", false);
                     return;
                 }
-                this.purchaseInvoicesV.ShowMsgBox(res.ErrorMsg, "Error:", false);
+                purchaseInvoicesV.ShowMsgBox(res.ErrorMsg, "Error:", false);
             }
         }
         private void LoadInvoiceTypesAsync()
@@ -126,36 +131,38 @@ namespace SBMS.Presenters.PurchasesPres
             InvoiceTypeM invoiceTypeM2 = new InvoiceTypeM();
             invoiceTypeM2.Id = 2;
             invoiceTypeM2.Name = "Return Invoice";
-            this.purchaseInvoicesV.CBXInvFilter.ValueMember = "Id";
-            this.purchaseInvoicesV.CBXInvFilter.DisplayMember = "Name";
-            this.purchaseInvoicesV.CBXInvFilter.Items.Add((InvoiceTypeM)invoiceTypeM);
-            this.purchaseInvoicesV.CBXInvFilter.Items.Add((InvoiceTypeM)invoiceTypeM1);
-            this.purchaseInvoicesV.CBXInvFilter.Items.Add((InvoiceTypeM)invoiceTypeM2);
-            this.purchaseInvoicesV.CBXInvFilter.SelectedIndex=0;
+            purchaseInvoicesV.CBXInvFilter.ValueMember = "Id";
+            purchaseInvoicesV.CBXInvFilter.DisplayMember = "Name";
+            purchaseInvoicesV.CBXInvFilter.Items.Add((InvoiceTypeM)invoiceTypeM);
+            purchaseInvoicesV.CBXInvFilter.Items.Add((InvoiceTypeM)invoiceTypeM1);
+            purchaseInvoicesV.CBXInvFilter.Items.Add((InvoiceTypeM)invoiceTypeM2);
+            purchaseInvoicesV.CBXInvFilter.SelectedIndex=0;
         }
         private async Task OnSearchAsync()
         {
-            await LoadInvoicesAsync(this.purchaseInvoicesV.InvSearchField);
+            await LoadInvoicesAsync(purchaseInvoicesV.InvSearchField);
         }
         private async Task OnFilterAsync()
         {
-            if (this.purchaseInvoicesV.CBXInvFilter.SelectedIndex == 0)
+            if (purchaseInvoicesV.CBXInvFilter.SelectedIndex == 0)
             {
                 await LoadInvoicesAsync(null);
             }
             else
             {
-                await LoadInvoicesAsync(((InvoiceTypeM)this.purchaseInvoicesV.CBXInvFilter.SelectedItem).Id.ToString());
+                await LoadInvoicesAsync(((InvoiceTypeM)purchaseInvoicesV.CBXInvFilter.SelectedItem).Id.ToString());
             }
             
         }
-        private void RestAll()
+        private async Task RestAllAsync()
         {
-            this.purchaseInvoicesV.CBXInvFilter.SelectedIndex = 0;
-            this.purchaseInvoicesV.InvSearchField = null;
-            this.purchaseInvoicesV.IsInvItemsVisable = false;
-            this.LoadInvoicesAsync(null);
+            purchaseInvoicesV.CBXInvFilter.SelectedIndex = 0;
+            purchaseInvoicesV.InvSearchField = null;
+            purchaseInvoicesV.IsInvItemsVisable = false;
+            await LoadInvoicesAsync(null);
         }
+
+        
 
     }
 }

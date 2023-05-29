@@ -27,6 +27,7 @@ namespace SBMS.Views.Suppliers
         event EventHandler OnAESupplierSave;
         event EventHandler OnAESupplierCancel;
         event EventHandler OnVRefresh;
+        event EventHandler OnDisposed;
 
 
 

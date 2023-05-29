@@ -3,6 +3,7 @@ using SBMS.Repositories;
 using SBMS.Repositories.EmployeesRepo;
 using SBMS.Views.Employees;
 using SBMS.Views.Purchases;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -22,19 +23,26 @@ namespace SBMS.Presenters.EmployeesPres
             if (instance == null) instance = new JobsVPres();
             return instance;
         }
-        /// <summary>
-        /// 
-        /// </summary>
+        public static void Dispose()
+        {
+            instance = null;
+        }
         private JobsVPres()
         {
             this.jobsV = EmployeesHV.GetInstance();
-            LoadCategoriesAsync();
+            OnInitAsync();
+        }
+
+        private async Task OnInitAsync()
+        {
+            await LoadCategoriesAsync();
             this.jobsV.ShowAddJobForm += delegate { ShowAddCustCategoryForm(); };
             this.jobsV.ShowEditJobForm += delegate { ShowEditCustCategoryForm(); };
             this.jobsV.OnAEJobSave += delegate { OnAEJobSave(); };
             this.jobsV.OnAEJobCancel += delegate { OnAEJobCancel(); };
-            this.jobsV.DeleteSelectedJob += delegate { OnDeleteSelectedJobAsync(); };
+            this.jobsV.DeleteSelectedJob += async delegate { await OnDeleteSelectedJobAsync(); };
             this.jobsV.OnSelectJob += delegate { OnSelectJob(); };
+            this.jobsV.OnDisposed += delegate { Dispose(); };
             this.ResetAll();
         }
 

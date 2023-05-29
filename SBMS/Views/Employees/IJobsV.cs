@@ -21,6 +21,7 @@ namespace SBMS.Views.Employees
         event EventHandler OnAEJobSave;
         event EventHandler OnAEJobCancel;
         event EventHandler OnSelectJob;
+        event EventHandler OnDisposed;
 
         bool ShowMsgBox(string msg, string title, bool isYesNo);
     }

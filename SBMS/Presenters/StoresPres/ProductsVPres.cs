@@ -21,6 +21,10 @@ namespace SBMS.Presenters.StoresPres
             if (instance == null) instance = new ProductsVPres();
             return instance;
         }
+        public static void Dispose()
+        {
+            instance = null;
+        }
         private ProductsVPres()
         {
             this.ProductsV = StoresV.GetInstance();
@@ -42,6 +46,7 @@ namespace SBMS.Presenters.StoresPres
             //this.ProductsV.OnSearchFieldChanged += async delegate { await OnSearchButtonClickedAsync(); };
             this.ProductsV.OnProductsVRefresh += async delegate { await OnRefreshPVAsync(); };
             this.ProductsV.ShowSelectedProductInfo += async delegate { await ShowProdInfoAsync(); };
+            this.ProductsV.OnDisposed += delegate { Dispose(); };
         }
         private async Task ShowProdInfoAsync()
         {

@@ -41,6 +41,7 @@ namespace SBMS.Views.Sales
         public event EventHandler OnInvItemDecOne;
         public event EventHandler OnInvItemRemove;
         public event EventHandler OnPSearchBClicked;
+        public event EventHandler OnDisposed;
 
         public string InvCustomerName { get => this.tbCustomerInvName.Text; set => this.tbCustomerInvName.Text = value; }
         public string AEButtonText { get => this.btnAddInvItem.Text; set => this.btnAddInvItem.Text = value; }
@@ -67,6 +68,7 @@ namespace SBMS.Views.Sales
             this.btnInvItemDecOne.Click += delegate { this.OnInvItemDecOne?.Invoke(this, EventArgs.Empty); };
             this.btnRemoveItem.Click += delegate { this.OnInvItemRemove?.Invoke(this, EventArgs.Empty); };
             this.btnSearch.Click += delegate { this.OnPSearchBClicked?.Invoke(this, EventArgs.Empty); };
+            this.Disposed += delegate { this.OnDisposed?.Invoke(this, EventArgs.Empty); };
         }
 
 
