@@ -53,9 +53,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblInvFinalTotal = new System.Windows.Forms.Label();
             this.btnInvCancel = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnInvSave = new System.Windows.Forms.Button();
             this.dgvInvoiceItems = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -109,7 +106,6 @@
             this.pnlInvElements.SuspendLayout();
             this.pnlInvTile.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoiceItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceItemMBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
@@ -298,7 +294,6 @@
             // 
             this.pnlInvTile.Controls.Add(this.panel6);
             this.pnlInvTile.Controls.Add(this.btnInvCancel);
-            this.pnlInvTile.Controls.Add(this.panel7);
             this.pnlInvTile.Controls.Add(this.btnInvSave);
             this.pnlInvTile.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlInvTile.Location = new System.Drawing.Point(0, 512);
@@ -350,36 +345,6 @@
             this.btnInvCancel.TabIndex = 7;
             this.btnInvCancel.Text = "Cancel";
             this.btnInvCancel.UseVisualStyleBackColor = false;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.textBox4);
-            this.panel7.Controls.Add(this.label3);
-            this.panel7.Location = new System.Drawing.Point(6, 43);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(204, 30);
-            this.panel7.TabIndex = 3;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(90, 5);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(102, 22);
-            this.textBox4.TabIndex = 8;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(4, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 16);
-            this.label3.TabIndex = 10;
-            this.label3.Text = " Discount :";
             // 
             // btnInvSave
             // 
@@ -867,10 +832,10 @@
             this.dataGridViewTextBoxColumn13});
             this.dgvProducts.DataSource = this.productMBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvProducts.DefaultCellStyle = dataGridViewCellStyle3;
@@ -924,8 +889,6 @@
             this.pnlInvTile.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoiceItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceItemMBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -967,9 +930,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblInvFinalTotal;
         private System.Windows.Forms.Button btnInvCancel;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnInvSave;
         private System.Windows.Forms.DataGridView dgvInvoiceItems;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;

@@ -69,7 +69,7 @@ namespace SBMS.Views.Purchases
             this.btnInvItemDecOne.Click += delegate { this.OnInvItemDecOne?.Invoke(this, EventArgs.Empty); };
             this.btnRemoveItem.Click += delegate { this.OnInvItemRemove?.Invoke(this, EventArgs.Empty); };
             this.btnPSearch.Click += delegate { this.OnPSearchBClicked?.Invoke(this, EventArgs.Empty); };
-            this.Disposed += delegate { this.OnPSearchBClicked?.Invoke(this, EventArgs.Empty); };
+            this.Disposed += delegate { this.OnDisposed?.Invoke(this, EventArgs.Empty); };
         }
         private void InitProp()
         {

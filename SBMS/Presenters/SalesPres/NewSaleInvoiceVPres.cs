@@ -243,7 +243,19 @@ namespace SBMS.Presenters.SalesPres
                     invoiceM.Note = this.newSaleInvoiceV.InvNote;
                     invoiceM.NameOnInvoice = this.newSaleInvoiceV.InvCustomerName;
                     invoiceM.Date = DateTime.Now;
+
+                    if (string.IsNullOrEmpty(this.newSaleInvoiceV.InvDiscount))
+                    {
+                        invoiceM.Discount = 0;
+                    }
+                    if (this.newSaleInvoiceV.InvDiscount.StartsWith("%"))
+                    {
+                        invoiceM.Discount = (decimal.TryParse(newSaleInvoiceV.InvDiscount.Substring(1), out _) ? Convert.ToDecimal(newSaleInvoiceV.InvDiscount.Substring(1)) : 0) /100;
+                    }
+                    invoiceM.Discount = 
+
                     invoiceM.Total = GetInvTotalPrice();
+                    
                     RepoResultM res = await SalesRepo.AddSaleInvAsync(invoiceM);
                     if (res.IsSucess)
                     {

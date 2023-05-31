@@ -30,7 +30,6 @@ namespace SBMS.Models.General
                 && this.ProductId == purchaseInvItem.ProductId
                 && this.InvoiceId == purchaseInvItem.InvoiceId
                 && this.Price == purchaseInvItem.Price
-                && this.Quantity == purchaseInvItem.Quantity
                 && this.ExpireDate == purchaseInvItem.ExpireDate
                 )
             {

@@ -18,6 +18,7 @@ namespace SBMS.Models.General
         public string InvoiceTypeName { get; set; }
         public int InvoiceTypeId { get; set; }
         public decimal Total { get; set; }
+        public decimal Discount { get; set; }
         public DateTime Date { get; set; }
     }
 }

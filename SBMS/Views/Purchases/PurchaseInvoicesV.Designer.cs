@@ -80,9 +80,8 @@
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1442, 94);
+            this.panel1.Size = new System.Drawing.Size(920, 64);
             this.panel1.TabIndex = 0;
             // 
             // panel10
@@ -90,10 +89,9 @@
             this.panel10.Controls.Add(this.cbxInvFilter);
             this.panel10.Controls.Add(this.label4);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel10.Location = new System.Drawing.Point(296, 0);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel10.Location = new System.Drawing.Point(197, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(186, 94);
+            this.panel10.Size = new System.Drawing.Size(124, 64);
             this.panel10.TabIndex = 13;
             // 
             // cbxInvFilter
@@ -101,10 +99,9 @@
             this.cbxInvFilter.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxInvFilter.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxInvFilter.FormattingEnabled = true;
-            this.cbxInvFilter.Location = new System.Drawing.Point(16, 45);
-            this.cbxInvFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxInvFilter.Location = new System.Drawing.Point(11, 31);
             this.cbxInvFilter.Name = "cbxInvFilter";
-            this.cbxInvFilter.Size = new System.Drawing.Size(151, 27);
+            this.cbxInvFilter.Size = new System.Drawing.Size(102, 21);
             this.cbxInvFilter.TabIndex = 10;
             // 
             // label4
@@ -115,10 +112,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(12, 15);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(8, 10);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(148, 25);
+            this.label4.Size = new System.Drawing.Size(105, 16);
             this.label4.TabIndex = 9;
             this.label4.Text = "Invoice Filter :";
             // 
@@ -129,9 +125,8 @@
             this.panel4.Controls.Add(this.tbInvSearch);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(296, 94);
+            this.panel4.Size = new System.Drawing.Size(197, 64);
             this.panel4.TabIndex = 12;
             // 
             // btnInvSearch
@@ -143,10 +138,9 @@
             this.btnInvSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnInvSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInvSearch.ForeColor = System.Drawing.Color.White;
-            this.btnInvSearch.Location = new System.Drawing.Point(208, 42);
-            this.btnInvSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInvSearch.Location = new System.Drawing.Point(139, 29);
             this.btnInvSearch.Name = "btnInvSearch";
-            this.btnInvSearch.Size = new System.Drawing.Size(75, 32);
+            this.btnInvSearch.Size = new System.Drawing.Size(50, 22);
             this.btnInvSearch.TabIndex = 10;
             this.btnInvSearch.Text = "S";
             this.btnInvSearch.UseVisualStyleBackColor = false;
@@ -159,10 +153,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 15);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(8, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 25);
+            this.label2.Size = new System.Drawing.Size(119, 16);
             this.label2.TabIndex = 9;
             this.label2.Text = "Invoice Search :";
             // 
@@ -172,20 +165,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbInvSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbInvSearch.Location = new System.Drawing.Point(16, 42);
-            this.tbInvSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbInvSearch.Location = new System.Drawing.Point(11, 29);
             this.tbInvSearch.Name = "tbInvSearch";
-            this.tbInvSearch.Size = new System.Drawing.Size(181, 30);
+            this.tbInvSearch.Size = new System.Drawing.Size(122, 22);
             this.tbInvSearch.TabIndex = 8;
             // 
             // pnlInvItems
             // 
             this.pnlInvItems.Controls.Add(this.dgvInvItems);
             this.pnlInvItems.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlInvItems.Location = new System.Drawing.Point(815, 94);
-            this.pnlInvItems.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlInvItems.Location = new System.Drawing.Point(502, 64);
             this.pnlInvItems.Name = "pnlInvItems";
-            this.pnlInvItems.Size = new System.Drawing.Size(627, 723);
+            this.pnlInvItems.Size = new System.Drawing.Size(418, 475);
             this.pnlInvItems.TabIndex = 1;
             this.pnlInvItems.Visible = false;
             // 
@@ -199,6 +190,7 @@
             this.dgvInvItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInvItems.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvInvItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvInvItems.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvInvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.barCodeDataGridViewTextBoxColumn,
@@ -219,7 +211,6 @@
             this.dgvInvItems.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvInvItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInvItems.Location = new System.Drawing.Point(0, 0);
-            this.dgvInvItems.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvInvItems.Name = "dgvInvItems";
             this.dgvInvItems.ReadOnly = true;
             this.dgvInvItems.RowHeadersVisible = false;
@@ -230,7 +221,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             this.dgvInvItems.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvInvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInvItems.Size = new System.Drawing.Size(627, 723);
+            this.dgvInvItems.Size = new System.Drawing.Size(418, 475);
             this.dgvInvItems.TabIndex = 3;
             // 
             // barCodeDataGridViewTextBoxColumn
@@ -297,10 +288,9 @@
             // 
             this.panel3.Controls.Add(this.dgvInvoices);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 94);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Location = new System.Drawing.Point(0, 64);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(815, 723);
+            this.panel3.Size = new System.Drawing.Size(502, 475);
             this.panel3.TabIndex = 2;
             // 
             // dgvInvoices
@@ -312,6 +302,7 @@
             this.dgvInvoices.AutoGenerateColumns = false;
             this.dgvInvoices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInvoices.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvInvoices.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInvoices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -334,7 +325,6 @@
             this.dgvInvoices.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvInvoices.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInvoices.Location = new System.Drawing.Point(0, 0);
-            this.dgvInvoices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvInvoices.Name = "dgvInvoices";
             this.dgvInvoices.ReadOnly = true;
             this.dgvInvoices.RowHeadersVisible = false;
@@ -345,7 +335,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.dgvInvoices.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvInvoices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInvoices.Size = new System.Drawing.Size(815, 723);
+            this.dgvInvoices.Size = new System.Drawing.Size(502, 475);
             this.dgvInvoices.TabIndex = 3;
             // 
             // idDataGridViewTextBoxColumn
@@ -426,16 +416,15 @@
             // 
             // PurchaseInvoicesV
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1442, 817);
+            this.ClientSize = new System.Drawing.Size(920, 539);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnlInvItems);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PurchaseInvoicesV";
             this.Text = "PurchaseInvoicesV";
             this.panel1.ResumeLayout(false);

@@ -45,14 +45,15 @@ namespace SBMS.Views.Sales
         public string PPrice { get => this.tbProdPrice.Text; set => this.tbProdPrice.Text = value; }
         public string InvTotlPrice { get => this.lblInvFinalTotal.Text; set => this.lblInvFinalTotal.Text = value; }
         public string InvNote { get => this.tbInvNote.Text; set => this.tbInvNote.Text = value; }
-
+        public string InvDiscount { get => this.tbInvDiscount.Text; set => this.tbInvDiscount.Text = value; }
         public DateTimePicker ExpireDate => this.dpProdExpireDate;
         public ComboBox CBXCustomers => this.cbxCustomers;
         public ComboBox CBXMonyState => this.cbxMonyState;
         public ComboBox CBXPCategoryFilter => this.cbxCategoryFilter;
         public DataGridView DGVProducts => this.dgvProducts;
         public DataGridView DGVInvItems => this.dgvInvoiceItems;
-        
+
+
         private void EventsSubscrib()
         {
             //this.btnClose.Click += delegate { this.OnClose?.Invoke(this, EventArgs.Empty); };

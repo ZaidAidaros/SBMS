@@ -54,7 +54,7 @@ namespace SBMS.Presenters
 
         void OnInit()
         {
-            adminHomeV.ShowEmployeesMV += delegate { ShowHome(); };
+            adminHomeV.ShowHome += delegate { ShowHome(); };
             adminHomeV.ShowEmployeesMV += delegate { ShowEmploeesMV(); };
             adminHomeV.ShowStoresMV += delegate { ShowStoresMV(); }; 
             adminHomeV.ShowSalesMV += delegate { ShowSalesMV(); };
@@ -65,7 +65,6 @@ namespace SBMS.Presenters
             adminHomeV.ShowSuppliersMV += delegate { ShowSuppliersMV(); };
             adminHomeV.ShowSettingsMV += delegate { ShowSettingsMV(); };
             adminHomeV.ShowAboutV += delegate { ShowAboutV(); };
-
             adminHomeV.OnDisposed += delegate { Dispose(); };
            
         }

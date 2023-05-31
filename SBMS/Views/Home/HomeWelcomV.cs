@@ -23,9 +23,6 @@ namespace SBMS.Views.Home
             if (instance == null || instance.IsDisposed)
             {
                 instance = new HomeWelcomV();
-                instance.FormBorderStyle = FormBorderStyle.None;
-                instance.Dock = DockStyle.Fill;
-                instance.Show();
             }
             else
             {

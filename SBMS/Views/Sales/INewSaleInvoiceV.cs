@@ -15,6 +15,7 @@ namespace SBMS.Views.Sales
         string InvItemQuantity { get; set; }
         string PPrice { get; set; }
         string InvTotlPrice { get; set; }
+        string InvDiscount { get; set; }
         string InvNote { get; set; }
         DateTimePicker ExpireDate { get; }
         ComboBox CBXCustomers { get; }
