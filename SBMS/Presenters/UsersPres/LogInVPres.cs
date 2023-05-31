@@ -47,15 +47,15 @@ namespace SBMS.Presenters
         }
         private void GoHome(UserM user)
         {
-            if (user.PermissionId == 1 || user.PermissionId==2)
+            if (user.PermissionId == 1)
             {
                 AdminHomeVPres.GetInstance(user);
             }
-            else if(user.PermissionId == 3)
+            else if(user.PermissionId == 2)
             {
                 SalesHVPres.GetInstance(user);
             }
-            else if (user.PermissionId == 4)
+            else if (user.PermissionId == 3)
             {
                 PurchasesHVPres.GetInstance(user);
             }

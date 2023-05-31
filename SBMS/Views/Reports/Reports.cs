@@ -77,5 +77,9 @@ namespace SBMS.Views.Reports
 
         }
 
+        private void reportViewer_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

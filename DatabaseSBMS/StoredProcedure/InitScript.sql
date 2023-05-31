@@ -37,7 +37,6 @@ INSERT INTO [dbo].[Employees] (
             );
 
 
-INSERT INTO [dbo].[Permission] VALUES('Owner');
 INSERT INTO [dbo].[Permission] VALUES('Admin');
 INSERT INTO [dbo].[Permission] VALUES('SaleSt');
 INSERT INTO [dbo].[Permission] VALUES('PurchaseSt');

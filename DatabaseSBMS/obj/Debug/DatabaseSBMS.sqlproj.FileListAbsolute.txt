@@ -17,3 +17,4 @@ C:\Users\za\Desktop\VisualProjects\SBMS\DatabaseSBMS\obj\Debug\Model.xml
 C:\Users\za\Desktop\VisualProjects\SBMS\DatabaseSBMS\obj\Debug\refactor.xml
 C:\Users\za\Desktop\VisualProjects\SBMS\DatabaseSBMS\obj\Debug\postdeploy.sql
 C:\Users\za\Desktop\VisualProjects\SBMS\DatabaseSBMS\obj\Debug\predeploy.sql
+C:\Users\daood\Desktop\SBMS\DatabaseSBMS\obj\Debug\DatabaseSBMS.sqlproj.AssemblyReference.cache
