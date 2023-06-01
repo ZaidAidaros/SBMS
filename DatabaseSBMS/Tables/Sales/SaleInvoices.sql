@@ -5,6 +5,7 @@
     [custId] INT NOT NULL, 
     [invCustName] NVARCHAR(50) NOT NULL, 
     [total] REAL NOT NULL, 
+    [discountRate] REAL NOT NULL, 
     [monStateId] INT NOT NULL, 
     [invTypeId] INT NOT NULL, 
     [opDate] DATETIME NOT NULL, 

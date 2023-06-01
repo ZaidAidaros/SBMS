@@ -14,6 +14,7 @@ SELECT [dbo].SaleInvoices.Id,
        [dbo].MonyState.[name] as MonyState,
        [dbo].InvoiceTypes.[name] as MonyState,
        [dbo].SaleInvoices.total,
+       [dbo].SaleInvoices.discountRate,
        [dbo].SaleInvoices.opDate,
        [dbo].SaleInvoices.note
 FROM [dbo].SaleInvoices

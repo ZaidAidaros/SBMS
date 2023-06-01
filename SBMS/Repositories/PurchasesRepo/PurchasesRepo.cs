@@ -10,9 +10,10 @@ namespace SBMS.Repositories.PurchasesRepo
 {
     class PurchasesRepo
     {
-        private static string addProcedName = "AddPurchaseInvoice";
+        private static string AddProcedName = "AddPurchaseInvoice";
         private static string GetProcedName = "GetPurchases";
-        private static string searchProcedName = "SearchPurchaseInv";
+        private static string SearchProcedName = "SearchPurchaseInv";
+        private static string ReportProcedName = "PurchasesReport";
         private static InvoiceM GetPurchaseInvM(List<object> result)
         {
             InvoiceM purchaseM = new InvoiceM();
@@ -60,7 +61,7 @@ namespace SBMS.Repositories.PurchasesRepo
             parameters[3].Value = DateTime.TryParse(searchValueIdBarcodeName, out _) ? Convert.ToDateTime(searchValueIdBarcodeName) : DateTime.Now;
 
             RepoResultM repoResult = new RepoResultM();
-            DBResult result = await DBHelper.ExcuteStoredProcedQueryAsync(searchProcedName, parameters);
+            DBResult result = await DBHelper.ExcuteStoredProcedQueryAsync(SearchProcedName, parameters);
             repoResult.IsSucess = result.IsSucess;
             repoResult.ErrorMsg = result.ErrorMsg;
             if (result.IsSucess)
@@ -88,7 +89,7 @@ namespace SBMS.Repositories.PurchasesRepo
             };
             parameters[8].Direction = ParameterDirection.Output;
 
-            DBResult result = await DBHelper.ExcuteStoredProcedNonQueryAsync(addProcedName, parameters, "@ID");
+            DBResult result = await DBHelper.ExcuteStoredProcedNonQueryAsync(AddProcedName, parameters, "@ID");
             RepoResultM repoResult = new RepoResultM();
             repoResult.IsSucess = result.IsSucess;
             repoResult.EfectedRows = result.EfectedRows;
@@ -97,6 +98,31 @@ namespace SBMS.Repositories.PurchasesRepo
             return repoResult;
         }
 
+        public static async Task<RepoResultM> PurchasesReport(decimal invTotal, int invTypeId, int monyStateId, string custName, string fromDate, string toDate)
+        {
+
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@invTotal", invTotal),
+                new SqlParameter("@invTypId", invTypeId),
+                new SqlParameter("@monyStaeId", monyStateId),
+                new SqlParameter("@name", custName),
+                new SqlParameter("@fromDate", fromDate),
+                new SqlParameter("@toDate", toDate)
+            };
+            RepoResultM repoResult = new RepoResultM();
+            DBResult result = await DBHelper.ExcuteStoredProcedQueryAsync(ReportProcedName, parameters);
+            repoResult.IsSucess = result.IsSucess;
+            repoResult.ErrorMsg = result.ErrorMsg;
+            if (result.IsSucess)
+            {
+                for (int i = 0; i < result.ResData.Count; i++)
+                {
+                    repoResult.ResData.Add((InvoiceM)GetPurchaseInvM(result.ResData[i]));
+                }
+            }
+            return repoResult;
+        }
 
     }
 }

@@ -37,7 +37,6 @@ INSERT INTO [dbo].[Employees] (
             );
 
 
-INSERT INTO [dbo].[Permission] VALUES('Owner');
 INSERT INTO [dbo].[Permission] VALUES('Admin');
 INSERT INTO [dbo].[Permission] VALUES('SaleSt');
 INSERT INTO [dbo].[Permission] VALUES('PurchaseSt');
@@ -57,10 +56,10 @@ INSERT INTO dbo.SupCategory VALUES('VIP','UnKnown')
 INSERT INTO dbo.Suppliers(name,phone,cateId,address) VALUES('UnKnown',8787876,1,'UnKnown')
 INSERT INTO dbo.CustCategory VALUES('VIP','UnKnown')
 INSERT INTO dbo.Customers(name,phone,address,cateId,genId) VALUES('UnKnown',8787876,'UnKnown',1,1)
-INSERT INTO dbo.ProductCategory VALUES('Foods','dvsdvdsv')
-INSERT INTO dbo.ProductCategory VALUES('Drinks','dvsdvdsv')
-INSERT INTO dbo.ProdUnits (name,symbole,subUName,subSymbole,rateMB,description) VALUES('Kilo','K','gram','g',1000,'dgfhgjkj')
-INSERT INTO dbo.Products(barCode,name,description,cateId,unitId,defPrice,totalQuantity) VALUES(278757,'Apple','Kfge rege fgrg',1,1,300,0)
-INSERT INTO dbo.Products(barCode,name,description,cateId,unitId,defPrice,totalQuantity) VALUES(72886,'Apfhdnple','Kfge rege fgrg',1,1,300,0)
-INSERT INTO dbo.Products(barCode,name,description,cateId,unitId,defPrice,totalQuantity) VALUES(7588,'Apntple','Kfge rege fgrg',2,1,200,0)
-INSERT INTO dbo.Products(barCode,name,description,cateId,unitId,defPrice,totalQuantity) VALUES(2783757,'Apbdtple','Kfge rege fgrg',2,1,200,0)
+INSERT INTO dbo.ProductCategory VALUES('Foods','Foods Foods')
+INSERT INTO dbo.ProductCategory VALUES('Drinks','Drinks Drinks')
+INSERT INTO dbo.ProdUnits (name,symbole,subUName,subSymbole,rateMB,description) VALUES('Kilo','K','gram','g',1000,'Kilo Kilo')
+INSERT INTO dbo.Products(barCode,name,description,cateId,unitId,defPrice,totalQuantity) VALUES(278757,'Apple','Apple Apple Apple',1,1,300,0)
+INSERT INTO dbo.Products(barCode,name,description,cateId,unitId,defPrice,totalQuantity) VALUES(72886,'Mango','Mango Mango Mango',1,1,300,0)
+INSERT INTO dbo.Products(barCode,name,description,cateId,unitId,defPrice,totalQuantity) VALUES(7588,'Juse','Juse Juse Juse',2,1,200,0)
+INSERT INTO dbo.Products(barCode,name,description,cateId,unitId,defPrice,totalQuantity) VALUES(2783757,'Watter','Watter Watter Watter',2,1,200,0)

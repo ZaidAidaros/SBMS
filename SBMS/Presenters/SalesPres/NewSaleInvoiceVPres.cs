@@ -243,19 +243,24 @@ namespace SBMS.Presenters.SalesPres
                     invoiceM.Note = this.newSaleInvoiceV.InvNote;
                     invoiceM.NameOnInvoice = this.newSaleInvoiceV.InvCustomerName;
                     invoiceM.Date = DateTime.Now;
-
-                    if (string.IsNullOrEmpty(this.newSaleInvoiceV.InvDiscount))
-                    {
-                        invoiceM.Discount = 0;
-                    }
-                    if (this.newSaleInvoiceV.InvDiscount.StartsWith("%"))
-                    {
-                        invoiceM.Discount = (decimal.TryParse(newSaleInvoiceV.InvDiscount.Substring(1), out _) ? Convert.ToDecimal(newSaleInvoiceV.InvDiscount.Substring(1)) : 0) /100;
-                    }
-                    invoiceM.Discount = 
-
                     invoiceM.Total = GetInvTotalPrice();
-                    
+
+                    if (InvValidate())
+                    {
+                        if (newSaleInvoiceV.InvDiscount.StartsWith("%"))
+                        {
+                            invoiceM.DiscountRate = decimal.Parse(newSaleInvoiceV.InvDiscount.Substring(1)) / 100;
+                        }
+                        else if (!string.IsNullOrEmpty(newSaleInvoiceV.InvDiscount))
+                        {
+                            invoiceM.DiscountRate = decimal.Parse(newSaleInvoiceV.InvDiscount) / invoiceM.Total;
+                        }
+                        else
+                        {
+                            invoiceM.DiscountRate = 0;
+                        }
+                    }
+                     
                     RepoResultM res = await SalesRepo.AddSaleInvAsync(invoiceM);
                     if (res.IsSucess)
                     {
@@ -263,21 +268,21 @@ namespace SBMS.Presenters.SalesPres
                         {
                             this.InvItems[i].InvoiceId = res.ReturnNewRowId;
                             RepoResultM itemRes = await SalesItemsRepo.AddSaleItemAsync(this.InvItems[i],-1);
-                            if (!itemRes.IsSucess) this.newSaleInvoiceV.ShowMsgBox(itemRes.ErrorMsg + "\n" + res.ResData[0], "Error:", false);
+                            if (!itemRes.IsSucess) newSaleInvoiceV.ShowMsgBox(itemRes.ErrorMsg + "\n" + res.ResData[0], "Error:", false);
 
                         }
-                        this.RestAll();
-                        this.newSaleInvoiceV.ShowMsgBox("The Invoice Saved Successfuly", "Success:", false);
+                        RestAll();
+                        newSaleInvoiceV.ShowMsgBox("The Invoice Saved Successfuly", "Success:", false);
                     }
                     else
                     {
-                        this.newSaleInvoiceV.ShowMsgBox(res.ErrorMsg, "Error:", false);
+                        newSaleInvoiceV.ShowMsgBox(res.ErrorMsg, "Error:", false);
                     }
                 }
             }
             else
             {
-                this.newSaleInvoiceV.ShowMsgBox("Invoice has No Items\nAdd Some Items First", "Error:", false);
+                newSaleInvoiceV.ShowMsgBox("Invoice has No Items\nAdd Some Items First", "Error:", false);
             }
         }
         private decimal GetInvTotalPrice()
@@ -338,6 +343,35 @@ namespace SBMS.Presenters.SalesPres
                 return true;
             }
             return false;
+        }
+        private bool IsNumber(string value)
+        {
+            foreach(char c in value)
+            {
+                if (!char.IsDigit(c))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        private bool InvValidate()
+        {
+            if (!string.IsNullOrEmpty(newSaleInvoiceV.InvDiscount))
+            {
+                if (!IsNumber(newSaleInvoiceV.InvDiscount) || (newSaleInvoiceV.InvDiscount.StartsWith("%") && !IsNumber(newSaleInvoiceV.InvDiscount.Substring(1))))
+                {
+                    newSaleInvoiceV.ShowMsgBox("Discount must be Number", "Note:", false);
+                    return false;
+                }
+                else if(newSaleInvoiceV.InvDiscount.StartsWith("%") && decimal.Parse(newSaleInvoiceV.InvDiscount.Substring(1)) > 100)
+                {
+                    newSaleInvoiceV.ShowMsgBox("Discount can not be greater than 100% ", "Note:", false);
+                    return false;
+                }
+                return true;
+            }
+            return true;
         }
         private void AddInvItem()
         {

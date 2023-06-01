@@ -10,9 +10,10 @@ namespace SBMS.Repositories.SalesRepo
 {
     class SalesRepo
     {
-        private static string addProcedName = "AddSaleInvoice";
-        private static string getProcedName = "GetSales";
-        private static string searchProcedName = "SearchSales";
+        private static string AddProcedName = "AddSaleInvoice";
+        private static string GetProcedName = "GetSales";
+        private static string SearchProcedName = "SearchSales";
+        private static string ReportProcedName = "SalesReport";
         private static InvoiceM GetSaleInvM(List<object> result)
         {
             InvoiceM invoiceM = new InvoiceM();
@@ -23,8 +24,9 @@ namespace SBMS.Repositories.SalesRepo
             invoiceM.MonyStateName = result[4].ToString();
             invoiceM.InvoiceTypeName = result[5].ToString();
             invoiceM.Total = decimal.Parse(result[6].ToString());
-            invoiceM.Date = DateTime.Parse(result[7].ToString()); 
-            invoiceM.Note = result[8].ToString();
+            invoiceM.DiscountRate = decimal.Parse(result[7].ToString());
+            invoiceM.Date = DateTime.Parse(result[8].ToString()); 
+            invoiceM.Note = result[9].ToString();
             return invoiceM;
         }
         public static async Task<RepoResultM> GetSaleInvoicesAsync()
@@ -32,7 +34,7 @@ namespace SBMS.Repositories.SalesRepo
 
             SqlParameter[] parameters = { };
             RepoResultM repoResult = new RepoResultM();
-            DBResult result = await DBHelper.ExcuteStoredProcedQueryAsync(getProcedName, parameters);
+            DBResult result = await DBHelper.ExcuteStoredProcedQueryAsync(GetProcedName, parameters);
             repoResult.IsSucess = result.IsSucess;
             repoResult.ErrorMsg = result.ErrorMsg;
             if (result.IsSucess)
@@ -60,7 +62,7 @@ namespace SBMS.Repositories.SalesRepo
             parameters[3].Value =DateTime.TryParse(searchValueIdBarcodeName,out _) ? Convert.ToDateTime(searchValueIdBarcodeName) : new DateTime(3000,1,1);
             
             RepoResultM repoResult = new RepoResultM();
-            DBResult result = await DBHelper.ExcuteStoredProcedQueryAsync(searchProcedName, parameters);
+            DBResult result = await DBHelper.ExcuteStoredProcedQueryAsync(SearchProcedName, parameters);
             repoResult.IsSucess = result.IsSucess;
             repoResult.ErrorMsg = result.ErrorMsg;
             if (result.IsSucess)
@@ -85,7 +87,7 @@ namespace SBMS.Repositories.SalesRepo
                 new SqlParameter("@toDate", toDate)
             };
             RepoResultM repoResult = new RepoResultM();
-            DBResult result = await DBHelper.ExcuteStoredProcedQueryAsync(searchProcedName, parameters);
+            DBResult result = await DBHelper.ExcuteStoredProcedQueryAsync(ReportProcedName, parameters);
             repoResult.IsSucess = result.IsSucess;
             repoResult.ErrorMsg = result.ErrorMsg;
             if (result.IsSucess)
@@ -110,11 +112,12 @@ namespace SBMS.Repositories.SalesRepo
                 new SqlParameter("@invTypeId", saleInvM.InvoiceTypeId),
                 new SqlParameter("@note", saleInvM.Note),
                 new SqlParameter("@date", saleInvM.Date),
+                new SqlParameter("@discountRate", saleInvM.DiscountRate),
                 new SqlParameter("@ID", SqlDbType.Int)
             };
             parameters[8].Direction = ParameterDirection.Output;
 
-            DBResult result = await DBHelper.ExcuteStoredProcedNonQueryAsync(addProcedName, parameters,"@ID");
+            DBResult result = await DBHelper.ExcuteStoredProcedNonQueryAsync(AddProcedName, parameters,"@ID");
             RepoResultM repoResult = new RepoResultM();
             repoResult.IsSucess = result.IsSucess;
             repoResult.EfectedRows = result.EfectedRows;

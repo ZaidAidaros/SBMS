@@ -25,7 +25,7 @@ namespace SBMS.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("DESKTOP-AQ6QOF4")]
+        [global::System.Configuration.DefaultSettingValueAttribute("DESKTOP-OBK8210")]
         public string DBServerName {
             get {
                 return ((string)(this["DBServerName"]));

@@ -1,0 +1,41 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[SaleInvoices]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[SaleInvoices].[discountRate] on table [dbo].[SaleInvoices] must be added, but the column has no
+         default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this
+         issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of
+         smart-defaults as a deployment option.
+
+** User actions
+     Table rebuild
+       [dbo].[SaleInvoices] (Table)
+     Alter
+       [dbo].[AddSaleInvoice] (Procedure)
+       [dbo].[GetSales] (Procedure)
+       [dbo].[SalesReport] (Procedure)
+       [dbo].[SearchSales] (Procedure)
+     Create
+       [dbo].[PurchasesReport] (Procedure)
+
+** Supporting actions
+     Drop
+       [dbo].[FK_MonyStates_SaleInvoices] (Foreign Key)
+       [dbo].[FK_SalesOp_Employees] (Foreign Key)
+       [dbo].[FK_InvoiceTypes_SaleInvoices] (Foreign Key)
+       [dbo].[FK_SalesOp_Customers] (Foreign Key)
+       [dbo].[FK_SalesItems_SalesInv] (Foreign Key)
+     Create
+       [dbo].[FK_MonyStates_SaleInvoices] (Foreign Key)
+       [dbo].[FK_SalesOp_Employees] (Foreign Key)
+       [dbo].[FK_InvoiceTypes_SaleInvoices] (Foreign Key)
+       [dbo].[FK_SalesOp_Customers] (Foreign Key)
+       [dbo].[FK_SalesItems_SalesInv] (Foreign Key)
+
+The compatibility level of the target schema 160 is not supported, which may result in undefined behavior. Please upgrade to a later version which supports this compatibility level.
+The column [dbo].[SaleInvoices].[discountRate] on table [dbo].[SaleInvoices] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+

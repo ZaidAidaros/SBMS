@@ -169,6 +169,7 @@
     <Build Include="StoredProcedure\Stores\GetFilterdFullProduct.sql" />
     <Build Include="StoredProcedure\Stores\SearchFullProduct.sql" />
     <Build Include="StoredProcedure\Sales\SalesReport.sql" />
+    <Build Include="StoredProcedure\Purchase\PurchasesReport.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DatabaseSBMS.refactorlog" />

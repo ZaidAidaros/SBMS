@@ -333,11 +333,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>SupplersDataSet</DataSetName>
+        <DataSetName>SuppliersDataSet</DataSetName>
         <Top>0.32167in</Top>
         <Left>0.11031in</Left>
         <Height>0.5in</Height>
-        <Width>6.62313in</Width>
+        <Width>6.62312in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -510,7 +510,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="SupplersDataSet">
+    <DataSet Name="SuppliersDataSet">
       <Query>
         <DataSourceName>SBMSModelsSuppliers</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
