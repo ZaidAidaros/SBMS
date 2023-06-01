@@ -4,7 +4,6 @@ INSERT INTO [dbo].[Gender]  VALUES(1,'Male');
 INSERT INTO [dbo].[Gender]  VALUES(2,'FMale');
 INSERT INTO [dbo].[MonyState]  VALUES(1,'Cash','نقدا');
 INSERT INTO [dbo].[MonyState]  VALUES(2,'Later','آجل');
-INSERT INTO [dbo].[MonyState]  VALUES(3,'Pay','تم السداد');
 INSERT INTO [dbo].[InvoiceTypes]  VALUES('Normal Invoice');
 INSERT INTO [dbo].[InvoiceTypes]  VALUES('Return Invoice');
 INSERT INTO [dbo].[Offers]  VALUES('No Offer','there is no offer');

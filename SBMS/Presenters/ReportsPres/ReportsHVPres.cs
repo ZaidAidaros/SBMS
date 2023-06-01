@@ -45,7 +45,6 @@ namespace SBMS.Presenters.ReportsPres
             reportsHV = ReportsHV.GetInstance();
             reportDataSource = new ReportDataSource();
             reportsHV.ReportsViewer.LocalReport.DataSources.Add(reportDataSource);
-            ReportsHV.GetInstance().Show();
             OnInit();
             
         }

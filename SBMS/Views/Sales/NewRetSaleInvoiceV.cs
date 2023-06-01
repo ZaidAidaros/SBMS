@@ -49,6 +49,7 @@ namespace SBMS.Views.Sales
         public string InvItemQuantity { get => this.tbInvItemQuanSet.Text; set => this.tbInvItemQuanSet.Text = value; }
         public string PPrice { get => this.tbProdPrice.Text; set => this.tbProdPrice.Text = value; }
         public string InvTotlPrice { get => this.lblInvFinalTotal.Text; set => this.lblInvFinalTotal.Text = value; }
+        public string InvDiscount { get; set; }
         public string InvNote { get => this.tbInvNote.Text; set => this.tbInvNote.Text = value; }
 
         public DateTimePicker ExpireDate => this.dpProdExpireDate;
@@ -57,6 +58,7 @@ namespace SBMS.Views.Sales
         public ComboBox CBXPCategoryFilter => this.cbxCategoryFilter;
         public DataGridView DGVProducts => this.dgvProducts;
         public DataGridView DGVInvItems => this.dgvInvoiceItems;
+
 
         private void EventsSubscrib()
         {

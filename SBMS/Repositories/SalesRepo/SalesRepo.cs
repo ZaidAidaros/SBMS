@@ -115,7 +115,7 @@ namespace SBMS.Repositories.SalesRepo
                 new SqlParameter("@discountRate", saleInvM.DiscountRate),
                 new SqlParameter("@ID", SqlDbType.Int)
             };
-            parameters[8].Direction = ParameterDirection.Output;
+            parameters[9].Direction = ParameterDirection.Output;
 
             DBResult result = await DBHelper.ExcuteStoredProcedNonQueryAsync(AddProcedName, parameters,"@ID");
             RepoResultM repoResult = new RepoResultM();

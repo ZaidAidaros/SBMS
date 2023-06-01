@@ -155,7 +155,6 @@ namespace SBMS.Presenters.PurchasesPres
         {
             MonyStateM monyState1 = new MonyStateM();
             MonyStateM monyState2 = new MonyStateM();
-            MonyStateM monyState3 = new MonyStateM();
             
             this.newPurchaseInvV.CBXMonyState.Items.Clear();
             this.newPurchaseInvV.CBXMonyState.DisplayMember = "Name";
@@ -166,9 +165,6 @@ namespace SBMS.Presenters.PurchasesPres
             monyState2.Id = 2;
             monyState2.Name = "Later";
             this.newPurchaseInvV.CBXMonyState.Items.Add(monyState2);
-            monyState3.Id = 3;
-            monyState3.Name = "Pay";
-            this.newPurchaseInvV.CBXMonyState.Items.Add(monyState3);
             this.newPurchaseInvV.CBXMonyState.SelectedIndex=0;
 
 

@@ -13,3 +13,4 @@ C:\Users\daood\Desktop\SBMS\DatabaseSBMS\obj\Debug\predeploy.sql
 C:\Users\daood\Desktop\SBMS\DatabaseSBMS\obj\Debug\DatabaseSBMS.dll
 C:\Users\daood\Desktop\SBMS\DatabaseSBMS\obj\Debug\DatabaseSBMS.pdb
 C:\Users\daood\Desktop\SBMS\DatabaseSBMS\obj\Debug\DatabaseSBMS.sqlproj.AssemblyReference.cache
+C:\Users\za\Desktop\VisualProjects\SBMS\DatabaseSBMS\obj\Debug\DatabaseSBMS.sqlproj.AssemblyReference.cache
