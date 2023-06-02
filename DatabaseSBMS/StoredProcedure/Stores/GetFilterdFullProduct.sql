@@ -21,5 +21,5 @@ INNER JOIN [dbo].[Products] ON [dbo].[ProductsDetails].prodId = [dbo].[Products]
 INNER JOIN [dbo].[ProductCategory] ON [dbo].[Products].cateId = [dbo].[ProductCategory].Id
 INNER JOIN [dbo].[ProdUnits] ON [dbo].[Products].unitId = [dbo].[ProdUnits].Id
 INNER JOIN [dbo].[PurchaseInvoices] ON [dbo].[ProductsDetails].purchId = [dbo].[PurchaseInvoices].Id
-WHERE [dbo].[Products].cateId = @cateId;
+WHERE [dbo].[Products].cateId = @cateId And [dbo].[ProductsDetails].quantity > 0
 End

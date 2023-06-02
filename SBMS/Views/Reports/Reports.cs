@@ -39,6 +39,7 @@ namespace SBMS.Views.Reports
         public event EventHandler ShowCustomersReportView;
         public event EventHandler ShowSuppliersReportView;
         public event EventHandler OnDisposed;
+        public event EventHandler OnReloadReport;
 
         public ReportViewer ReportsViewer => reportViewer;
 
@@ -61,6 +62,7 @@ namespace SBMS.Views.Reports
             this.btnShowUsersReportView.Click += delegate { ShowUsersReportView?.Invoke(this, EventArgs.Empty); };
             this.btnCustomers.Click += delegate { ShowCustomersReportView?.Invoke(this, EventArgs.Empty); };
             this.btnSuppliers.Click += delegate { ShowSuppliersReportView?.Invoke(this, EventArgs.Empty); };
+            this.btnReportReLoad.Click += delegate { OnReloadReport?.Invoke(this, EventArgs.Empty); };
             this.Disposed += delegate { OnDisposed?.Invoke(this, EventArgs.Empty); };
         }
         public bool ShowMsgBox(string msg, string title, bool isYesNo)

@@ -6,37 +6,34 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.72495cm</Width>
+              <Width>1.88421cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.72495cm</Width>
+              <Width>1.88421cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.72495cm</Width>
+              <Width>1.88421cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.72495cm</Width>
+              <Width>1.88421cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.72495cm</Width>
+              <Width>1.88421cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.72495cm</Width>
+              <Width>1.88421cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.72495cm</Width>
+              <Width>1.88421cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.72495cm</Width>
+              <Width>1.88421cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.72495cm</Width>
+              <Width>1.88421cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.72495cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.72495cm</Width>
+              <Width>2.0165cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -389,42 +386,6 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox22</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <BackgroundColor>Teal</BackgroundColor>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox24">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Total Cost</Value>
-                              <Style>
-                                <FontSize>12pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox24</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -794,48 +755,12 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="TotalCost">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!TotalCost.Value</Value>
-                              <Style>
-                                <FontSize>11pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>TotalCost</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
               </TablixCells>
             </TablixRow>
           </TablixRows>
         </TablixBody>
         <TablixColumnHierarchy>
           <TablixMembers>
-            <TablixMember />
             <TablixMember />
             <TablixMember />
             <TablixMember />

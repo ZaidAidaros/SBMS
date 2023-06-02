@@ -21,6 +21,7 @@ namespace SBMS.Views.Reports
         event EventHandler ShowUsersReportView;
         event EventHandler ShowCustomersReportView;
         event EventHandler ShowSuppliersReportView;
+        event EventHandler OnReloadReport;
         event EventHandler OnDisposed;
 
         public bool ShowMsgBox(string msg, string title, bool isYesNo);

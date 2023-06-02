@@ -34,9 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlInvHeader = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.cbxOffers = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.panelMS = new System.Windows.Forms.Panel();
             this.cbxMonyState = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -98,7 +95,6 @@
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.pnlBody = new System.Windows.Forms.Panel();
             this.pnlInvHeader.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.panelMS.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -122,7 +118,6 @@
             // 
             // pnlInvHeader
             // 
-            this.pnlInvHeader.Controls.Add(this.panel8);
             this.pnlInvHeader.Controls.Add(this.panelMS);
             this.pnlInvHeader.Controls.Add(this.panel3);
             this.pnlInvHeader.Controls.Add(this.panel1);
@@ -131,40 +126,6 @@
             this.pnlInvHeader.Name = "pnlInvHeader";
             this.pnlInvHeader.Size = new System.Drawing.Size(709, 72);
             this.pnlInvHeader.TabIndex = 19;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.cbxOffers);
-            this.panel8.Controls.Add(this.label12);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel8.Location = new System.Drawing.Point(488, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(107, 72);
-            this.panel8.TabIndex = 16;
-            // 
-            // cbxOffers
-            // 
-            this.cbxOffers.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbxOffers.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbxOffers.FormattingEnabled = true;
-            this.cbxOffers.Location = new System.Drawing.Point(11, 31);
-            this.cbxOffers.Name = "cbxOffers";
-            this.cbxOffers.Size = new System.Drawing.Size(86, 21);
-            this.cbxOffers.TabIndex = 10;
-            // 
-            // label12
-            // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(8, 10);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(57, 16);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "Offers :";
             // 
             // panelMS
             // 
@@ -834,7 +795,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -876,8 +837,6 @@
             this.Name = "NewRetSaleInvoiceV";
             this.Text = "NewRetSaleInvoiceV";
             this.pnlInvHeader.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.panelMS.ResumeLayout(false);
             this.panelMS.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -911,9 +870,6 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlInvHeader;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.ComboBox cbxOffers;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panelMS;
         private System.Windows.Forms.ComboBox cbxMonyState;
         private System.Windows.Forms.Label label7;

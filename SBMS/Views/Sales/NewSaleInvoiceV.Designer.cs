@@ -56,14 +56,6 @@
             this.pnlBody = new System.Windows.Forms.Panel();
             this.gbProducts = new System.Windows.Forms.GroupBox();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.cbxCategoryFilter = new System.Windows.Forms.ComboBox();
@@ -91,6 +83,15 @@
             this.btnInvCancel = new System.Windows.Forms.Button();
             this.btnInvSave = new System.Windows.Forms.Button();
             this.dgvInvoiceItems = new System.Windows.Forms.DataGridView();
+            this.pnlHeader = new System.Windows.Forms.Panel();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,7 +99,6 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.invoiceItemMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pnlHeader = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlInvItemControl.SuspendLayout();
@@ -106,7 +106,6 @@
             this.pnlBody.SuspendLayout();
             this.gbProducts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productMBindingSource)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -119,8 +118,9 @@
             this.pnlInvTile.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoiceItems)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceItemMBindingSource)).BeginInit();
             this.pnlHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productMBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceItemMBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -165,7 +165,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(889, 3);
+            this.btnClose.Location = new System.Drawing.Point(1121, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(32, 27);
             this.btnClose.TabIndex = 11;
@@ -179,7 +179,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(461, 87);
+            this.panel2.Size = new System.Drawing.Size(449, 87);
             this.panel2.TabIndex = 1;
             // 
             // pnlInvItemControl
@@ -197,7 +197,7 @@
             this.pnlInvItemControl.Controls.Add(this.btnAddInvItem);
             this.pnlInvItemControl.Controls.Add(this.btnInvItemIncOne);
             this.pnlInvItemControl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlInvItemControl.Location = new System.Drawing.Point(1, 0);
+            this.pnlInvItemControl.Location = new System.Drawing.Point(-11, 0);
             this.pnlInvItemControl.Name = "pnlInvItemControl";
             this.pnlInvItemControl.Size = new System.Drawing.Size(460, 87);
             this.pnlInvItemControl.TabIndex = 14;
@@ -387,7 +387,7 @@
             this.pnlBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBody.Location = new System.Drawing.Point(0, 35);
             this.pnlBody.Name = "pnlBody";
-            this.pnlBody.Size = new System.Drawing.Size(924, 504);
+            this.pnlBody.Size = new System.Drawing.Size(1156, 504);
             this.pnlBody.TabIndex = 20;
             // 
             // gbProducts
@@ -398,7 +398,7 @@
             this.gbProducts.ForeColor = System.Drawing.Color.White;
             this.gbProducts.Location = new System.Drawing.Point(0, 72);
             this.gbProducts.Name = "gbProducts";
-            this.gbProducts.Size = new System.Drawing.Size(457, 432);
+            this.gbProducts.Size = new System.Drawing.Size(701, 432);
             this.gbProducts.TabIndex = 17;
             this.gbProducts.TabStop = false;
             this.gbProducts.Text = "Products";
@@ -444,68 +444,8 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Navy;
             this.dgvProducts.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProducts.Size = new System.Drawing.Size(451, 342);
+            this.dgvProducts.Size = new System.Drawing.Size(695, 342);
             this.dgvProducts.TabIndex = 13;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "BarCode";
-            this.dataGridViewTextBoxColumn1.HeaderText = "BarCode";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Category";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Category";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Unit";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Unit";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Quantity";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Quantity";
-            this.dataGridViewTextBoxColumn11.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "DefPrice";
-            this.dataGridViewTextBoxColumn10.HeaderText = "DefPrice";
-            this.dataGridViewTextBoxColumn10.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "ExpireDate";
-            this.dataGridViewTextBoxColumn13.HeaderText = "ExpireDate";
-            this.dataGridViewTextBoxColumn13.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            // 
-            // productMBindingSource
-            // 
-            this.productMBindingSource.DataSource = typeof(SBMS.Models.Stores.ProductM);
             // 
             // panel5
             // 
@@ -514,7 +454,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(3, 16);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(451, 71);
+            this.panel5.Size = new System.Drawing.Size(695, 71);
             this.panel5.TabIndex = 1;
             // 
             // panel10
@@ -610,7 +550,7 @@
             this.pnlInvHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlInvHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlInvHeader.Name = "pnlInvHeader";
-            this.pnlInvHeader.Size = new System.Drawing.Size(457, 72);
+            this.pnlInvHeader.Size = new System.Drawing.Size(701, 72);
             this.pnlInvHeader.TabIndex = 19;
             // 
             // panel8
@@ -719,9 +659,9 @@
             this.gbInvItems.Controls.Add(this.pnlInvElements);
             this.gbInvItems.Dock = System.Windows.Forms.DockStyle.Right;
             this.gbInvItems.ForeColor = System.Drawing.Color.Green;
-            this.gbInvItems.Location = new System.Drawing.Point(457, 0);
+            this.gbInvItems.Location = new System.Drawing.Point(701, 0);
             this.gbInvItems.Name = "gbInvItems";
-            this.gbInvItems.Size = new System.Drawing.Size(467, 504);
+            this.gbInvItems.Size = new System.Drawing.Size(455, 504);
             this.gbInvItems.TabIndex = 18;
             this.gbInvItems.TabStop = false;
             this.gbInvItems.Text = "Invoice Items";
@@ -734,7 +674,7 @@
             this.pnlInvElements.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlInvElements.Location = new System.Drawing.Point(3, 16);
             this.pnlInvElements.Name = "pnlInvElements";
-            this.pnlInvElements.Size = new System.Drawing.Size(461, 485);
+            this.pnlInvElements.Size = new System.Drawing.Size(449, 485);
             this.pnlInvElements.TabIndex = 1;
             // 
             // pnlInvTile
@@ -746,7 +686,7 @@
             this.pnlInvTile.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlInvTile.Location = new System.Drawing.Point(0, 408);
             this.pnlInvTile.Name = "pnlInvTile";
-            this.pnlInvTile.Size = new System.Drawing.Size(461, 77);
+            this.pnlInvTile.Size = new System.Drawing.Size(449, 77);
             this.pnlInvTile.TabIndex = 0;
             // 
             // panel6
@@ -756,7 +696,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(461, 38);
+            this.panel6.Size = new System.Drawing.Size(449, 38);
             this.panel6.TabIndex = 2;
             // 
             // label5
@@ -787,7 +727,7 @@
             this.btnInvCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnInvCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInvCancel.ForeColor = System.Drawing.Color.White;
-            this.btnInvCancel.Location = new System.Drawing.Point(320, 46);
+            this.btnInvCancel.Location = new System.Drawing.Point(308, 46);
             this.btnInvCancel.Name = "btnInvCancel";
             this.btnInvCancel.Size = new System.Drawing.Size(61, 27);
             this.btnInvCancel.TabIndex = 7;
@@ -801,7 +741,7 @@
             this.btnInvSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnInvSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInvSave.ForeColor = System.Drawing.Color.White;
-            this.btnInvSave.Location = new System.Drawing.Point(388, 46);
+            this.btnInvSave.Location = new System.Drawing.Point(376, 46);
             this.btnInvSave.Name = "btnInvSave";
             this.btnInvSave.Size = new System.Drawing.Size(61, 27);
             this.btnInvSave.TabIndex = 6;
@@ -845,8 +785,77 @@
             this.dgvInvoiceItems.RowHeadersVisible = false;
             this.dgvInvoiceItems.RowHeadersWidth = 62;
             this.dgvInvoiceItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInvoiceItems.Size = new System.Drawing.Size(461, 398);
+            this.dgvInvoiceItems.Size = new System.Drawing.Size(449, 398);
             this.dgvInvoiceItems.TabIndex = 12;
+            // 
+            // pnlHeader
+            // 
+            this.pnlHeader.Controls.Add(this.btnClose);
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(1156, 35);
+            this.pnlHeader.TabIndex = 19;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "BarCode";
+            this.dataGridViewTextBoxColumn1.HeaderText = "BarCode";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Category";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Category";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Unit";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Unit";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Quantity";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Quantity";
+            this.dataGridViewTextBoxColumn11.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "DefPrice";
+            this.dataGridViewTextBoxColumn10.HeaderText = "DefPrice";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "ExpireDate";
+            this.dataGridViewTextBoxColumn13.HeaderText = "ExpireDate";
+            this.dataGridViewTextBoxColumn13.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            // 
+            // productMBindingSource
+            // 
+            this.productMBindingSource.DataSource = typeof(SBMS.Models.Stores.ProductM);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -900,21 +909,12 @@
             // 
             this.invoiceItemMBindingSource.DataSource = typeof(SBMS.Models.General.InvoiceItemM);
             // 
-            // pnlHeader
-            // 
-            this.pnlHeader.Controls.Add(this.btnClose);
-            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(924, 35);
-            this.pnlHeader.TabIndex = 19;
-            // 
             // NewSaleInvoiceV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(924, 539);
+            this.ClientSize = new System.Drawing.Size(1156, 539);
             this.Controls.Add(this.pnlBody);
             this.Controls.Add(this.pnlHeader);
             this.ForeColor = System.Drawing.Color.White;
@@ -931,7 +931,6 @@
             this.pnlBody.ResumeLayout(false);
             this.gbProducts.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productMBindingSource)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
@@ -950,8 +949,9 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoiceItems)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceItemMBindingSource)).EndInit();
             this.pnlHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.productMBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceItemMBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

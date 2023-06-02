@@ -229,11 +229,11 @@ namespace SBMS.Presenters.SalesPres
             {
                 if (((CustomerM)this.newSaleInvoiceV.CBXCustomers.SelectedItem) == null)
                 {
-                    this.newSaleInvoiceV.ShowMsgBox("Select Supplier", "Note:", false);
+                    this.newSaleInvoiceV.ShowMsgBox("Select Customer", "Note:", false);
                 }
                 else if (string.IsNullOrEmpty(this.newSaleInvoiceV.InvCustomerName))
                 {
-                    this.newSaleInvoiceV.ShowMsgBox("Enter Supplier Name", "Note:", false);
+                    this.newSaleInvoiceV.ShowMsgBox("Enter Customer Name", "Note:", false);
                 }
                 else
                 {
@@ -294,40 +294,46 @@ namespace SBMS.Presenters.SalesPres
         }
         private void OnAEInvItem()
         {
-            if (this.newSaleInvoiceV.DGVProducts.SelectedRows.Count == 1 && ValidateFields() && this.newSaleInvoiceV.AEButtonText == "Add")
+            if (ValidateFields())
             {
-                this.AddInvItem();
+                if (newSaleInvoiceV.DGVProducts.SelectedRows.Count == 1 && newSaleInvoiceV.AEButtonText == "Add")
+                {
+                    AddInvItem();
+                }
+                else if (newSaleInvoiceV.DGVInvItems.SelectedRows.Count == 1)
+                {
+                    EditInvItem();
+                }
+                else
+                {
+                    this.newSaleInvoiceV.ShowMsgBox("Select Product", "Note:", false);
+                    return;
+                }
+                this.RestItemFields();
+                this.newSaleInvoiceV.DGVInvItems.DataSource = null;
+                this.newSaleInvoiceV.DGVInvItems.DataSource = this.InvItems;
+                this.newSaleInvoiceV.InvTotlPrice = GetInvTotalPrice().ToString();
             }
-            else if (this.newSaleInvoiceV.DGVInvItems.SelectedRows.Count == 1 && ValidateFields())
-            {
-                this.EditInvItem();
-            }
-            else
-            {
-                this.newSaleInvoiceV.ShowMsgBox("Select Product", "Note:", false);
-                return;
-            }
-            this.RestItemFields();
-            this.newSaleInvoiceV.DGVInvItems.DataSource = null;
-            this.newSaleInvoiceV.DGVInvItems.DataSource = this.InvItems;
-            this.newSaleInvoiceV.InvTotlPrice = GetInvTotalPrice().ToString();
 
         }
         private bool ValidateFields()
         {
-            if (string.IsNullOrEmpty(this.newSaleInvoiceV.PPrice))
+            if (string.IsNullOrEmpty(newSaleInvoiceV.PPrice))
             {
-                this.newSaleInvoiceV.ShowMsgBox("Enter Product Cost ", "Note:", false);
+                newSaleInvoiceV.ShowMsgBox("Enter Product Price ", "Note:", false);
+                return false;
             }
-            else if (string.IsNullOrEmpty(this.newSaleInvoiceV.InvItemQuantity))
+            if (string.IsNullOrEmpty(newSaleInvoiceV.InvItemQuantity))
             {
-                this.newSaleInvoiceV.ShowMsgBox("Enter Product Quantity ", "Note:", false);
+                newSaleInvoiceV.ShowMsgBox("Enter Product Quantity ", "Note:", false);
+                return false;
             }
-            else
+            if (decimal.Parse(newSaleInvoiceV.InvItemQuantity) <= 0)
             {
-                return true;
+                newSaleInvoiceV.ShowMsgBox("Product Quantity must be greater than 0 ", "Note:", false);
+                return false;
             }
-            return false;
+            return true;
         }
         private void AddInvItem()
         {

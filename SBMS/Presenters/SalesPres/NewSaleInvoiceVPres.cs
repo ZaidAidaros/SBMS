@@ -225,15 +225,8 @@ namespace SBMS.Presenters.SalesPres
         {
             if (this.InvItems.Count > 0)
             {
-                if (((CustomerM)this.newSaleInvoiceV.CBXCustomers.SelectedItem) == null)
-                {
-                    this.newSaleInvoiceV.ShowMsgBox("Select Supplier", "Note:", false);
-                }
-                else if (string.IsNullOrEmpty(this.newSaleInvoiceV.InvCustomerName))
-                {
-                    this.newSaleInvoiceV.ShowMsgBox("Enter Supplier Name", "Note:", false);
-                }
-                else
+                
+                if (InvValidate())
                 {
                     InvoiceM invoiceM = new InvoiceM();
                     invoiceM.EmpId = SalesHVPres.GetInstance(null).user.EmployeeId;
@@ -245,21 +238,19 @@ namespace SBMS.Presenters.SalesPres
                     invoiceM.Date = DateTime.Now;
                     invoiceM.Total = GetInvTotalPrice();
 
-                    if (InvValidate())
+                    if (newSaleInvoiceV.InvDiscount.StartsWith("%"))
                     {
-                        if (newSaleInvoiceV.InvDiscount.StartsWith("%"))
-                        {
-                            invoiceM.DiscountRate = decimal.Parse(newSaleInvoiceV.InvDiscount.Substring(1)) / 100;
-                        }
-                        else if (!string.IsNullOrEmpty(newSaleInvoiceV.InvDiscount))
-                        {
-                            invoiceM.DiscountRate = decimal.Parse(newSaleInvoiceV.InvDiscount) / invoiceM.Total;
-                        }
-                        else
-                        {
-                            invoiceM.DiscountRate = 0;
-                        }
+                        invoiceM.DiscountRate = decimal.Parse(newSaleInvoiceV.InvDiscount.Substring(1)) / 100;
                     }
+                    else if (!string.IsNullOrEmpty(newSaleInvoiceV.InvDiscount))
+                    {
+                        invoiceM.DiscountRate = decimal.Parse(newSaleInvoiceV.InvDiscount) / invoiceM.Total;
+                    }
+                    else
+                    {
+                        invoiceM.DiscountRate = 0;
+                    }
+                    
                      
                     RepoResultM res = await SalesRepo.AddSaleInvAsync(invoiceM);
                     if (res.IsSucess)
@@ -309,40 +300,52 @@ namespace SBMS.Presenters.SalesPres
         }
         private void OnAEInvItem()
         {
-            if (this.newSaleInvoiceV.DGVProducts.SelectedRows.Count == 1 && ValidateFields() && this.newSaleInvoiceV.AEButtonText == "Add")
+            if (ValidateFields())
             {
-                this.AddInvItem();
+                if (newSaleInvoiceV.DGVProducts.SelectedRows.Count == 1 && this.newSaleInvoiceV.AEButtonText == "Add")
+                {
+                    AddInvItem();
+                }
+                else if (newSaleInvoiceV.DGVInvItems.SelectedRows.Count == 1)
+                {
+                    EditInvItem();
+                }
+                else
+                {
+                    newSaleInvoiceV.ShowMsgBox("Select Product", "Note:", false);
+                    return;
+                }
+                this.RestItemFields();
+                this.newSaleInvoiceV.DGVInvItems.DataSource = null;
+                this.newSaleInvoiceV.DGVInvItems.DataSource = this.InvItems;
+                this.newSaleInvoiceV.InvTotlPrice = GetInvTotalPrice().ToString();
             }
-            else if (this.newSaleInvoiceV.DGVInvItems.SelectedRows.Count == 1 && ValidateFields())
-            {
-                this.EditInvItem();
-            }
-            else
-            {
-                this.newSaleInvoiceV.ShowMsgBox("Select Product", "Note:", false);
-                return;
-            }
-            this.RestItemFields();
-            this.newSaleInvoiceV.DGVInvItems.DataSource = null;
-            this.newSaleInvoiceV.DGVInvItems.DataSource = this.InvItems;
-            this.newSaleInvoiceV.InvTotlPrice = GetInvTotalPrice().ToString();
 
         }
         private bool ValidateFields()
         {
-            if (string.IsNullOrEmpty(this.newSaleInvoiceV.PPrice))
+            if (string.IsNullOrEmpty(newSaleInvoiceV.PPrice))
             {
-                this.newSaleInvoiceV.ShowMsgBox("Enter Product Cost ", "Note:", false);
+                newSaleInvoiceV.ShowMsgBox("Enter Product Price ", "Note:", false);
+                return false;
             }
-            else if (string.IsNullOrEmpty(this.newSaleInvoiceV.InvItemQuantity))
+            if (string.IsNullOrEmpty(newSaleInvoiceV.InvItemQuantity))
             {
-                this.newSaleInvoiceV.ShowMsgBox("Enter Product Quantity ", "Note:", false);
+                newSaleInvoiceV.ShowMsgBox("Enter Product Quantity ", "Note:", false);
+                return false;
             }
-            else
+            if (decimal.Parse(newSaleInvoiceV.InvItemQuantity) > selectedProduct.Quantity)
             {
-                return true;
+                newSaleInvoiceV.ShowMsgBox("Product Quantity Out Of Avaliable ", "Note:", false);
+                return false;
             }
-            return false;
+            if (decimal.Parse(newSaleInvoiceV.InvItemQuantity) <= 0)
+            {
+                newSaleInvoiceV.ShowMsgBox("Product Quantity must be greater than 0 ", "Note:", false);
+                return false;
+            }
+            return true;
+            
         }
         private bool IsNumber(string value)
         {
@@ -357,19 +360,38 @@ namespace SBMS.Presenters.SalesPres
         }
         private bool InvValidate()
         {
-            if (!string.IsNullOrEmpty(newSaleInvoiceV.InvDiscount))
+            if ((CustomerM)newSaleInvoiceV.CBXCustomers.SelectedItem == null)
             {
-                if (!IsNumber(newSaleInvoiceV.InvDiscount) || (newSaleInvoiceV.InvDiscount.StartsWith("%") && !IsNumber(newSaleInvoiceV.InvDiscount.Substring(1))))
+                newSaleInvoiceV.ShowMsgBox("Select Customer", "Note:", false);
+                return false;
+            }
+            if (string.IsNullOrEmpty(this.newSaleInvoiceV.InvCustomerName))
+            {
+                newSaleInvoiceV.ShowMsgBox("Enter Customer Name For Invoice", "Note:", false);
+                return false;
+            }
+            if(!string.IsNullOrEmpty(newSaleInvoiceV.InvDiscount) && newSaleInvoiceV.InvDiscount.StartsWith("%"))
+            {
+                if (!IsNumber(newSaleInvoiceV.InvDiscount.Substring(1)))
                 {
                     newSaleInvoiceV.ShowMsgBox("Discount must be Number", "Note:", false);
                     return false;
                 }
-                else if(newSaleInvoiceV.InvDiscount.StartsWith("%") && decimal.Parse(newSaleInvoiceV.InvDiscount.Substring(1)) > 100)
+                if(decimal.Parse(newSaleInvoiceV.InvDiscount.Substring(1)) > 100)
                 {
                     newSaleInvoiceV.ShowMsgBox("Discount can not be greater than 100% ", "Note:", false);
                     return false;
                 }
-                return true;
+                
+            }
+            if (!string.IsNullOrEmpty(newSaleInvoiceV.InvDiscount))
+            {
+                if (!IsNumber(newSaleInvoiceV.InvDiscount))
+                {
+                    newSaleInvoiceV.ShowMsgBox("Discount must be Number", "Note:", false);
+                    return false;
+                }
+
             }
             return true;
         }

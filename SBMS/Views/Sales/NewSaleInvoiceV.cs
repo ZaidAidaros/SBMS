@@ -80,7 +80,5 @@ namespace SBMS.Views.Sales
                 return false;
             }
         }
-
-        
     }
 }

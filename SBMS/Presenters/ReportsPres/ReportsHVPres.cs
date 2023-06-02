@@ -13,16 +13,27 @@ using SBMS.Repositories.SalesRepo;
 using SBMS.Repositories.StoresRepo;
 using SBMS.Repositories.SuppliersRepo;
 using SBMS.Views.Reports;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace SBMS.Presenters.ReportsPres
 {
+    enum ReportDep
+    {
+        Employees,
+        Users,
+        Products,
+        Sales,
+        Purchases,
+        Customers,
+        Suppliers,
+    }
     class ReportsHVPres
     {
         IReportsHV reportsHV;
         ReportDataSource reportDataSource;
-
+        ReportDep reportDep;
         const string EmployeesDataSet = "EmployeesDataSet";
         const string UsersDataSet = "UsersDataSet";
         const string ProductsDataSet = "ProductsDataSet";
@@ -67,24 +78,56 @@ namespace SBMS.Presenters.ReportsPres
             reportsHV.ShowUsersReportView += async delegate { await ShowUsersReportViewAsync(); };
             reportsHV.ShowCustomersReportView += async delegate { await ShowCustomersReportView(); };
             reportsHV.ShowSuppliersReportView += async delegate { await ShowSuppliersReportView(); };
+            reportsHV.OnReloadReport += async delegate { await ReloadReport(); };
             reportsHV.OnDisposed += delegate { Dispose(); };
         }
+
+        private async Task ReloadReport()
+        {
+            switch (reportDep)
+            {
+                case ReportDep.Employees:
+                    await LoadEmployeesAsync();
+                    break;
+                case ReportDep.Users:
+                    await LoadUsersAsync();
+                    break;
+                case ReportDep.Products:
+                    await LoadProductsAsync();
+                    break;
+                case ReportDep.Customers:
+                    await LoadCustomersAsync();
+                    break;
+                case ReportDep.Suppliers:
+                    await LoadSuppliersAsync();
+                    break;
+                case ReportDep.Sales:
+                    await LoadSalesInvoicesAsync(true);
+                    break;
+                case ReportDep.Purchases:
+                    await LoadPurchasesInvoicesAsync(true);
+                    break;
+            }
+        }
+
         private async Task ShowCustomersReportView()
         {
+            reportDep = ReportDep.Customers;
             reportsHV.ReportsViewer.LocalReport.ReportEmbeddedResource = CustomersReport;
             reportDataSource.Name = CustomersDataSet;
-            await LoadCustomersAsync(false);
+            await LoadCustomersAsync();
         }
 
         
 
         private async Task ShowSuppliersReportView()
         {
+            reportDep = ReportDep.Suppliers;
             reportsHV.ReportsViewer.LocalReport.ReportEmbeddedResource = SuppliersReport;
             reportDataSource.Name = SuppliersDataSet;
-            await LoadSuppliersAsync(false);
+            await LoadSuppliersAsync();
         }
-        private async Task LoadCustomersAsync(bool IsFilter)
+        private async Task LoadCustomersAsync()
         {
             RepoResultM res = await CustomersRepo.GetCustomersAsync();
             if (res.IsSucess)
@@ -110,7 +153,7 @@ namespace SBMS.Presenters.ReportsPres
                 reportsHV.ShowMsgBox(res.ErrorMsg, "Error:", false);
             }
         }
-        private async Task LoadSuppliersAsync(bool IsFilter)
+        private async Task LoadSuppliersAsync()
         {
             RepoResultM res = await SuppliersRepo.GetSuppliersAsync();
             if (res.IsSucess)
@@ -139,6 +182,7 @@ namespace SBMS.Presenters.ReportsPres
 
         private async Task ShowSalesReportViewAsync()
         {
+            reportDep = ReportDep.Sales;
             reportsHV.ReportsViewer.LocalReport.ReportEmbeddedResource = SalesReport;
             reportDataSource.Name = SalesDataSet;
             await LoadSalesInvoicesAsync(false);
@@ -146,13 +190,15 @@ namespace SBMS.Presenters.ReportsPres
 
         private async Task ShowPurchasesReportViewAsync()
         {
+            reportDep = ReportDep.Purchases;
             reportsHV.ReportsViewer.LocalReport.ReportEmbeddedResource = PurchasesReport;
             reportDataSource.Name = PurchasesDataSet;
-            await LoadPurchasesInvoicesAsync(null);
+            await LoadPurchasesInvoicesAsync(false);
         }
 
         private async Task ShowProductsReportViewAsync()
         {
+            reportDep = ReportDep.Products;
             reportsHV.ReportsViewer.LocalReport.ReportEmbeddedResource = ProductsReport;
             reportDataSource.Name = ProductsDataSet;
             await LoadProductsAsync();
@@ -161,6 +207,7 @@ namespace SBMS.Presenters.ReportsPres
         private async Task ShowEmployeesReportViewAsync()
         {
 
+            reportDep = ReportDep.Employees;
             reportsHV.ReportsViewer.LocalReport.ReportEmbeddedResource = EmployeesReport;
             reportDataSource.Name = EmployeesDataSet;
             await LoadEmployeesAsync();
@@ -168,6 +215,7 @@ namespace SBMS.Presenters.ReportsPres
 
         private async Task ShowUsersReportViewAsync()
         {
+            reportDep = ReportDep.Users;
             reportsHV.ReportsViewer.LocalReport.ReportEmbeddedResource = UsersReport;
             reportDataSource.Name = UsersDataSet;
             await LoadUsersAsync();
@@ -209,16 +257,16 @@ namespace SBMS.Presenters.ReportsPres
                 reportsHV.ShowMsgBox(res.ErrorMsg, "Error:", false);
             }
         }
-        private async Task LoadPurchasesInvoicesAsync(string searchValue)
+        private async Task LoadPurchasesInvoicesAsync(bool IsFilter)
         {
             RepoResultM res;
-            if (searchValue == null)
+            if (IsFilter)
             {
-                res = await PurchasesRepo.GetPurchasInvoicesAsync();
+                res = await PurchasesRepo.PurchasesReport(1000, 1, 1, "", "2000-1-1", "3000-1-1");
             }
             else
             {
-                res = await PurchasesRepo.SearchPurchaseInvAsync(searchValue);
+                res = await PurchasesRepo.GetPurchasInvoicesAsync();
             }
             if (res.IsSucess)
             {

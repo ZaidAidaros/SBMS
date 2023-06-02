@@ -14,8 +14,8 @@ SELECT [dbo].PurchaseInvoices.Id,
        [dbo].MonyState.[name] as MonyState,
        [dbo].InvoiceTypes.[name] as MonyState,
        [dbo].PurchaseInvoices.total,
-       [dbo].PurchaseInvoices.opDate,
-       [dbo].PurchaseInvoices.note
+       [dbo].PurchaseInvoices.note,
+       [dbo].PurchaseInvoices.opDate
 FROM [dbo].PurchaseInvoices
 INNER JOIN [dbo].Employees ON [dbo].Employees.Id = [dbo].PurchaseInvoices.empId
 INNER JOIN [dbo].Suppliers ON [dbo].Suppliers.Id = [dbo].PurchaseInvoices.suppId
