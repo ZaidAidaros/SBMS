@@ -264,6 +264,7 @@ namespace SBMS.Presenters.SalesPres
                         }
                         RestAll();
                         newSaleInvoiceV.ShowMsgBox("The Invoice Saved Successfuly", "Success:", false);
+                        await LoadProductsAsync(0);
                     }
                     else
                     {
@@ -384,7 +385,7 @@ namespace SBMS.Presenters.SalesPres
                 }
                 
             }
-            if (!string.IsNullOrEmpty(newSaleInvoiceV.InvDiscount))
+            else if (!string.IsNullOrEmpty(newSaleInvoiceV.InvDiscount))
             {
                 if (!IsNumber(newSaleInvoiceV.InvDiscount))
                 {
@@ -498,6 +499,7 @@ namespace SBMS.Presenters.SalesPres
         {
             this.newSaleInvoiceV.CBXMonyState.SelectedIndex = 0;
             this.newSaleInvoiceV.InvCustomerName = null;
+            this.newSaleInvoiceV.InvDiscount = null;
             this.RestItemFields();
             this.newSaleInvoiceV.DGVInvItems.DataSource = null;
             this.InvItems.Clear();

@@ -9,7 +9,7 @@ AS
 Begin
 SELECT [dbo].PurchaseInvoices.Id,
        [dbo].PurchaseInvoices.invSuppName,
-       [dbo].Suppliers.[name] as CustName,
+       [dbo].Suppliers.[name] as SuppName,
        [dbo].Employees.[name] as EmpName,
        [dbo].MonyState.[name] as MonyState,
        [dbo].InvoiceTypes.[name] as MonyState,

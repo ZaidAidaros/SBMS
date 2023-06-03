@@ -210,23 +210,24 @@ namespace SBMS.Presenters.PurchasesPres
                     {
                         for (int i = 0; i < this.InvItems.Count; i++)
                         {
-                            this.InvItems[i].InvoiceId = (int)res.ResData[0];
+                            InvItems[i].InvoiceId = (int)res.ResData[0];
                             RepoResultM itemRes = await PurchasesItemsRepo.AddRePurchaseInvItemAsync(this.InvItems[i]);
-                            if (!itemRes.IsSucess) this.newRetPurchaseInvV.ShowMsgBox(itemRes.ErrorMsg + "\n" + res.ResData[0], "Error:", false);
+                            if (!itemRes.IsSucess) newRetPurchaseInvV.ShowMsgBox(itemRes.ErrorMsg + "\n" + res.ResData[0], "Error:", false);
 
                         }
-                        this.RestAll();
-                        this.newRetPurchaseInvV.ShowMsgBox("The Invoice Saved Successfuly", "Success:", false);
+                        RestAll();
+                        newRetPurchaseInvV.ShowMsgBox("The Invoice Saved Successfuly", "Success:", false);
+                        await LoadProductsAsync(0);
                     }
                     else
                     {
-                        this.newRetPurchaseInvV.ShowMsgBox(res.ErrorMsg, "Error:", false);
+                        newRetPurchaseInvV.ShowMsgBox(res.ErrorMsg, "Error:", false);
                     }
                 }
             }
             else
             {
-                this.newRetPurchaseInvV.ShowMsgBox("Invoice has No Items\nAdd Some Items First", "Error:", false);
+                newRetPurchaseInvV.ShowMsgBox("Invoice has No Items\nAdd Some Items First", "Error:", false);
             }
         }
         private decimal GetInvTotalPrice()

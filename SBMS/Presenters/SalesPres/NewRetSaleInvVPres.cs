@@ -42,7 +42,6 @@ namespace SBMS.Presenters.SalesPres
             await this.LoadProductsAsync(0);
             await this.LoadCustomersAsync();
             await this.LoadProdCategoiesAsync();
-            await this.LoadOffersAsync();
             this.LoadMonyStates();
             this.newSaleInvoiceV.DGVProducts.ClearSelection();
             this.newSaleInvoiceV.DGVInvItems.ClearSelection();
@@ -165,42 +164,6 @@ namespace SBMS.Presenters.SalesPres
                 this.newSaleInvoiceV.ShowMsgBox(res.ErrorMsg, "Error:", false);
             }
         }
-        private async Task LoadOffersAsync()
-        {
-            MonyStateM monyState1 = new MonyStateM();
-            this.newSaleInvoiceV.CBXMonyState.Items.Clear();
-            this.newSaleInvoiceV.CBXMonyState.DisplayMember = "Name";
-            this.newSaleInvoiceV.CBXMonyState.ValueMember = "Id";
-            monyState1.Id = 1;
-            monyState1.Name = "No Offer";
-            this.newSaleInvoiceV.CBXMonyState.Items.Add(monyState1);
-            //RepoResultM res = await ProdCategoriesRepo.GetProdCategoriesAsync();
-            //if (res.IsSucess)
-            //{
-            //    this.newSaleInvoiceV.CBXPCategoryFilter.Items.Clear();
-            //    this.newSaleInvoiceV.CBXPCategoryFilter.DisplayMember = "Name";
-            //    this.newSaleInvoiceV.CBXPCategoryFilter.ValueMember = "Id";
-            //    ProdCategoryM prodCategoryM = new ProdCategoryM();
-            //    prodCategoryM.Id = 0;
-            //    prodCategoryM.Name = "All";
-            //    this.newSaleInvoiceV.CBXPCategoryFilter.Items.Add(prodCategoryM);
-            //    for (int i = 0; i < res.ResData.Count; i++)
-            //    {
-            //        this.newSaleInvoiceV.CBXPCategoryFilter.Items.Add((ProdCategoryM)res.ResData[i]);
-            //    }
-            //    this.newSaleInvoiceV.CBXPCategoryFilter.SelectedIndex = 0;
-
-            //}
-            //else
-            //{
-            //    if (res.ErrorMsg == "No Result")
-            //    {
-            //        this.newSaleInvoiceV.ShowMsgBox("The Product Categories List Is Empty", "Note:", false);
-            //        return;
-            //    }
-            //    this.newSaleInvoiceV.ShowMsgBox(res.ErrorMsg, "Error:", false);
-            //}
-        }
         private void LoadMonyStates()
         {
             MonyStateM monyState1 = new MonyStateM();
@@ -258,6 +221,7 @@ namespace SBMS.Presenters.SalesPres
                         }
                         this.RestAll();
                         this.newSaleInvoiceV.ShowMsgBox("The Invoice Saved Successfuly", "Success:", false);
+                        await LoadProductsAsync(0);
                     }
                     else
                     {
